@@ -10,15 +10,17 @@ public class CardManager : MonoBehaviour
     public bool doMerge = false;
     public bool stopDraw = false;
 
-    public GameObject Card1;
-    public GameObject Card2;
-    public GameObject Card3;
-    public GameObject Card4;
+    public GameObject[] Card = new GameObject[4];
+
 
     // Start is called before the first frame update
     void Start()
     {
         cardDrawing = false;
+        Card[0] = FindObjectOfType<GameManager>().Card[0];
+        Card[1] = FindObjectOfType<GameManager>().Card[1];
+        Card[2] = FindObjectOfType<GameManager>().Card[2];
+        Card[3] = FindObjectOfType<GameManager>().Card[3];
     }
 
     // Update is called once per frame
@@ -43,12 +45,9 @@ public class CardManager : MonoBehaviour
     {
         int cardType;
         float addCardCoolTime;
-        cardType = Random.Range(1, 5);
+        cardType = Random.Range(0, 4);
  
-        if(cardType == 1 ) { spawnCard = Card1; }
-        else if(cardType == 2 ) { spawnCard = Card2;}
-        else if(cardType == 3 ) { spawnCard = Card3;}
-        else if(cardType == 4 ) { spawnCard = Card4;}
+        spawnCard = Card[cardType];
  
         Instantiate(spawnCard, transform);
         

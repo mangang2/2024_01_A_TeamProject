@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Card1,Card2,Card3,Card4;
+    public GameObject[] Card = new GameObject[4];
 
     public static GameManager Instance { get; private set; }
 
