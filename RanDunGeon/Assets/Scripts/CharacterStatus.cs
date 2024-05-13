@@ -6,7 +6,7 @@ using TMPro;
 
 public class CharacterStatus : MonoBehaviour
 {
-    public GameObject TrunManager;
+    public GameObject TurnManager;
     public Text HpText;
     public Slider HpBar;
     public GameObject RecoveryAmount;
@@ -65,7 +65,7 @@ public class CharacterStatus : MonoBehaviour
     {
         if (gameObject.transform.tag == "Player")
         {
-            if (TrunManager.GetComponent<TurnManager>().pTurn == true && TurnDown == true)
+            if (TurnManager.GetComponent<TurnManager>().pTurn == true && TurnDown == true)
             {
                 if (AdBuffTurn > 0) AdBuffTurn--;
                 if (AdDeBuffTurn > 0) AdDeBuffTurn--;
@@ -79,12 +79,12 @@ public class CharacterStatus : MonoBehaviour
                 TurnDown = false;
             }
 
-            if (TrunManager.GetComponent<TurnManager>().eTurn == true) TurnDown = true;
+            if (TurnManager.GetComponent<TurnManager>().eTurn == true) TurnDown = true;
         }
 
         if (gameObject.transform.tag == "Enemy")
         {
-            if (TrunManager.GetComponent<TurnManager>().eTurn == true && TurnDown == true)
+            if (TurnManager.GetComponent<TurnManager>().eTurn == true && TurnDown == true)
             {
                 if (AdBuffTurn > 0) AdBuffTurn--;
                 if (AdDeBuffTurn > 0) AdDeBuffTurn--;
@@ -95,10 +95,11 @@ public class CharacterStatus : MonoBehaviour
                 if (CriPercentDebuffTrun > 0) CriPercentDebuffTrun--;
                 if (CriDamageBuffTrun > 0) CriDamageBuffTrun--;
                 if (CriDamageDebuffTrun > 0) CriDamageDebuffTrun--;
+                StartCoroutine(checkDotsDamage());
                 TurnDown = false;
             }
 
-            if (TrunManager.GetComponent<TurnManager>().pTurn == true) TurnDown = true;
+            if (TurnManager.GetComponent<TurnManager>().pTurn == true) TurnDown = true;
         }
 
         if(Hp > MaxHp)
@@ -149,5 +150,21 @@ public class CharacterStatus : MonoBehaviour
         if (CriDamageBuffTrun == 0) CriDamageBuff = 0;
         if (CriPercentDebuffTrun == 0) CriDamageDebuff = 0;
         CriDamage = DefaultCriDamage + CriDamageBuff - CriDamageDebuff;
+    }
+
+    private IEnumerator checkDotsDamage()
+    {
+        for(int i = -1; i < transform.childCount; i++)
+        {
+            if(i >= 0)
+            transform.GetChild(i).GetComponent<DotsDamage>().DoDotsDamage();
+
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        if (gameObject.tag == "Enemy")
+            gameObject.GetComponent<EnemyAI>().eTurn = true;
+
+        yield break;
     }
 }

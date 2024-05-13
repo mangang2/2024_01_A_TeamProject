@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43821484, g: 0.48623484, b: 0.56651336, a: 1}
+  m_IndirectSpecularColor: {r: 0.43821454, g: 0.48623425, b: 0.566512, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a758bbf726b40f8950d64d55b85674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrunManager: {fileID: 1983862294}
+  TurnManager: {fileID: 1983862294}
   HpText: {fileID: 105708144}
   HpBar: {fileID: 1275788390}
   RecoveryAmount: {fileID: 8039561855477572402, guid: 36a34df4b1c2d442282f8132c4d88b9e, type: 3}
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a758bbf726b40f8950d64d55b85674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrunManager: {fileID: 1983862294}
+  TurnManager: {fileID: 1983862294}
   HpText: {fileID: 590657165}
   HpBar: {fileID: 1266277847}
   RecoveryAmount: {fileID: 8039561855477572402, guid: 36a34df4b1c2d442282f8132c4d88b9e, type: 3}
@@ -1096,6 +1096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnManager: {fileID: 1983862294}
+  eTurn: 0
 --- !u!1 &813556360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3382059273543940731, guid: 6ecc476a93be547f4bd655234d6224cd, type: 3}
@@ -1826,7 +1827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Card:
-  - {fileID: 5293796684268122817, guid: d52fc99b66493a44780af6eaef8be42d, type: 3}
+  - {fileID: 9143045235273301103, guid: 2e74733c12ad141b6a78fba81a693344, type: 3}
   - {fileID: 4055728022967715978, guid: 5e5aa5c0942c29a48b2615826c065546, type: 3}
   - {fileID: 5834814195292812506, guid: 22855bc87f9873547b4ce313f3a5d4fd, type: 3}
   - {fileID: 8880946109014373666, guid: 021080190d4dc0b4899a1f86708f5655, type: 3}
@@ -1949,7 +1950,7 @@ GameObject:
   - component: {fileID: 1983862295}
   m_Layer: 0
   m_Name: TurnManager
-  m_TagString: Untagged
+  m_TagString: TurnManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

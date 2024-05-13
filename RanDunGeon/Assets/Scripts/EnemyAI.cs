@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public GameObject TurnManager;
+    public bool eTurn = false;
 
     private GameObject player;
     private GameObject enemy;
@@ -22,17 +23,22 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (EWCount == 0)
+        {
+            eTurn = false;
+        }
+
         int skillNum;
 
         EWCount = TurnManager.GetComponent<TurnManager>().EWorkCount;
 
-        if (skillWork == false && EWCount > 0)
+        if (skillWork == false && EWCount > 0 && eTurn == true)
         {
             skillNum = Random.Range(1, 4);
 
-            if (skillNum == 1) Invoke("Skill_1", 1.2f);
-            if (skillNum == 2) Invoke("Skill_2", 1.2f);
-            if (skillNum == 3) Invoke("Skill_3", 1.2f);
+            if (skillNum == 1) Invoke("Skill_1", 0.5f);
+            if (skillNum == 2) Invoke("Skill_2", 0.5f);
+            if (skillNum == 3) Invoke("Skill_3", 0.5f);
             skillWork = true;
         }
     }

@@ -8,6 +8,7 @@ TagManager:
   - SubCamera
   - Enemy
   - DeckSet
+  - TurnManager
   layers:
   - Default
   - TransparentFX
