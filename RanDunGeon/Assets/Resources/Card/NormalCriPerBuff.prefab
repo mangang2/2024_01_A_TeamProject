@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   DoMerge: 0
-  cardType: 0
+  cardType: 7
   cardRank: 1
   skill: 0
   rankText: {fileID: 4834320325267724009}
@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd284391ceb04ce388e41768f62c419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnManager: {fileID: 0}
 --- !u!1001 &561533312469200293
 PrefabInstance:
   m_ObjectHideFlags: 0

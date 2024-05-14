@@ -160,7 +160,7 @@ public class CharacterStatus : MonoBehaviour
 
         if (DefenseBuffTurn == 0) DefenseBuff = 1;
         if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
-        Defense = 100 / (100 + (DefaultDefense + Defense) * DefenseBuff * DefenseDebuff);
+        Defense = 100 / (100 + DefaultDefense * DefenseBuff * DefenseDebuff);
 
         if(DownDamageTurn == 0) DownDamage = 0;
 
