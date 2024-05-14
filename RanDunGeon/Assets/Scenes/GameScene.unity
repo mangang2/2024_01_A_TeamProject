@@ -729,7 +729,7 @@ MonoBehaviour:
   MaxHp: 250
   DefaultAd: 23
   DefaultDefense: 10
-  DefaultCriPercent: 5
+  DefaultCriPercent: 25
   DefaultCriDamage: 50
   Hp: 500
   Ad: 0
@@ -1827,8 +1827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Card:
+  - {fileID: 5293796684268122817, guid: d52fc99b66493a44780af6eaef8be42d, type: 3}
   - {fileID: 9143045235273301103, guid: 2e74733c12ad141b6a78fba81a693344, type: 3}
-  - {fileID: 4055728022967715978, guid: 5e5aa5c0942c29a48b2615826c065546, type: 3}
   - {fileID: 5834814195292812506, guid: 22855bc87f9873547b4ce313f3a5d4fd, type: 3}
   - {fileID: 8880946109014373666, guid: 021080190d4dc0b4899a1f86708f5655, type: 3}
 --- !u!4 &1489762888
