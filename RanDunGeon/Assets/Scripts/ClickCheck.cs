@@ -34,7 +34,7 @@ public class ClickCheck : MonoBehaviour
             holdTime += Time.deltaTime;
         }
 
-        if(Input.GetMouseButtonUp(0) && CardManager.GetComponent<CardManager>().stopDraw == true && click == true)
+        if(Input.GetMouseButtonUp(0) && CardManager.GetComponent<CardManager>().ClickAble == true && click == true)
         {
             Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out hit);
             click = false;
@@ -47,7 +47,6 @@ public class ClickCheck : MonoBehaviour
                     {
                         if (PWCount > 0)
                         {
-                            TurnManager.GetComponent<TurnManager>().PWorkCount--;
                             hit.collider.gameObject.GetComponent<CardState>().skill = true;
                         }
                         

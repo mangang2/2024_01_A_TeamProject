@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NormalStoneCard : MonoBehaviour
 {
+    private GameObject TurnManager;
+
     private GameObject player;
     private GameObject enemy;
     // Start is called before the first frame update
@@ -11,6 +13,7 @@ public class NormalStoneCard : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        TurnManager = GameObject.FindGameObjectWithTag("TurnManager");
     }
 
     // Update is called once per frame
@@ -57,6 +60,7 @@ public class NormalStoneCard : MonoBehaviour
 
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
             Debug.Log(finalDamage.ToString("F0") + "의 물리피해를 입힙니다.");
+            TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skill = false;
             Destroy(gameObject);
         }

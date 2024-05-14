@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 7516597654787418295}
   - component: {fileID: 6022883433629487350}
   m_Layer: 3
-  m_Name: NormalBuff
+  m_Name: NormalDamageDown
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

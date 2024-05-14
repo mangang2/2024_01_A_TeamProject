@@ -15,12 +15,29 @@ public class CharacterStatus : MonoBehaviour
     public float Recover;
     public float FinalDamage;
 
-    public float MaxHp;
+    [Header("기초 스테이터스")]
+    public float DefaultHp;
     public float DefaultAd;
     public float DefaultDefense;
     public float DefaultCriPercent;
     public float DefaultCriDamage;
 
+    [Header("최대 체력")]
+    public float MaxHp;
+
+    [Header("스테이터스 % 추가")]
+    public float HpPer;
+    public float AdPer;
+    public float DefensePer;
+
+    [Header("스테이터스 정수값 추가")]
+    public float HpAdd;
+    public float AdAdd;
+    public float DefenseAdd;
+    public float CriPercentAdd;
+    public float CriDamageAdd;
+
+    [Header("스테이터스")]
     public float Hp;
     public float Ad;
     public float Defense;
@@ -28,27 +45,29 @@ public class CharacterStatus : MonoBehaviour
     public float CriPercent;
     public float CriDamage;
 
-  
+    [Header("버프")]
     public float AdBuff = 1;
     public float DefenseBuff = 1;
     public float CriPercentBuff = 0;
     public float CriDamageBuff = 0;
 
-  
+    [Header("디버프")]
     public float AdDebuff = 1;
     public float DefenseDebuff = 1;
     public float CriPercentDebuff = 0;
     public float CriDamageDebuff = 0;
 
-
+    [Header("버프 턴")]
     public int AdBuffTurn;
-    public int AdDeBuffTurn;
     public int DefenseBuffTurn;
-    public int DefenseDebuffTurn;
     public int DownDamageTurn;
     public int CriPercentBuffTrun;
-    public int CriPercentDebuffTrun;
     public int CriDamageBuffTrun;
+
+    [Header("디버프 턴")]
+    public int AdDeBuffTurn;
+    public int DefenseDebuffTurn;
+    public int CriPercentDebuffTrun;
     public int CriDamageDebuffTrun;
 
     private bool TurnDown = true;
@@ -56,6 +75,7 @@ public class CharacterStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MaxHp = DefaultHp * (1 + HpPer) + HpAdd;
         Hp = MaxHp;
         HpBar.value = Hp / MaxHp;
     }
@@ -102,6 +122,7 @@ public class CharacterStatus : MonoBehaviour
             if (TurnManager.GetComponent<TurnManager>().pTurn == true) TurnDown = true;
         }
 
+
         if(Hp > MaxHp)
         {
             Hp = MaxHp;
@@ -135,21 +156,21 @@ public class CharacterStatus : MonoBehaviour
 
         if (AdBuffTurn == 0) AdBuff = 1;
         if (AdDeBuffTurn == 0) AdDebuff = 1;
-        Ad = DefaultAd * AdBuff * AdDebuff;
+        Ad = (DefaultAd + AdAdd) * AdBuff * AdDebuff;
 
         if (DefenseBuffTurn == 0) DefenseBuff = 1;
         if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
-        Defense = 100 / (100 + DefaultDefense * DefenseBuff * DefenseDebuff);
+        Defense = 100 / (100 + (DefaultDefense + Defense) * DefenseBuff * DefenseDebuff);
 
         if(DownDamageTurn == 0) DownDamage = 0;
 
         if (CriPercentBuffTrun == 0) CriPercentBuff = 0;
         if (CriPercentDebuffTrun == 0) CriPercentDebuff = 0;
-        CriPercent = DefaultCriPercent + CriPercentBuff - CriPercentDebuff;
+        CriPercent = DefaultCriPercent + CriPercentAdd + CriPercentBuff - CriPercentDebuff;
 
         if (CriDamageBuffTrun == 0) CriDamageBuff = 0;
         if (CriPercentDebuffTrun == 0) CriDamageDebuff = 0;
-        CriDamage = DefaultCriDamage + CriDamageBuff - CriDamageDebuff;
+        CriDamage = DefaultCriDamage + CriDamageAdd + CriDamageBuff - CriDamageDebuff;
     }
 
     private IEnumerator checkDotsDamage()

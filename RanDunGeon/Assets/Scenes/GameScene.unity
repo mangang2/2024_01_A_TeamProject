@@ -726,11 +726,20 @@ MonoBehaviour:
   DamageAmount: {fileID: 3287973495662824354, guid: e5ae68db2de654b6a9bc48cf39750025, type: 3}
   Recover: 0
   FinalDamage: 0
-  MaxHp: 250
+  DefaultHp: 250
   DefaultAd: 23
   DefaultDefense: 10
   DefaultCriPercent: 25
   DefaultCriDamage: 50
+  MaxHp: 250
+  HpPer: 0
+  AdPer: 0
+  DefensePer: 0
+  HpAdd: 0
+  AdAdd: 0
+  DefenseAdd: 0
+  CriPercentAdd: 0
+  CriDamageAdd: 0
   Hp: 500
   Ad: 0
   Defense: 0
@@ -746,13 +755,13 @@ MonoBehaviour:
   CriPercentDebuff: 0
   CriDamageDebuff: 0
   AdBuffTurn: 0
-  AdDeBuffTurn: 0
   DefenseBuffTurn: 0
-  DefenseDebuffTurn: 0
   DownDamageTurn: 0
   CriPercentBuffTrun: 0
-  CriPercentDebuffTrun: 0
   CriDamageBuffTrun: 0
+  AdDeBuffTurn: 0
+  DefenseDebuffTurn: 0
+  CriPercentDebuffTrun: 0
   CriDamageDebuffTrun: 0
 --- !u!1 &590657163
 GameObject:
@@ -1055,11 +1064,20 @@ MonoBehaviour:
   DamageAmount: {fileID: 3287973495662824354, guid: e5ae68db2de654b6a9bc48cf39750025, type: 3}
   Recover: 0
   FinalDamage: 0
-  MaxHp: 250
+  DefaultHp: 500
   DefaultAd: 28
   DefaultDefense: 18
   DefaultCriPercent: 5
   DefaultCriDamage: 50
+  MaxHp: 250
+  HpPer: 0
+  AdPer: 0
+  DefensePer: 0
+  HpAdd: 0
+  AdAdd: 0
+  DefenseAdd: 0
+  CriPercentAdd: 0
+  CriDamageAdd: 0
   Hp: 500
   Ad: 0
   Defense: 0
@@ -1075,13 +1093,13 @@ MonoBehaviour:
   CriPercentDebuff: 0
   CriDamageDebuff: 0
   AdBuffTurn: 0
-  AdDeBuffTurn: 0
   DefenseBuffTurn: 0
-  DefenseDebuffTurn: 0
   DownDamageTurn: 0
   CriPercentBuffTrun: 0
-  CriPercentDebuffTrun: 0
   CriDamageBuffTrun: 0
+  AdDeBuffTurn: 0
+  DefenseDebuffTurn: 0
+  CriPercentDebuffTrun: 0
   CriDamageDebuffTrun: 0
 --- !u!114 &737671627
 MonoBehaviour:
@@ -1827,10 +1845,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Card:
-  - {fileID: 5293796684268122817, guid: d52fc99b66493a44780af6eaef8be42d, type: 3}
+  - {fileID: 9143045235273301103, guid: 2e74733c12ad141b6a78fba81a693344, type: 3}
   - {fileID: 9143045235273301103, guid: 2e74733c12ad141b6a78fba81a693344, type: 3}
   - {fileID: 5834814195292812506, guid: 22855bc87f9873547b4ce313f3a5d4fd, type: 3}
-  - {fileID: 8880946109014373666, guid: 021080190d4dc0b4899a1f86708f5655, type: 3}
+  - {fileID: 9143045235273301103, guid: 13ed882c5ce7b47209580899c541031c, type: 3}
 --- !u!4 &1489762888
 Transform:
   m_ObjectHideFlags: 0
@@ -2098,6 +2116,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2643865042616514288, guid: 6ecc476a93be547f4bd655234d6224cd, type: 3}
+      propertyPath: TurnManager
+      value: 
+      objectReference: {fileID: 1983862294}
     - target: {fileID: 2643865042616514288, guid: 6ecc476a93be547f4bd655234d6224cd, type: 3}
       propertyPath: Card.Array.size
       value: 4

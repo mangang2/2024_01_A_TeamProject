@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class NormalDamageDown : MonoBehaviour
 {
+    private GameObject TurnManager;
+
     private GameObject player;
-    public bool click;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        TurnManager = GameObject.FindGameObjectWithTag("TurnManager");
     }
 
     // Update is called once per frame
@@ -23,7 +25,6 @@ public class NormalDamageDown : MonoBehaviour
 
         if (GetComponent<CardState>().skill == true)
         {
-            click = false;
             playerDd = player.GetComponent<CharacterStatus>().DownDamage;
             CardRank = GetComponent<CardState>().cardRank;
 
@@ -48,8 +49,7 @@ public class NormalDamageDown : MonoBehaviour
                 Debug.Log("현재 더 강력한 효과가 적용중입니다.");
             }
 
-
-            click = true;
+            TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skill = false;
             Destroy(gameObject);
         }

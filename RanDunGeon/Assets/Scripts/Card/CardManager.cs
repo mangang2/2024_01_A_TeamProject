@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
-    private GameObject spawnCard;
-    private int isCard;
+    public GameObject TurnManager;
     public bool cardDrawing = false;
+    public bool ClickAble = false;
     public bool doMerge = false;
     public bool stopDraw = false;
 
-    public GameObject[] Card = new GameObject[4];
+    private GameObject[] Card = new GameObject[4];
+    private GameObject spawnCard;
+    private int isCard;
+    private float checkTime;
 
 
     // Start is called before the first frame update
@@ -28,7 +31,7 @@ public class CardManager : MonoBehaviour
     {
         isCard = transform.childCount;
 
-        if(isCard < 5 && cardDrawing == false && doMerge == false)
+        if(isCard < 5 && cardDrawing == false && doMerge == false && TurnManager.GetComponent<TurnManager>().pTurn == true)
         {
             stopDraw = false;
             cardDrawing = true;
@@ -37,6 +40,22 @@ public class CardManager : MonoBehaviour
         if(isCard == 5)
         {
             stopDraw = true;
+        }
+
+        if(cardDrawing == false)
+        {
+            checkTime -= Time.deltaTime;
+        }
+
+        if(cardDrawing == true)
+        {
+            ClickAble = false;
+            checkTime = 0.4f;
+        }
+
+        if(checkTime <= 0)
+        {
+            ClickAble = true;
         }
     }
 

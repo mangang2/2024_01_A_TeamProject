@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class NormalRecoveryCard : MonoBehaviour
 {
+    private GameObject TurnManager;
+
     private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        TurnManager = GameObject.FindGameObjectWithTag("TurnManager");
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class NormalRecoveryCard : MonoBehaviour
 
             Debug.Log("체력을 " + finalHeal.ToString("F0") + "만큼 회복합니다.");
 
+            TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skill = false;
             Destroy(gameObject);
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class NormalPoisonCard : MonoBehaviour
 {
     public GameObject DotDamagePrefabs;
+    private GameObject TurnManager;
 
     private GameObject player;
     private GameObject enemy;
@@ -14,6 +15,7 @@ public class NormalPoisonCard : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        TurnManager = GameObject.FindGameObjectWithTag("TurnManager");
     }
 
     // Update is called once per frame
@@ -33,12 +35,12 @@ public class NormalPoisonCard : MonoBehaviour
 
             if (CardRank == 1)
             {
-                DamageRank = 0.4f;
+                DamageRank = 0.7f;
                 Turn = 3;
             }
             if (CardRank == 2)
             {
-                DamageRank = 0.7f;
+                DamageRank = 1.3f;
                 Turn = 3;
             }
             if (CardRank == 3)
@@ -53,6 +55,7 @@ public class NormalPoisonCard : MonoBehaviour
             DotDamageObject.transform.parent = enemy.transform;
 
             Debug.Log(Turn.ToString("F0") + "턴 동안 매턴 " + (playerAd * DamageRank).ToString("F0") + "의 지속피해를 입힙니다.");
+            TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skill = false;
             Destroy(gameObject);
         }

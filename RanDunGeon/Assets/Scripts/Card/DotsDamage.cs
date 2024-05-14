@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DotsDamage : MonoBehaviour
-{
-    public GameObject TurnManager;
+{    
     public float Damage;
     public int Turn;
+    public float enemyDf;
+    public float enemyDd;
+    public float finalDamage;
 
+    private GameObject TurnManager;
     private GameObject enemy;
 
     // Start is called before the first frame update
@@ -29,10 +32,6 @@ public class DotsDamage : MonoBehaviour
 
     public void DoDotsDamage()
     {
-        float enemyDf;
-        float enemyDd;
-        float finalDamage;
-
         enemyDf = enemy.gameObject.GetComponent<CharacterStatus>().Defense;
         enemyDd = enemy.gameObject.GetComponent<CharacterStatus>().DownDamage;
 
@@ -40,6 +39,14 @@ public class DotsDamage : MonoBehaviour
         enemy.gameObject.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
         Debug.Log(Turn.ToString("지속피해 : " + finalDamage.ToString("F0") + "의 지속피해를 입힙니다."));
         Turn -= 1;
+    }
 
+    public float ReturnDatsDamage()
+    {
+        enemyDf = enemy.gameObject.GetComponent<CharacterStatus>().Defense;
+        enemyDd = enemy.gameObject.GetComponent<CharacterStatus>().DownDamage;
+
+        finalDamage = (Damage * enemyDf - enemyDd) * Turn;
+        return finalDamage;
     }
 }
