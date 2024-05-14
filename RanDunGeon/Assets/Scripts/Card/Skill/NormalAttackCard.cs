@@ -22,6 +22,8 @@ public class NormalAttackCard : MonoBehaviour
         float enemyDf;
         float enemyDd;
         float finalDamage;
+        float criP;
+        float criD;
 
         int CardRank;
 
@@ -31,6 +33,9 @@ public class NormalAttackCard : MonoBehaviour
         {
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;
+            criP = player.GetComponent<CharacterStatus>().CriPercent;
+ 
+
 
             if (CardRank == 1) DamageRank = 1.2f;
             if (CardRank == 2) DamageRank = 2.1f;
@@ -40,10 +45,20 @@ public class NormalAttackCard : MonoBehaviour
             enemyDf = enemy.GetComponent<CharacterStatus>().Defense;
             enemyDd = enemy.GetComponent<CharacterStatus>().DownDamage;
 
-            finalDamage = playerAd * DamageRank * enemyDf - enemyDd;
+            if(Random.Range(0f,100f) <= criP)
+            {
+                criD = (100 + player.GetComponent<CharacterStatus>().CriDamage) * 0.01f;
+                Debug.Log("치명타!");
+            }
+            else
+            {
+                criD = 1f;
+            }
+
+            finalDamage = playerAd * DamageRank * enemyDf * criD - enemyDd;
 
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
-            Debug.Log((playerAd * DamageRank).ToString("F0") + "의 물리피해를 입힙니다.");
+            Debug.Log(finalDamage.ToString("F0") + "의 물리피해를 입힙니다.");
             GetComponent<CardState>().skill = false;
             Destroy(gameObject);
         }

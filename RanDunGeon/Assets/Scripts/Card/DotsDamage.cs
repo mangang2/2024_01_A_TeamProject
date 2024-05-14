@@ -38,7 +38,7 @@ public class DotsDamage : MonoBehaviour
 
         finalDamage = Damage * enemyDf - enemyDd;
         enemy.gameObject.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
-        Debug.Log(Turn.ToString("지속피해 : " + Damage.ToString("F0") + "의 지속피해를 입힙니다."));
+        Debug.Log(Turn.ToString("지속피해 : " + finalDamage.ToString("F0") + "의 지속피해를 입힙니다."));
         Turn -= 1;
 
     }
