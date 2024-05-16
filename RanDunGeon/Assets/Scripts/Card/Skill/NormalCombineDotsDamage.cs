@@ -76,7 +76,8 @@ public class NormalCombineDotsDamage : MonoBehaviour
             Debug.Log(damage.ToString("F0") + "만큼의 마법 피해를 입히고, 적의 지속피해를 합산하여 " + dotsDamageSum.ToString("F0") + "만큼의 피해를 입힙니다.");
 
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            Destroy(gameObject);
+            Destroy(gameObject,0.3f);
+            enabled = false;
         }
     }
 }

@@ -64,7 +64,8 @@ public class NormalAttackCard : MonoBehaviour
             Debug.Log(finalDamage.ToString("F0") + "의 물리피해를 입힙니다.");
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skill = false;
-            Destroy(gameObject);
+            Destroy(gameObject,0.3f);
+            enabled = false;
         }
     }
 }

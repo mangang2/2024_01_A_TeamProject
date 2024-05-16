@@ -51,7 +51,8 @@ public class NormalDamageDown : MonoBehaviour
 
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skill = false;
-            Destroy(gameObject);
+            Destroy(gameObject,0.3f);
+            enabled = false;
         }
     }
 }

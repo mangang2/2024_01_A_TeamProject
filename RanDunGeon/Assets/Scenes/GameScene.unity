@@ -1064,7 +1064,7 @@ MonoBehaviour:
   DamageAmount: {fileID: 3287973495662824354, guid: e5ae68db2de654b6a9bc48cf39750025, type: 3}
   Recover: 0
   FinalDamage: 0
-  DefaultHp: 2000
+  DefaultHp: 1000
   DefaultAd: 28
   DefaultDefense: 150
   DefaultCriPercent: 5

@@ -9,8 +9,9 @@ using DG.Tweening;
 public class CardState : MonoBehaviour
 {
     public float moveSpeed;
-    GameObject target1;
-    GameObject target2;
+    private GameObject target1;
+    private GameObject target2;
+    private GameObject CardManager;
 
     public bool DoMerge = false;
     private bool DoMove = false;
@@ -21,21 +22,28 @@ public class CardState : MonoBehaviour
 
     public TextMeshPro rankText;
 
+    private Material Mt;
+
     private string infoText;
 
-    RaycastHit stopTarget;
-    RaycastHit hit;
+    private RaycastHit stopTarget;
+    private RaycastHit hit;
 
+    private Color FadeOut;
 
     private void Awake()
     {
+        CardManager = GameObject.Find("CardManager");
         infoText = gameObject.GetComponent<CardInfo>().InfoText;
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
         rankText.text = cardRank.ToString();
+        Mt = GetComponent<MeshRenderer>().material;
+        FadeOut = new Color(Mt.color.r, Mt.color.g, Mt.color.b, 0);
     }
 
     // Update is called once per frame
@@ -44,7 +52,7 @@ public class CardState : MonoBehaviour
 
         
 
-        if (DoMove == false)
+        if (DoMove == false && CardManager.GetComponent<CardManager>().UsingCard == false)
         {
             if (Physics.Raycast(transform.position, new Vector3(-1, 0, 0), out hit, 3))            //합쳐질 카드 인식
             {
@@ -70,7 +78,9 @@ public class CardState : MonoBehaviour
         
         if(skill == true)
         {
-            transform.DOMoveY(transform.position.y + 3, 0.5f);
+            CardManager.GetComponent<CardManager>().UsingCard = true;
+            transform.DOMoveY(5, 0.3f);
+            Mt.DOColor(Color.clear,0.3f);
         }
         
     }

@@ -57,7 +57,8 @@ public class NormalPoisonCard : MonoBehaviour
             Debug.Log(Turn.ToString("F0") + "턴 동안 매턴 " + (playerAd * DamageRank).ToString("F0") + "의 지속피해를 입힙니다.");
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skill = false;
-            Destroy(gameObject);
+            Destroy(gameObject,0.3f);
+            enabled = false;
         }
     }
 }

@@ -9,11 +9,12 @@ public class CardManager : MonoBehaviour
     public bool ClickAble = false;
     public bool doMerge = false;
     public bool stopDraw = false;
+    public bool UsingCard = false;
 
     private GameObject[] Card = new GameObject[4];
     private GameObject spawnCard;
     private int isCard;
-    private float checkTime;
+    private float checkTime, checkTime2;
 
 
     // Start is called before the first frame update
@@ -42,21 +43,37 @@ public class CardManager : MonoBehaviour
             stopDraw = true;
         }
 
-        if(cardDrawing == false)
-        {
-            checkTime -= Time.deltaTime;
-        }
-
         if(cardDrawing == true)
         {
             ClickAble = false;
             checkTime = 0.4f;
         }
 
+        if (cardDrawing == false && ClickAble == false)
+        {
+            checkTime -= Time.deltaTime;
+        }
+
         if(checkTime <= 0)
         {
             ClickAble = true;
         }
+
+        if(UsingCard)
+        {
+            checkTime2 -= Time.deltaTime;
+        }
+        else
+        {
+            checkTime2 = 0.3f;
+        }
+
+        if(checkTime2 <= 0)
+        {
+            UsingCard = false;
+        }
+       
+
     }
 
 
