@@ -734,10 +734,10 @@ MonoBehaviour:
   MaxHp: 250
   HpPer: 0
   AdPer: 0
-  DefensePer: 0
+  DfPer: 0
   HpAdd: 0
   AdAdd: 0
-  DefenseAdd: 0
+  DfAdd: 0
   CriPercentAdd: 0
   CriDamageAdd: 0
   Hp: 500
@@ -1064,18 +1064,18 @@ MonoBehaviour:
   DamageAmount: {fileID: 3287973495662824354, guid: e5ae68db2de654b6a9bc48cf39750025, type: 3}
   Recover: 0
   FinalDamage: 0
-  DefaultHp: 500
+  DefaultHp: 2000
   DefaultAd: 28
-  DefaultDefense: 18
+  DefaultDefense: 150
   DefaultCriPercent: 5
   DefaultCriDamage: 50
   MaxHp: 250
   HpPer: 0
   AdPer: 0
-  DefensePer: 0
+  DfPer: 0
   HpAdd: 0
   AdAdd: 0
-  DefenseAdd: 0
+  DfAdd: 0
   CriPercentAdd: 0
   CriDamageAdd: 0
   Hp: 500
@@ -1849,6 +1849,22 @@ MonoBehaviour:
   - {fileID: 9143045235273301103, guid: 2e74733c12ad141b6a78fba81a693344, type: 3}
   - {fileID: 5834814195292812506, guid: 22855bc87f9873547b4ce313f3a5d4fd, type: 3}
   - {fileID: 9143045235273301103, guid: 13ed882c5ce7b47209580899c541031c, type: 3}
+  DefaultStatus:
+  - 250
+  - 23
+  - 10
+  - 25
+  - 50
+  StatusPer:
+  - 30
+  - 15
+  - 40
+  StatusAdd:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!4 &1489762888
 Transform:
   m_ObjectHideFlags: 0

@@ -28,12 +28,12 @@ public class CharacterStatus : MonoBehaviour
     [Header("스테이터스 % 추가")]
     public float HpPer;
     public float AdPer;
-    public float DefensePer;
+    public float DfPer;
 
     [Header("스테이터스 정수값 추가")]
     public float HpAdd;
     public float AdAdd;
-    public float DefenseAdd;
+    public float DfAdd;
     public float CriPercentAdd;
     public float CriDamageAdd;
 
@@ -75,7 +75,12 @@ public class CharacterStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MaxHp = DefaultHp * (1 + HpPer) + HpAdd;
+        if (gameObject.transform.tag == "Player")
+        {
+            LoadStatus();
+        }
+
+        MaxHp = DefaultHp * (1 + HpPer * 0.01f) + HpAdd;
         Hp = MaxHp;
         HpBar.value = Hp / MaxHp;
     }
@@ -156,11 +161,11 @@ public class CharacterStatus : MonoBehaviour
 
         if (AdBuffTurn == 0) AdBuff = 1;
         if (AdDeBuffTurn == 0) AdDebuff = 1;
-        Ad = (DefaultAd + AdAdd) * AdBuff * AdDebuff;
+        Ad = (DefaultAd * (1 + AdPer * 0.01f) + AdAdd) * AdBuff * AdDebuff;
 
         if (DefenseBuffTurn == 0) DefenseBuff = 1;
         if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
-        Defense = 100 / (100 + DefaultDefense * DefenseBuff * DefenseDebuff);
+        Defense = 100 / (100 + ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * DefenseBuff * DefenseDebuff);
 
         if(DownDamageTurn == 0) DownDamage = 0;
 
@@ -187,5 +192,25 @@ public class CharacterStatus : MonoBehaviour
             gameObject.GetComponent<EnemyAI>().eTurn = true;
 
         yield break;
+    }
+
+    private void LoadStatus()
+    {
+        GameManager temp = GameObject.Find("GameManager").GetComponent<GameManager>();
+        DefaultHp = temp.DefaultStatus[0];
+        DefaultAd = temp.DefaultStatus[1];
+        DefaultDefense = temp.DefaultStatus[2];
+        DefaultCriPercent = temp.DefaultStatus[3];
+        DefaultCriDamage = temp.DefaultStatus[4];
+
+        HpPer = temp.StatusPer[0];
+        AdPer = temp.StatusPer[1];
+        DfPer = temp.StatusPer[2];
+
+        HpAdd = temp.StatusAdd[0];
+        AdAdd = temp.StatusAdd[1];
+        DfAdd = temp.StatusAdd[2];
+        CriPercentAdd = temp.StatusAdd[3];
+        CriDamageAdd = temp.StatusAdd[4];
     }
 }

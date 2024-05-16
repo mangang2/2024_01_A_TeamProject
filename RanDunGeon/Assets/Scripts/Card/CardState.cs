@@ -31,6 +31,7 @@ public class CardState : MonoBehaviour
     {
         infoText = gameObject.GetComponent<CardInfo>().InfoText;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +68,10 @@ public class CardState : MonoBehaviour
             }
         }
         
-
+        if(skill == true)
+        {
+            transform.DOMoveY(transform.position.y + 3, 0.5f);
+        }
         
     }
 

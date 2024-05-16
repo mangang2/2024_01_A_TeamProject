@@ -1,0 +1,1 @@
+사운드가 사용될 부분 이름 EX) Attack, CardDraw, ClickDSound 등 띄어쓰기 없이 적어주세요.

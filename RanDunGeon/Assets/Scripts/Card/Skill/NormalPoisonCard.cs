@@ -35,17 +35,17 @@ public class NormalPoisonCard : MonoBehaviour
 
             if (CardRank == 1)
             {
-                DamageRank = 0.7f;
+                DamageRank = 1.2f;
                 Turn = 3;
             }
             if (CardRank == 2)
             {
-                DamageRank = 1.3f;
+                DamageRank = 1.7f;
                 Turn = 3;
             }
             if (CardRank == 3)
             {
-                DamageRank = 1.8f;
+                DamageRank = 2.3f;
                 Turn = 2;
             }
 

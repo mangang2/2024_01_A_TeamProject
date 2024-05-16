@@ -41,25 +41,34 @@ public class NormalCombineDotsDamage : MonoBehaviour
 
             if (CardRank == 1)
             {
-                SumDamageRank = 0.7f;
-                DamageRank = 0.2f;
+                SumDamageRank = 0.8f;
+                DamageRank = 0.5f;
             }
             if (CardRank == 2)
             {
                 SumDamageRank = 0.9f;
-                DamageRank = 0.3f;
+                DamageRank = 0.6f;
             }
             if (CardRank == 3)
             {
-                SumDamageRank = 1.1f;
-                DamageRank = 0.4f;
+                SumDamageRank = 1.0f;
+                DamageRank = 0.7f;
             }
 
-            for (int i = transform.childCount -1 ; i >= 0 ; i--)
+            if (enemy.transform.childCount > 0)
             {
-                dotsDamageSum += enemy.transform.GetChild(i).GetComponent<DotsDamage>().ReturnDatsDamage() * SumDamageRank;
-                enemy.transform.GetChild(i).GetComponent<DotsDamage>().Turn = 0;
+                for (int i = enemy.transform.childCount - 1; i >= 0; i--)
+                {
+                    dotsDamageSum += enemy.transform.GetChild(i).GetComponent<DotsDamage>().ReturnDatsDamage() * SumDamageRank;
+                    enemy.transform.GetChild(i).GetComponent<DotsDamage>().Turn = 0;
+                    Debug.Log("++");
+                }
             }
+            else
+            {
+                Debug.Log("지속 데미지가 없어!");
+            }
+
             damage = playerAd * DamageRank * enemyDf - enemyDd;
             finalDamage = damage + dotsDamageSum;
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage;

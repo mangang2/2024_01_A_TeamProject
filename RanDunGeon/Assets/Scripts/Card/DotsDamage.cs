@@ -10,13 +10,11 @@ public class DotsDamage : MonoBehaviour
     public float enemyDd;
     public float finalDamage;
 
-    private GameObject TurnManager;
     private GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        TurnManager = GameObject.FindGameObjectWithTag("TurnManager");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 

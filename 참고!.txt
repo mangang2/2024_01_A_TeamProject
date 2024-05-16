@@ -1,5 +1,7 @@
 RanDunGeon은 게임 유니티 파일입니다.
 
+Commit하기 전에 꼭 Fork에서 Fetch > Pull 하고 Commit,Push 해주세요.
+
 Docs에는 문서 파일
 
 Images에는 컨셉아트나 참고 자료등 이미지 파일
