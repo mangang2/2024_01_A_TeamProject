@@ -13,10 +13,12 @@ public class CardState : MonoBehaviour
     private GameObject target2;
     private GameObject CardManager;
 
+    public bool Unlock = false;
+
     public bool DoMerge = false;
     private bool DoMove = false;
 
-    public int cardType;        //1 = 공격 2 = 방어 3 = 회복 4 = 짱돌
+    public int cardType;
     public int cardRank = 1;
     public bool skill = false;
 
@@ -35,7 +37,6 @@ public class CardState : MonoBehaviour
     {
         CardManager = GameObject.Find("CardManager");
         infoText = gameObject.GetComponent<CardInfo>().InfoText;
-
     }
 
     // Start is called before the first frame update
@@ -43,7 +44,7 @@ public class CardState : MonoBehaviour
     {
         rankText.text = cardRank.ToString();
         Mt = GetComponent<MeshRenderer>().material;
-        FadeOut = new Color(Mt.color.r, Mt.color.g, Mt.color.b, 0);
+        FadeOut = new Color(Mt.color.r,Mt.color.g,Mt.color.b, 1);
     }
 
     // Update is called once per frame
@@ -80,7 +81,7 @@ public class CardState : MonoBehaviour
         {
             CardManager.GetComponent<CardManager>().UsingCard = true;
             transform.DOMoveY(5, 0.3f);
-            Mt.DOColor(Color.clear,0.3f);
+            Mt.DOColor(FadeOut,0.3f);
         }
         
     }

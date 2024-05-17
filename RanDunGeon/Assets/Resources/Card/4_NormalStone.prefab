@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: -5723053021552198173}
   - component: {fileID: 3979256831802120190}
   m_Layer: 3
-  m_Name: NormalStone
+  m_Name: 4_NormalStone
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
+  Unlock: 1
   DoMerge: 0
   cardType: 4
   cardRank: 1

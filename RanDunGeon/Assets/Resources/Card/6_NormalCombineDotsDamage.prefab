@@ -186,9 +186,9 @@ GameObject:
   - component: {fileID: 8546909567175730845}
   - component: {fileID: 9027998817102125035}
   - component: {fileID: -7612886901748817763}
-  - component: {fileID: -6269935368714377077}
+  - component: {fileID: 9060602027866261773}
   m_Layer: 3
-  m_Name: NormalCriPerBuff
+  m_Name: 6_NormalCombineDotsDamage
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,7 +238,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ecda4c559fc084f1386afbe82fb22f05, type: 2}
+  - {fileID: 2100000, guid: 3b7ec839262304f01976d20f458d93a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   DoMerge: 0
-  cardType: 7
+  cardType: 6
   cardRank: 1
   skill: 0
   rankText: {fileID: 4834320325267724009}
@@ -338,10 +338,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c23e56975ed42058a5d40330ff453e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoText: "\uD589\uB3D9 \uD69F\uC218\uB97C 0/0/1\uD68C \uCD94\uAC00\uD558\uACE0,
-    \uC774\uBC88 1\uD134\uB3D9\uC548 \uCE58\uBA85\uD0C0 \uD655\uB960\uC774 15/25/25%,
-    \uCE58\uBA85\uD0C0 \uD53C\uD574\uAC00 0/0/50% \uC99D\uAC00\uD569\uB2C8\uB2E4."
---- !u!114 &-6269935368714377077
+  InfoText: "\uACF5\uACA9\uB825\uC758 20/30/40% \uB9CC\uD07C\uC758 \uB9C8\uBC95\uD53C\uD574\uB97C
+    \uC785\uD788\uACE0, \uC801\uC758 \uC9C0\uC18D\uD53C\uD574\uB97C \uD569\uC0B0\uD55C
+    \uAC12\uC758 70/90/110% \uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4."
+--- !u!114 &9060602027866261773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -350,6 +350,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9143045235273301103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd284391ceb04ce388e41768f62c419, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e223b5c4be5a4f3d9472e3d128b4980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6499100084609457828}
   - component: {fileID: 9203656241048644194}
   m_Layer: 3
-  m_Name: NormalRecovery
+  m_Name: 3_NormalRecovery
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
+  Unlock: 1
   DoMerge: 0
   cardType: 3
   cardRank: 1

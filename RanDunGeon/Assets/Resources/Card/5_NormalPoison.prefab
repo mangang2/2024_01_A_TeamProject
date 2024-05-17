@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: -7612886901748817763}
   - component: {fileID: -5942696635168537896}
   m_Layer: 3
-  m_Name: NormalPoison
+  m_Name: 5_NormalPoison
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

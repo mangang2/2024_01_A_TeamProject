@@ -61,7 +61,6 @@ public class NormalCombineDotsDamage : MonoBehaviour
                 {
                     dotsDamageSum += enemy.transform.GetChild(i).GetComponent<DotsDamage>().ReturnDatsDamage() * SumDamageRank;
                     enemy.transform.GetChild(i).GetComponent<DotsDamage>().Turn = 0;
-                    Debug.Log("++");
                 }
             }
             else

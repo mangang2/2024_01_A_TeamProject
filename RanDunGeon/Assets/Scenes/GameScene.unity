@@ -1066,7 +1066,7 @@ MonoBehaviour:
   FinalDamage: 0
   DefaultHp: 1000
   DefaultAd: 28
-  DefaultDefense: 150
+  DefaultDefense: 100
   DefaultCriPercent: 5
   DefaultCriDamage: 50
   MaxHp: 250
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   DefaultStatus:
   - 250
   - 23
-  - 10
+  - 50
   - 25
   - 50
   StatusPer:

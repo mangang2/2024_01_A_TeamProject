@@ -165,7 +165,7 @@ public class CharacterStatus : MonoBehaviour
 
         if (DefenseBuffTurn == 0) DefenseBuff = 1;
         if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
-        Defense = 100 / (100 + ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * DefenseBuff * DefenseDebuff);
+        Defense = 300 / (300 + ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * DefenseBuff * DefenseDebuff);
 
         if(DownDamageTurn == 0) DownDamage = 0;
 
@@ -196,7 +196,7 @@ public class CharacterStatus : MonoBehaviour
 
     private void LoadStatus()
     {
-        GameManager temp = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GameManager temp = GameManager.Instance;
         DefaultHp = temp.DefaultStatus[0];
         DefaultAd = temp.DefaultStatus[1];
         DefaultDefense = temp.DefaultStatus[2];

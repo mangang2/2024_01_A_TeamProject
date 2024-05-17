@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [Header("스테이터스 정수값 추가")]
     public float[] StatusAdd = new float[5];
 
+    public List<GameObject> CardList = new List<GameObject>();
+
+    public List<bool> UnlockCard = new List<bool>();
 
     public static GameManager Instance { get; private set; }
 
@@ -37,7 +40,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        CardList = new List<GameObject>();
+        UnlockCard = new List<bool>();
+
+        var cardlist = Resources.LoadAll<GameObject>("Card");
+        foreach (GameObject c in cardlist)
+        {
+            CardList.Add(c);
+            UnlockCard.Add(c.GetComponent<CardState>().Unlock);
+        }
     }
 
     // Update is called once per frame
