@@ -48,6 +48,13 @@ public class DeckCard : MonoBehaviour
 
     public void NewCardSet()
     {
-        textBox.text = CardType.name.ToString();
+        if (CardType != null)
+        {
+            textBox.text = CardType.name.ToString();
+        }
+        else
+        {
+            textBox.text = "null";
+        }
     }
 }
