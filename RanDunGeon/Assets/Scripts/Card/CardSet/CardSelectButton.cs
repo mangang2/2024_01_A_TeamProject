@@ -69,17 +69,13 @@ public class CardSelectButton : MonoBehaviour
     private IEnumerator FadeOut()
     {
 
-        while (CardSelectCavas.GetComponent<CanvasGroup>().alpha >= 0)
+        while (CardSelectCavas.GetComponent<CanvasGroup>().alpha > 0)
         {
             CardSelectCavas.GetComponent<CanvasGroup>().alpha -= 3 * Time.deltaTime;
-
-            if(CardSelectCavas.GetComponent<CanvasGroup>().alpha <= 0)
-            {
-                CardSelectCavas.SetActive(false);
-            }
-
             yield return null;
         }
+
+        CardSelectCavas.SetActive(false);
         yield break;
     }
 }

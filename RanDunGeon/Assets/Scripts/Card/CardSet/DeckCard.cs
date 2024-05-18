@@ -37,7 +37,7 @@ public class DeckCard : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
-        while(CardSelectCavas.GetComponent<CanvasGroup>().alpha <= 1)
+        while(CardSelectCavas.GetComponent<CanvasGroup>().alpha < 1)
         {
             CardSelectCavas.GetComponent<CanvasGroup>().alpha += 3 * Time.deltaTime;
             yield return null;
