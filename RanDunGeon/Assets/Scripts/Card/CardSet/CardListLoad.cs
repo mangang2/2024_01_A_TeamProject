@@ -6,6 +6,8 @@ public class CardListLoad : MonoBehaviour
 {
     public GameObject CardListPrefabs,CardListNull;
 
+    public float LastCardPosY;
+
     private GameManager GM;
 
     private List<GameObject> CardList;
@@ -26,6 +28,7 @@ public class CardListLoad : MonoBehaviour
             GameObject temp = Instantiate(CardListPrefabs);
             temp.transform.parent = gameObject.transform;
             temp.GetComponent<CardSelectButton>().CardType = CardList[i - 1];
+            temp.GetComponent<CardSelectButton>().SendPosY();
         }
 
         for(int o = 1; o <= addNum; o++)
@@ -38,6 +41,19 @@ public class CardListLoad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            transform.Translate(Vector3.up * Input.GetAxis("Mouse ScrollWheel") * -500);
+        }
+
+        if (transform.position.y < 970)
+        {
+            transform.position = new Vector2(transform.position.x, 970);
+        }
+
+        if (transform.position.y > LastCardPosY + 1100)
+        {
+            transform.position = new Vector2(transform.position.x, LastCardPosY + 1100);
+        }
     }
 }

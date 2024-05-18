@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CardSelectButton : MonoBehaviour
 {
+    public GameObject CardListLoader;
+
     public GameObject CardType;
 
     private GameObject DeckManager;
@@ -19,9 +21,15 @@ public class CardSelectButton : MonoBehaviour
     [SerializeField]
     private bool Clicking,notClick = false;
 
+    private void Awake()
+    {
+        CardListLoader = GameObject.Find("CardLayout");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
         DeckManager = GameObject.Find("DeckManager");
         CardSelectCavas = GameObject.Find("CardSelect");
         nameText.text = CardType.name;
@@ -64,6 +72,11 @@ public class CardSelectButton : MonoBehaviour
         {
             Debug.Log("아직 해금 되지 않은 카드야!");
         }
+    }
+
+    public void SendPosY()
+    {
+        CardListLoader.GetComponent<CardListLoad>().LastCardPosY = transform.position.y;
     }
 
     private IEnumerator FadeOut()
