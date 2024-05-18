@@ -24,7 +24,7 @@ public class NormalCriPerBuff : MonoBehaviour
         float CriPBuff = 0;
         float CriDBuff = 0;
 
-        int turn = 1;
+        int turn = 2;
 
         int CardRank;
 

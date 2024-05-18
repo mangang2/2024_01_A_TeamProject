@@ -1847,7 +1847,7 @@ MonoBehaviour:
   Card:
   - {fileID: 5293796684268122817, guid: d52fc99b66493a44780af6eaef8be42d, type: 3}
   - {fileID: 9143045235273301103, guid: dc8a4d77e12f9460c96175beacf57566, type: 3}
-  - {fileID: 8880946109014373666, guid: 021080190d4dc0b4899a1f86708f5655, type: 3}
+  - {fileID: 9143045235273301103, guid: a9e093f1fae1b63419e363471ea1609c, type: 3}
   - {fileID: 5834814195292812506, guid: 22855bc87f9873547b4ce313f3a5d4fd, type: 3}
   DefaultStatus:
   - 250
