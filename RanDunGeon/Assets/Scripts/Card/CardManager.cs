@@ -20,11 +20,8 @@ public class CardManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cardDrawing = false;
-        Card[0] = FindObjectOfType<GameManager>().Card[0];
-        Card[1] = FindObjectOfType<GameManager>().Card[1];
-        Card[2] = FindObjectOfType<GameManager>().Card[2];
-        Card[3] = FindObjectOfType<GameManager>().Card[3];
+        cardDrawing = true;
+        Invoke("LoadCard", 0.1f);
     }
 
     // Update is called once per frame
@@ -76,6 +73,15 @@ public class CardManager : MonoBehaviour
 
     }
 
+
+    private void LoadCard()
+    {
+        Card[0] = FindObjectOfType<GameManager>().Card[0];
+        Card[1] = FindObjectOfType<GameManager>().Card[1];
+        Card[2] = FindObjectOfType<GameManager>().Card[2];
+        Card[3] = FindObjectOfType<GameManager>().Card[3];
+        cardDrawing = false;
+    }
 
     private IEnumerator AddCard()
     {

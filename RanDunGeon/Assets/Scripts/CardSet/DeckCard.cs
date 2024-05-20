@@ -24,7 +24,14 @@ public class DeckCard : MonoBehaviour
         DeckManager = GameObject.Find("DeckManager");
         GM = GameManager.Instance;
         CardType = GM.GetComponent<GameManager>().Card[DeckNum - 1];
-        textBox.text = CardType.name.ToString();
+        if (CardType != null)
+        {
+            textBox.text = CardType.name.ToString();
+        }
+        else
+        {
+            textBox.text = "null";
+        }
         CardSelectCavas.GetComponent<CanvasGroup>().alpha = 0;
     }
 

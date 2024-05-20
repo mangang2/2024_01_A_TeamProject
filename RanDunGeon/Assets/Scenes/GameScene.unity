@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43821484, g: 0.48623484, b: 0.56651336, a: 1}
+  m_IndirectSpecularColor: {r: 0.43821454, g: 0.48623425, b: 0.566512, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -325,6 +325,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105708142}
   m_CullTransparentMesh: 1
+--- !u!1 &137108277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137108279}
+  - component: {fileID: 137108278}
+  m_Layer: 0
+  m_Name: EXSceneChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &137108278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137108277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09da0dc4565a94725b702ecddd1fa31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &137108279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137108277}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1025.1171, y: 413.20303, z: -5.23757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277280308
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,12 +770,14 @@ MonoBehaviour:
   DamageAmount: {fileID: 3287973495662824354, guid: e5ae68db2de654b6a9bc48cf39750025, type: 3}
   Recover: 0
   FinalDamage: 0
+  CharNum: 0
+  CharLevel: 0
   DefaultHp: 250
   DefaultAd: 23
   DefaultDefense: 10
   DefaultCriPercent: 25
   DefaultCriDamage: 50
-  MaxHp: 250
+  MaxHp: 0
   HpPer: 0
   AdPer: 0
   DfPer: 0
@@ -740,7 +786,7 @@ MonoBehaviour:
   DfAdd: 0
   CriPercentAdd: 0
   CriDamageAdd: 0
-  Hp: 500
+  Hp: 0
   Ad: 0
   Defense: 0
   DownDamage: 0
@@ -1064,12 +1110,14 @@ MonoBehaviour:
   DamageAmount: {fileID: 3287973495662824354, guid: e5ae68db2de654b6a9bc48cf39750025, type: 3}
   Recover: 0
   FinalDamage: 0
-  DefaultHp: 1000
+  CharNum: 0
+  CharLevel: 0
+  DefaultHp: 200
   DefaultAd: 28
   DefaultDefense: 100
   DefaultCriPercent: 5
   DefaultCriDamage: 50
-  MaxHp: 250
+  MaxHp: 0
   HpPer: 0
   AdPer: 0
   DfPer: 0
@@ -1078,7 +1126,7 @@ MonoBehaviour:
   DfAdd: 0
   CriPercentAdd: 0
   CriDamageAdd: 0
-  Hp: 500
+  Hp: 0
   Ad: 0
   Defense: 0
   DownDamage: 0
@@ -1855,16 +1903,44 @@ MonoBehaviour:
   - 50
   - 25
   - 50
+  BaseStatus:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   StatusPer:
   - 30
   - 15
   - 40
+  BaseStatusPer:
+  - 0
+  - 0
+  - 0
+  ItemStatusPer:
+  - 0
+  - 0
+  - 0
   StatusAdd:
   - 0
   - 0
   - 0
   - 0
   - 0
+  BaseStatusAdd:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  ItemStatusAdd:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  NowChar: 1
+  Char_1_Level: 1
   CardList: []
   UnlockCard: 
 --- !u!4 &1489762888
@@ -2225,3 +2301,4 @@ SceneRoots:
   - {fileID: 1983862296}
   - {fileID: 472522680}
   - {fileID: 1489762888}
+  - {fileID: 137108279}

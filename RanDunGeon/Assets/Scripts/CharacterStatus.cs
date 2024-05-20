@@ -15,6 +15,10 @@ public class CharacterStatus : MonoBehaviour
     public float Recover;
     public float FinalDamage;
 
+    public int CharNum;
+
+    public int CharLevel;
+
     [Header("기초 스테이터스")]
     public float DefaultHp;
     public float DefaultAd;
@@ -77,12 +81,14 @@ public class CharacterStatus : MonoBehaviour
     {
         if (gameObject.transform.tag == "Player")
         {
-            LoadStatus();
+            Invoke("LoadStatus",0.1f);
         }
-
-        MaxHp = DefaultHp * (1 + HpPer * 0.01f) + HpAdd;
-        Hp = MaxHp;
-        HpBar.value = Hp / MaxHp;
+        else
+        {
+            MaxHp = DefaultHp * (1 + HpPer * 0.01f) + HpAdd;
+            Hp = MaxHp;
+            HpBar.value = Hp / MaxHp;
+        }
     }
 
     // Update is called once per frame
@@ -197,6 +203,7 @@ public class CharacterStatus : MonoBehaviour
     private void LoadStatus()
     {
         GameManager temp = GameManager.Instance;
+        CharLevel = temp.Char_1_Level;
         DefaultHp = temp.DefaultStatus[0];
         DefaultAd = temp.DefaultStatus[1];
         DefaultDefense = temp.DefaultStatus[2];
@@ -212,5 +219,9 @@ public class CharacterStatus : MonoBehaviour
         DfAdd = temp.StatusAdd[2];
         CriPercentAdd = temp.StatusAdd[3];
         CriDamageAdd = temp.StatusAdd[4];
+
+        MaxHp = DefaultHp * (1 + HpPer * 0.01f) + HpAdd;
+        Hp = MaxHp;
+        HpBar.value = Hp / MaxHp;
     }
 }

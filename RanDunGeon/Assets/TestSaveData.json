@@ -1,0 +1,36 @@
+{
+    "CharLevel": 1,
+    "Char_1_Card": [
+        {
+            "instanceID": 23190
+        },
+        {
+            "instanceID": 23192
+        },
+        {
+            "instanceID": 23194
+        },
+        {
+            "instanceID": 23196
+        }
+    ],
+    "Char_1_BaseStatus": [
+        250.0,
+        23.0,
+        10.0,
+        25.0,
+        50.0
+    ],
+    "Char_1_BaseStatusPer": [
+        0.0,
+        0.0,
+        0.0
+    ],
+    "Char_1_BaseStatusAdd": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ]
+}
