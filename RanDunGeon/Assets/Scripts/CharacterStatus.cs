@@ -221,7 +221,6 @@ public class CharacterStatus : MonoBehaviour
     private void LoadStatus()
     {
         GameManager temp = GameManager.Instance;
-        temp.LoadAllStatus();
         switch (CharNum)
         {
             case 1:

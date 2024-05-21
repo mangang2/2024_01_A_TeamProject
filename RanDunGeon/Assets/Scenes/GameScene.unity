@@ -857,6 +857,7 @@ MonoBehaviour:
   DefaultDefense: 10
   DefaultCriPercent: 25
   DefaultCriDamage: 50
+  DefaultEnhanceD: 0
   MaxHp: 0
   HpPer: 15
   AdPer: 140
@@ -866,29 +867,36 @@ MonoBehaviour:
   DfAdd: 0
   CriPercentAdd: 50
   CriDamageAdd: 100
+  EnhanceDAdd: 0
   Hp: 0
   Ad: 0
   Defense: 0
   DownDamage: 0
   CriPercent: 0
   CriDamage: 0
+  EnhanceDamage: 0
   AdBuff: 1
   DefenseBuff: 1
   CriPercentBuff: 0
   CriDamageBuff: 0
+  EnhanceDBuff: 0
   AdDebuff: 1
   DefenseDebuff: 1
   CriPercentDebuff: 0
   CriDamageDebuff: 0
+  EnhanceDDebuff: 0
   AdBuffTurn: 0
   DefenseBuffTurn: 0
   DownDamageTurn: 0
   CriPercentBuffTrun: 0
   CriDamageBuffTrun: 0
+  EnhanceDBuffTurn: 0
   AdDeBuffTurn: 0
   DefenseDebuffTurn: 0
   CriPercentDebuffTrun: 0
   CriDamageDebuffTrun: 0
+  EnhanceDDebuffTurn: 0
+  EnhanceDotsD: 0
 --- !u!1 &590657163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1205,7 @@ MonoBehaviour:
   DefaultDefense: 100
   DefaultCriPercent: 15
   DefaultCriDamage: 100
+  DefaultEnhanceD: 0
   MaxHp: 0
   HpPer: 0
   AdPer: 0
@@ -1206,29 +1215,36 @@ MonoBehaviour:
   DfAdd: 0
   CriPercentAdd: 0
   CriDamageAdd: 0
+  EnhanceDAdd: 0
   Hp: 0
   Ad: 0
   Defense: 0
   DownDamage: 0
   CriPercent: 0
   CriDamage: 0
+  EnhanceDamage: 0
   AdBuff: 1
   DefenseBuff: 1
   CriPercentBuff: 0
   CriDamageBuff: 0
+  EnhanceDBuff: 0
   AdDebuff: 1
   DefenseDebuff: 1
   CriPercentDebuff: 0
   CriDamageDebuff: 0
+  EnhanceDDebuff: 0
   AdBuffTurn: 0
   DefenseBuffTurn: 0
   DownDamageTurn: 0
   CriPercentBuffTrun: 0
   CriDamageBuffTrun: 0
+  EnhanceDBuffTurn: 0
   AdDeBuffTurn: 0
   DefenseDebuffTurn: 0
   CriPercentDebuffTrun: 0
   CriDamageDebuffTrun: 0
+  EnhanceDDebuffTurn: 0
+  EnhanceDotsD: 0
 --- !u!114 &737671627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2029,11 +2045,13 @@ MonoBehaviour:
   - 50
   - 25
   - 50
+  - 50
   BaseStatus:
-  - 0
-  - 0
-  - 0
-  - 0
+  - 1000
+  - 100
+  - 100
+  - 25
+  - 50
   - 0
   StatusPer:
   - 30
@@ -2053,13 +2071,16 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
   BaseStatusAdd:
   - 0
   - 0
   - 0
   - 0
   - 0
+  - 0
   ItemStatusAdd:
+  - 0
   - 0
   - 0
   - 0

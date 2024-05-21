@@ -159,8 +159,8 @@ public class GameManager : MonoBehaviour
             DefaultStatus[0] = BaseStatus[0] + CharLevel[0] * 10;
             DefaultStatus[1] = BaseStatus[1] + CharLevel[0] * 10;
             DefaultStatus[2] = BaseStatus[2] + CharLevel[0] * 10;
-            DefaultStatus[3] = BaseStatus[3] + CharLevel[0] / 5 * 5;
-            DefaultStatus[4] = BaseStatus[4] + CharLevel[0] / 5 * 10;
+            DefaultStatus[3] = BaseStatus[3] + CharLevel[0] / 10 * 5;
+            DefaultStatus[4] = BaseStatus[4] + CharLevel[0] / 10 * 10;
             DefaultStatus[5] = BaseStatus[5];
         }
         else
