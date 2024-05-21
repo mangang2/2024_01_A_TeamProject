@@ -988,7 +988,27 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  BaseStatusPer:
+  - 0
+  - 0
+  - 0
+  ItemStatusPer:
+  - 0
+  - 0
+  - 0
   StatusAdd:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  BaseStatusAdd:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  ItemStatusAdd:
   - 0
   - 0
   - 0

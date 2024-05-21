@@ -1,5 +1,7 @@
 {
-    "CharLevel": 1,
+    "CharLevel": [
+        0
+    ],
     "Char_1_Card": [
         {
             "instanceID": 23190

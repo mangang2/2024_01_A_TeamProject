@@ -203,7 +203,12 @@ public class CharacterStatus : MonoBehaviour
     private void LoadStatus()
     {
         GameManager temp = GameManager.Instance;
-        CharLevel = temp.Char_1_Level;
+        switch(CharNum)
+        {
+            case 1:
+                CharLevel = temp.CharLevel[0];
+                break;
+        }
         DefaultHp = temp.DefaultStatus[0];
         DefaultAd = temp.DefaultStatus[1];
         DefaultDefense = temp.DefaultStatus[2];

@@ -30,7 +30,7 @@ public class LevelScripts : MonoBehaviour
         switch (NowChar)
         {
             case 1:
-                Level = GM.Char_1_Level;
+                Level = GM.CharLevel[0];
                 break;
             default:
                 break;
@@ -45,7 +45,7 @@ public class LevelScripts : MonoBehaviour
             switch (NowChar)
             {
                 case 1:
-                    GM.Char_1_Level = ++Level;
+                    GM.CharLevel[0] = ++Level;
                     break;
                 default:
                     break;
