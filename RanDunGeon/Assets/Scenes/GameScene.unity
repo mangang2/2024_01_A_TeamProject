@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43821445, g: 0.48623413, b: 0.56651217, a: 1}
+  m_IndirectSpecularColor: {r: 0.43821454, g: 0.48623425, b: 0.566512, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2016,11 +2016,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d75ed6fa9aff43b0b33f25e1859cf4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NowChar: 1
+  CharLevel: 00000000
   Card:
-  - {fileID: 5293796684268122817, guid: d52fc99b66493a44780af6eaef8be42d, type: 3}
-  - {fileID: 9143045235273301103, guid: dc8a4d77e12f9460c96175beacf57566, type: 3}
+  - {fileID: 5293796684268122817, guid: 0a92220c3f35f9e438802951059879f6, type: 3}
+  - {fileID: 4055728022967715978, guid: 26f24930523031e4680aa569a81ccd9c, type: 3}
   - {fileID: 9143045235273301103, guid: a9e093f1fae1b63419e363471ea1609c, type: 3}
-  - {fileID: 5834814195292812506, guid: 22855bc87f9873547b4ce313f3a5d4fd, type: 3}
+  - {fileID: 9143045235273301103, guid: 1a8d57c435b6f2b4ba9a8094714b2fd9, type: 3}
   DefaultStatus:
   - 250
   - 23
@@ -2063,10 +2065,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  NowChar: 1
-  Char_1_Level: 1
   CardList: []
-  UnlockCard: 
 --- !u!4 &1489762888
 Transform:
   m_ObjectHideFlags: 0
