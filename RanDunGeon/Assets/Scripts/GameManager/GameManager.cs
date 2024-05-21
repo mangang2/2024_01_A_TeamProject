@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour
 
     private GameData gameData = new GameData();
 
+    private string path = Path.Combine(Application.dataPath, "TestSaveData.json");
+    //private string monsterPath = Path.
+
     private void Awake()
     {
         if (Instance)
@@ -57,6 +60,10 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        DefaultStatus = new float[6];
+        BaseStatus = new float[6];
+        StatusAdd = new float[6];
+        BaseStatusAdd = new float[6];
     }
 
     private int compare(GameObject a, GameObject b)
@@ -77,7 +84,14 @@ public class GameManager : MonoBehaviour
 
         CardList.Sort(compare);
 
-        LoadData();
+        if (File.Exists(path))
+        {
+            LoadData();
+        }
+        else
+        {
+            Debug.Log("new data");
+        }
     }
 
     private void Update()
@@ -88,7 +102,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadAddStatus()
+    public void LoadAllStatus()
     {
         switch (NowChar)
         {
@@ -105,20 +119,18 @@ public class GameManager : MonoBehaviour
     public void SaveData()
     {
         SaveIngameData();
-        LoadAddStatus();
+        LoadAllStatus();
         string jsonData = JsonUtility.ToJson(gameData,true);
-        string path = Path.Combine(Application.dataPath, "TestSaveData.json");
         File.WriteAllText(path, jsonData);
         Debug.Log("저장 성공!");
     }
 
     public void LoadData()
     {
-        string path = Path.Combine(Application.dataPath, "TestSaveData.json");
         string jsonData = File.ReadAllText(path);
         gameData = JsonUtility.FromJson<GameData>(jsonData);
         LoadIngameData();
-        LoadAddStatus();
+        Char_1_SetStatus();
         Debug.Log("불러오기 성공!");
     }
 
@@ -142,21 +154,44 @@ public class GameManager : MonoBehaviour
 
     private void Char_1_SetStatus()
     {
-        DefaultStatus[0] = BaseStatus[0] + CharLevel[0] * 12;
-        DefaultStatus[1] = BaseStatus[1] + CharLevel[0] * 3;
-        DefaultStatus[2] = BaseStatus[2] + CharLevel[0] * 10;
-        DefaultStatus[3] = BaseStatus[3] + CharLevel[0] / 5 * 5;
-        DefaultStatus[4] = BaseStatus[4] + CharLevel[0] / 5 * 10;
+        if (CharLevel[0] > 1)
+        {
+            DefaultStatus[0] = BaseStatus[0] + CharLevel[0] * 10;
+            DefaultStatus[1] = BaseStatus[1] + CharLevel[0] * 10;
+            DefaultStatus[2] = BaseStatus[2] + CharLevel[0] * 10;
+            DefaultStatus[3] = BaseStatus[3] + CharLevel[0] / 5 * 5;
+            DefaultStatus[4] = BaseStatus[4] + CharLevel[0] / 5 * 10;
+            DefaultStatus[5] = BaseStatus[5];
+        }
+        else
+        {
+            DefaultStatus[0] = BaseStatus[0];
+            DefaultStatus[1] = BaseStatus[1];
+            DefaultStatus[2] = BaseStatus[2];
+            DefaultStatus[3] = BaseStatus[3];
+            DefaultStatus[4] = BaseStatus[4];
+            DefaultStatus[5] = BaseStatus[5];
+        }
 
         StatusPer[0] = CharLevel[0] / 5 * 3 + ItemStatusPer[0];
         StatusPer[1] = CharLevel[0] / 5 * 3 + ItemStatusPer[1];
         StatusPer[2] = CharLevel[0] / 5 * 3 + ItemStatusPer[2];
 
-        StatusAdd[0] = CharLevel[0] * 15 + ItemStatusAdd[0];
-        StatusAdd[1] = CharLevel[0] * 5 + ItemStatusAdd[1];
+        if (CharLevel[0] > 1)
+        {
+            StatusAdd[0] = CharLevel[0] * 10 + ItemStatusAdd[0];
+            StatusAdd[1] = CharLevel[0] * 5 + ItemStatusAdd[1];
+        }
+        else
+        {
+            StatusAdd[0] = ItemStatusAdd[0];
+            StatusAdd[1] = ItemStatusAdd[1];
+        }
         StatusAdd[2] = ItemStatusAdd[2];
         StatusAdd[3] = ItemStatusAdd[3];
         StatusAdd[4] = ItemStatusAdd[4];
+        StatusAdd[5] = ItemStatusAdd[5];
+
     }
 
 
@@ -169,10 +204,17 @@ public class GameData
 
     public GameObject[] Char_1_Card = new GameObject[4];
 
-    public float[] Char_1_BaseStatus = new float[5];
+    public float[] Char_1_BaseStatus = new float[6];
 
     public float[] Char_1_BaseStatusPer = new float[3];
 
-    public float[] Char_1_BaseStatusAdd = new float[5];
+    public float[] Char_1_BaseStatusAdd = new float[6];
+
+    
+}
+
+public class MonsterData
+{
+
 }
 

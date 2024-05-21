@@ -25,6 +25,7 @@ public class NormalStoneCard : MonoBehaviour
         float finalDamage;
         float criP;
         float criD;
+        float ED;
 
         int CardRank;
 
@@ -35,6 +36,8 @@ public class NormalStoneCard : MonoBehaviour
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;
             criP = player.GetComponent<CharacterStatus>().CriPercent;
+            ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
+
 
             if (CardRank == 1) DamageRank = 1.6f;
             if (CardRank == 2) DamageRank = 1.8f;
@@ -56,7 +59,7 @@ public class NormalStoneCard : MonoBehaviour
             }
 
 
-            finalDamage = playerAd * DamageRank * enemyDf * criD - enemyDd;
+            finalDamage = playerAd * DamageRank * enemyDf * criD * ED - enemyDd;
 
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
             Debug.Log(finalDamage.ToString("F0") + "의 물리피해를 입힙니다.");

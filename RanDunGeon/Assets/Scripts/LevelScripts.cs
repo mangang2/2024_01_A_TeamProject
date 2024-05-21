@@ -51,7 +51,7 @@ public class LevelScripts : MonoBehaviour
                     break;
             }
             LevelText.text = "Level : " + Level.ToString();
-            GM.LoadAddStatus();
+            GM.LoadAllStatus();
         }
         else
         {

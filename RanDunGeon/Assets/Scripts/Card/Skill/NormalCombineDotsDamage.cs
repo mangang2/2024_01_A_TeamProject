@@ -25,6 +25,7 @@ public class NormalCombineDotsDamage : MonoBehaviour
         float dotsDamageSum = 0;
         float damage = 0;
         float finalDamage;
+        float ED;
 
         int CardRank;
 
@@ -38,6 +39,8 @@ public class NormalCombineDotsDamage : MonoBehaviour
 
             enemyDf = enemy.GetComponent<CharacterStatus>().Defense;
             enemyDd = enemy.GetComponent<CharacterStatus>().DownDamage;
+            ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
+
 
             if (CardRank == 1)
             {
@@ -68,7 +71,7 @@ public class NormalCombineDotsDamage : MonoBehaviour
                 Debug.Log("지속 데미지가 없어!");
             }
 
-            damage = playerAd * DamageRank * enemyDf - enemyDd;
+            damage = playerAd * DamageRank * enemyDf * ED - enemyDd;
             finalDamage = damage + dotsDamageSum;
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
 

@@ -28,9 +28,9 @@ public class NormalRecoveryCard : MonoBehaviour
             playerMaxHp = player.GetComponent<CharacterStatus>().MaxHp;
             CardRank = GetComponent<CardState>().cardRank;
 
-            if (CardRank == 1) recoveryRank = 0.06f;
-            if (CardRank == 2) recoveryRank = 0.10f;
-            if (CardRank == 3) recoveryRank = 0.16f;
+            if (CardRank == 1) recoveryRank = 0.4f;
+            if (CardRank == 2) recoveryRank = 0.5f;
+            if (CardRank == 3) recoveryRank = 0.55f;
 
             finalHeal = playerMaxHp * recoveryRank + 5;
 

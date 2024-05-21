@@ -1,26 +1,27 @@
 {
     "CharLevel": [
-        0
+        1
     ],
     "Char_1_Card": [
         {
             "instanceID": 24194
         },
         {
-            "instanceID": 24186
+            "instanceID": 24176
         },
         {
-            "instanceID": 24176
+            "instanceID": 24186
         },
         {
             "instanceID": 24184
         }
     ],
     "Char_1_BaseStatus": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
+        1000.0,
+        100.0,
+        100.0,
+        25.0,
+        50.0,
         0.0
     ],
     "Char_1_BaseStatusPer": [
@@ -29,6 +30,7 @@
         0.0
     ],
     "Char_1_BaseStatusAdd": [
+        0.0,
         0.0,
         0.0,
         0.0,

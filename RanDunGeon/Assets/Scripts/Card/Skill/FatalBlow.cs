@@ -26,6 +26,7 @@ public class FatalBlow : MonoBehaviour
         float finalDamage;
         float criP;
         float criD;
+        float ED;
 
         int CardRank;
 
@@ -37,6 +38,8 @@ public class FatalBlow : MonoBehaviour
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;
             criP = player.GetComponent<CharacterStatus>().CriPercent;
+            ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
+
 
 
 
@@ -70,7 +73,7 @@ public class FatalBlow : MonoBehaviour
                 criD = 1f;
             }
 
-            finalDamage = playerAd * DamageRank * enemyDf * (criD) - enemyDd;
+            finalDamage = playerAd * DamageRank * enemyDf * (criD) * ED - enemyDd;
 
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
             Debug.Log(finalDamage.ToString("F0") + "? ????? ????.");

@@ -36,22 +36,22 @@ public class NormalCriPerBuff : MonoBehaviour
 
             if (CardRank == 1)
             {
-                CriPBuff = 15;
+                CriPBuff = 10;
                 CriDBuff = 25;
                 bonusTurn = 0;
                 TurnManager.GetComponent<TurnManager>().PWorkCount--;
             }
             if (CardRank == 2)
             {
-                CriPBuff = 25;
-                CriDBuff = 50;
+                CriPBuff = 10;
+                CriDBuff = 30;
                 bonusTurn = 0;
                 TurnManager.GetComponent<TurnManager>().PWorkCount--;
             }
             if (CardRank == 3)
             {
-                CriPBuff = 25;
-                CriDBuff = 50;
+                CriPBuff = 15;
+                CriDBuff = 40;
                 bonusTurn = 1;
             }
 

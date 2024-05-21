@@ -28,9 +28,9 @@ public class NormalDamageDown : MonoBehaviour
             playerDd = player.GetComponent<CharacterStatus>().DownDamage;
             CardRank = GetComponent<CardState>().cardRank;
 
-            if (CardRank == 1) Dd = 5;
-            if (CardRank == 2) Dd = 8;
-            if (CardRank == 3) Dd = 15;
+            if (CardRank == 1) Dd = 20;
+            if (CardRank == 2) Dd = 30;
+            if (CardRank == 3) Dd = 50;
 
             if(playerDd < Dd)
             {

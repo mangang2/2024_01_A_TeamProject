@@ -858,14 +858,14 @@ MonoBehaviour:
   DefaultCriPercent: 25
   DefaultCriDamage: 50
   MaxHp: 0
-  HpPer: 0
-  AdPer: 0
-  DfPer: 0
+  HpPer: 15
+  AdPer: 140
+  DfPer: 21
   HpAdd: 0
   AdAdd: 0
   DfAdd: 0
-  CriPercentAdd: 0
-  CriDamageAdd: 0
+  CriPercentAdd: 50
+  CriDamageAdd: 100
   Hp: 0
   Ad: 0
   Defense: 0
@@ -1192,11 +1192,11 @@ MonoBehaviour:
   FinalDamage: 0
   CharNum: 0
   CharLevel: 0
-  DefaultHp: 200
-  DefaultAd: 28
+  DefaultHp: 2000
+  DefaultAd: 75
   DefaultDefense: 100
-  DefaultCriPercent: 5
-  DefaultCriDamage: 50
+  DefaultCriPercent: 15
+  DefaultCriDamage: 100
   MaxHp: 0
   HpPer: 0
   AdPer: 0

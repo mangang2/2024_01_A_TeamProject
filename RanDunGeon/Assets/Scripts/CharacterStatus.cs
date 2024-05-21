@@ -25,6 +25,7 @@ public class CharacterStatus : MonoBehaviour
     public float DefaultDefense;
     public float DefaultCriPercent;
     public float DefaultCriDamage;
+    public float DefaultEnhanceD;
 
     [Header("최대 체력")]
     public float MaxHp;
@@ -40,6 +41,7 @@ public class CharacterStatus : MonoBehaviour
     public float DfAdd;
     public float CriPercentAdd;
     public float CriDamageAdd;
+    public float EnhanceDAdd;
 
     [Header("스테이터스")]
     public float Hp;
@@ -48,18 +50,21 @@ public class CharacterStatus : MonoBehaviour
     public int DownDamage;        //?????? ????!!
     public float CriPercent;
     public float CriDamage;
+    public float EnhanceDamage;
 
     [Header("버프")]
     public float AdBuff = 1;
     public float DefenseBuff = 1;
     public float CriPercentBuff = 0;
     public float CriDamageBuff = 0;
+    public float EnhanceDBuff = 0;
 
     [Header("디버프")]
     public float AdDebuff = 1;
     public float DefenseDebuff = 1;
     public float CriPercentDebuff = 0;
     public float CriDamageDebuff = 0;
+    public float EnhanceDDebuff = 0;
 
     [Header("버프 턴")]
     public int AdBuffTurn;
@@ -67,12 +72,17 @@ public class CharacterStatus : MonoBehaviour
     public int DownDamageTurn;
     public int CriPercentBuffTrun;
     public int CriDamageBuffTrun;
+    public int EnhanceDBuffTurn;
 
     [Header("디버프 턴")]
     public int AdDeBuffTurn;
     public int DefenseDebuffTurn;
     public int CriPercentDebuffTrun;
     public int CriDamageDebuffTrun;
+    public int EnhanceDDebuffTurn;
+
+    [Header("지속피해 데미지 증가")]
+    public float EnhanceDotsD;
 
     private bool TurnDown = true;
 
@@ -107,6 +117,8 @@ public class CharacterStatus : MonoBehaviour
                 if (CriPercentDebuffTrun > 0) CriPercentDebuffTrun--;
                 if (CriDamageBuffTrun > 0) CriDamageBuffTrun--;
                 if (CriDamageDebuffTrun > 0) CriDamageDebuffTrun--;
+                if (EnhanceDBuffTurn > 0) EnhanceDBuffTurn--;
+                if (EnhanceDDebuffTurn > 0) EnhanceDDebuffTurn--;
                 TurnDown = false;
             }
 
@@ -126,6 +138,8 @@ public class CharacterStatus : MonoBehaviour
                 if (CriPercentDebuffTrun > 0) CriPercentDebuffTrun--;
                 if (CriDamageBuffTrun > 0) CriDamageBuffTrun--;
                 if (CriDamageDebuffTrun > 0) CriDamageDebuffTrun--;
+                if (EnhanceDBuffTurn > 0) EnhanceDBuffTurn--;
+                if (EnhanceDDebuffTurn > 0) EnhanceDDebuffTurn--;
                 StartCoroutine(checkDotsDamage());
                 TurnDown = false;
             }
@@ -171,7 +185,7 @@ public class CharacterStatus : MonoBehaviour
 
         if (DefenseBuffTurn == 0) DefenseBuff = 1;
         if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
-        Defense = 300 / (300 + ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * DefenseBuff * DefenseDebuff);
+        Defense = 1000 / (1000 + ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * DefenseBuff * DefenseDebuff);
 
         if(DownDamageTurn == 0) DownDamage = 0;
 
@@ -182,6 +196,10 @@ public class CharacterStatus : MonoBehaviour
         if (CriDamageBuffTrun == 0) CriDamageBuff = 0;
         if (CriPercentDebuffTrun == 0) CriDamageDebuff = 0;
         CriDamage = DefaultCriDamage + CriDamageAdd + CriDamageBuff - CriDamageDebuff;
+
+        if (EnhanceDBuffTurn == 0) EnhanceDBuff = 0;
+        if (EnhanceDBuffTurn == 0) EnhanceDDebuff = 0;
+        EnhanceDamage = 100 + DefaultEnhanceD + EnhanceDAdd + EnhanceDBuff - EnhanceDDebuff;
     }
 
     private IEnumerator checkDotsDamage()
@@ -203,7 +221,8 @@ public class CharacterStatus : MonoBehaviour
     private void LoadStatus()
     {
         GameManager temp = GameManager.Instance;
-        switch(CharNum)
+        temp.LoadAllStatus();
+        switch (CharNum)
         {
             case 1:
                 CharLevel = temp.CharLevel[0];
