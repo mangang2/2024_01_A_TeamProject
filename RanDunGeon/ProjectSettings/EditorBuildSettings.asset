@@ -4,25 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/GameScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Stage.unity
-    guid: 25b2d50209712d84abdd05b802256d30
-=======
-    path: Assets/Scenes/StartScene.unity
-    guid: fa89940ad57344434b4c21a71682ac45
-  - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/CardSet.unity
-    guid: 73fad4048572a41d68b82d61d4ec01c3
-  - enabled: 1
-    path: Assets/Scenes/CharacterStatusScene.unity
-    guid: b503439eaa29545d984a7b88bee577b2
->>>>>>> 39960c160de69b5872367f188debbf054f094322
+  m_Scenes: []
   m_configObjects: {}
