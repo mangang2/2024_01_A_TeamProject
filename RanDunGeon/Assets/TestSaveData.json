@@ -4,24 +4,24 @@
     ],
     "Char_1_Card": [
         {
-            "instanceID": 23620
+            "instanceID": 23660
         },
         {
-            "instanceID": 23606
+            "instanceID": 23646
         },
         {
-            "instanceID": 23614
+            "instanceID": 23654
         },
         {
-            "instanceID": 23612
+            "instanceID": 23652
         }
     ],
     "Char_1_BaseStatus": [
-        1000.0,
-        100.0,
-        100.0,
+        320.0,
+        23.0,
+        10.0,
         25.0,
-        50.0,
+        100.0,
         0.0
     ],
     "Char_1_BaseStatusPer": [
@@ -36,5 +36,6 @@
         0.0,
         0.0,
         0.0
-    ]
+    ],
+    "ItemList": []
 }

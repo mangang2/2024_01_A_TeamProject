@@ -47,7 +47,6 @@ public class NormalStoneCard : MonoBehaviour
             enemyDf = enemy.GetComponent<CharacterStatus>().Defense;
             enemyDd = enemy.GetComponent<CharacterStatus>().DownDamage;
 
-
             if (Random.Range(0f, 100f) <= criP)
             {
                 criD = (100 + player.GetComponent<CharacterStatus>().CriDamage) * 0.01f;

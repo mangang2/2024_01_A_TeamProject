@@ -859,9 +859,9 @@ MonoBehaviour:
   DefaultCriDamage: 50
   DefaultEnhanceD: 0
   MaxHp: 0
-  HpPer: 15
-  AdPer: 140
-  DfPer: 21
+  HpPer: 0
+  AdPer: 0
+  DfPer: 0
   HpAdd: 0
   AdAdd: 0
   DfAdd: 0

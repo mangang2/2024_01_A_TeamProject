@@ -37,6 +37,7 @@ public class TileSet : MonoBehaviour
                 temp.transform.parent = AreaTileGroup[i].transform;
                 temp.transform.localPosition = new Vector2(n * 123, 282 + i * 141 - n * 70.5f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
+                temp.GetComponent<ItemCellButton>().CellRank = i + 1;
                 tempX = temp.transform.localPosition.x;
                 tempY = temp.transform.localPosition.y;
                 yield return null;
@@ -48,6 +49,7 @@ public class TileSet : MonoBehaviour
                 temp.transform.parent = AreaTileGroup[i].transform;
                 temp.transform.localPosition = new Vector2(tempX, tempY - 141f - n * 141f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
+                temp.GetComponent<ItemCellButton>().CellRank = i + 1;
                 if (n == i + 1)
                 {
                     tempX = temp.transform.localPosition.x;
@@ -62,6 +64,7 @@ public class TileSet : MonoBehaviour
                 temp.transform.parent = AreaTileGroup[i].transform;
                 temp.transform.localPosition = new Vector2(tempX - (n + 1) * 123, tempY - (n + 1) * 70.5f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
+                temp.GetComponent<ItemCellButton>().CellRank = i + 1;
                 if (n == i + 1)
                 {
                     tempX = temp.transform.localPosition.x;
@@ -76,6 +79,7 @@ public class TileSet : MonoBehaviour
                 temp.transform.parent = AreaTileGroup[i].transform;
                 temp.transform.localPosition = new Vector2(tempX - (n + 1) * 123, tempY + (n + 1) * 70.5f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
+                temp.GetComponent<ItemCellButton>().CellRank = i + 1;
                 if (n == i + 1)
                 {
                     tempX = temp.transform.localPosition.x;
@@ -90,6 +94,7 @@ public class TileSet : MonoBehaviour
                 temp.transform.parent = AreaTileGroup[i].transform;
                 temp.transform.localPosition = new Vector2(tempX, tempY + 141f + n * 141f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
+                temp.GetComponent<ItemCellButton>().CellRank = i + 1;
                 if (n == i + 1)
                 {
                     tempX = temp.transform.localPosition.x;
@@ -104,6 +109,7 @@ public class TileSet : MonoBehaviour
                 temp.transform.parent = AreaTileGroup[i].transform;
                 temp.transform.localPosition = new Vector2(tempX + (n + 1) * 123, tempY + (n + 1) * 70.5f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
+                temp.GetComponent<ItemCellButton>().CellRank = i + 1;
                 if (n == i + 1)
                 {
                     tempX = temp.transform.localPosition.x;

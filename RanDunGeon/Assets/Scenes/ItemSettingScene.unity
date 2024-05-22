@@ -505,6 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345c9336da3487a89522c8d4f7aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellNum: 2
 --- !u!1 &298341890
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345c9336da3487a89522c8d4f7aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellNum: 0
 --- !u!114 &434071454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,6 +959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345c9336da3487a89522c8d4f7aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellNum: 1
 --- !u!114 &532246837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,6 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345c9336da3487a89522c8d4f7aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellNum: 4
 --- !u!114 &1054130984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,6 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345c9336da3487a89522c8d4f7aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellNum: 3
 --- !u!114 &1248773864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2487,6 +2492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345c9336da3487a89522c8d4f7aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellNum: 5
 --- !u!114 &1676809833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,6 +2865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21345c9336da3487a89522c8d4f7aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellNum: 6
 --- !u!114 &1994446485
 MonoBehaviour:
   m_ObjectHideFlags: 0

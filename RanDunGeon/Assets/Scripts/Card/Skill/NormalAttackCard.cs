@@ -38,7 +38,7 @@ public class NormalAttackCard : MonoBehaviour
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;
             criP = player.GetComponent<CharacterStatus>().CriPercent;
-            ED = player.GetComponent<CharacterStatus>().EnhanceDamage;
+            ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
 
 
             if (CardRank == 1) DamageRank = 1.2f;

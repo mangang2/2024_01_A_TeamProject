@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveData()
     {
-        SaveIngameData();
+        SaveGameData();
         LoadAllStatus();
         string jsonData = JsonUtility.ToJson(gameData,true);
         File.WriteAllText(path, jsonData);
@@ -129,12 +129,12 @@ public class GameManager : MonoBehaviour
     {
         string jsonData = File.ReadAllText(path);
         gameData = JsonUtility.FromJson<GameData>(jsonData);
-        LoadIngameData();
+        LoadGameData();
         Char_1_SetStatus();
         Debug.Log("불러오기 성공!");
     }
 
-    private void SaveIngameData()
+    private void SaveGameData()
     {
         gameData.CharLevel[0] = CharLevel[0];
         gameData.Char_1_Card = Card;
@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
         gameData.Char_1_BaseStatusAdd = BaseStatusAdd;
     }
 
-    private void LoadIngameData()
+    private void LoadGameData()
     {
         CharLevel[0] = gameData.CharLevel[0];
         Card = gameData.Char_1_Card;
@@ -209,6 +209,8 @@ public class GameData
     public float[] Char_1_BaseStatusPer = new float[3];
 
     public float[] Char_1_BaseStatusAdd = new float[6];
+
+    public List<Vector2> ItemList = new List<Vector2>();
 
     
 }

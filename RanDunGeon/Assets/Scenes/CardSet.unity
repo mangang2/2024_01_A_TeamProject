@@ -587,12 +587,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d75ed6fa9aff43b0b33f25e1859cf4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NowChar: 1
+  CharLevel: 00000000
   Card:
   - {fileID: 5293796684268122817, guid: d52fc99b66493a44780af6eaef8be42d, type: 3}
-  - {fileID: 4055728022967715978, guid: 5e5aa5c0942c29a48b2615826c065546, type: 3}
+  - {fileID: 0}
   - {fileID: 5834814195292812506, guid: 22855bc87f9873547b4ce313f3a5d4fd, type: 3}
   - {fileID: 8880946109014373666, guid: 021080190d4dc0b4899a1f86708f5655, type: 3}
   DefaultStatus:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  BaseStatus:
+  - 0
   - 0
   - 0
   - 0
@@ -602,14 +611,35 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  BaseStatusPer:
+  - 0
+  - 0
+  - 0
+  ItemStatusPer:
+  - 0
+  - 0
+  - 0
   StatusAdd:
   - 0
   - 0
   - 0
   - 0
   - 0
+  BaseStatusAdd:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  ItemStatusAdd:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   CardList: []
-  UnlockCard: 
 --- !u!4 &783196157
 Transform:
   m_ObjectHideFlags: 0
