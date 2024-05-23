@@ -12,18 +12,32 @@ public class ItemStatus : MonoBehaviour
 
 
     private Text text;
-    private string EnhanceType;
+    private bool EnhanceType;
 
     // Start is called before the first frame update
     void Start()
     {
-        text = transform.parent.GetComponentInChildren<Text>();
+        text = GetComponentInChildren<Text>();
+        if (ItemValue > 20000)
+        {
+            EnhanceType = true;
+            ItemAdd = ItemValue - 20000;
+        }
+        else if (ItemValue > 10000)
+        {
+            EnhanceType = false;
+            ItemAdd = ItemValue - 10000;
+        }
+        ItemAdd = Mathf.Round(ItemAdd * 10f) / 10f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = ItemValue.ToString() + EnhanceType;
+        if(EnhanceType)
+        text.text = ItemAdd.ToString() + "%";
+        else
+            text.text = "+" + ItemAdd.ToString();
     }
 
     public void SetValue(int type,float value, bool used)
@@ -32,16 +46,16 @@ public class ItemStatus : MonoBehaviour
         ItemValue = value;
         
         Used = used;
-
-        if (value > 20000)
+        if (ItemValue > 20000)
         {
-            EnhanceType = "%";
+            EnhanceType = true;
             ItemAdd = ItemValue - 20000;
         }
-        else if (value > 10000)
+        else if (ItemValue > 10000)
         {
-            EnhanceType = "";
+            EnhanceType = false;
             ItemAdd = ItemValue - 10000;
         }
+        ItemAdd = Mathf.Round(ItemAdd * 10f) / 10f;
     }
 }

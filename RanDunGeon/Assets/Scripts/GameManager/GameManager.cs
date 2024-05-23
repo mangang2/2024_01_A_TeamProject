@@ -32,8 +32,10 @@ public class GameManager : MonoBehaviour
     [Header("아이템 스테이터스 정수값 추가")]
     public float[] ItemStatusAdd = new float[6];
 
+    [Header("카드 리스트")]
     public List<GameObject> CardList = new List<GameObject>();
 
+    [Header("아이템 리스트")]
     public List<ItemStatusClass> ItemList = new List<ItemStatusClass>();
 
     public static GameManager Instance { get; private set; }
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CardList = new List<GameObject>();
+        ItemList = new List<ItemStatusClass>();
 
         var cardlist = Resources.LoadAll<GameObject>("Card");
         foreach (GameObject c in cardlist)
