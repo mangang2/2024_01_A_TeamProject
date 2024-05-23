@@ -23,22 +23,18 @@ public class GameManager : MonoBehaviour
     [Header("실 적용 스테이터스 % 추가")]
     public float[] StatusPer = new float[3];
 
-    [Header("캐릭터 기본 스테이터스 % 추가")]
-    public float[] BaseStatusPer = new float[3];
-
     [Header("아이템 스테이터스 % 추가")]
     public float[] ItemStatusPer = new float[3];
 
     [Header("실 적용 스테이터스 정수값 추가")]
     public float[] StatusAdd = new float[6];
 
-    [Header("캐릭터 기본 스테이터스 정수값 추가")]
-    public float[] BaseStatusAdd = new float[6];
-
     [Header("아이템 스테이터스 정수값 추가")]
     public float[] ItemStatusAdd = new float[6];
 
     public List<GameObject> CardList = new List<GameObject>();
+
+    public List<ItemStatusClass> ItemList = new List<ItemStatusClass>();
 
     public static GameManager Instance { get; private set; }
 
@@ -63,7 +59,6 @@ public class GameManager : MonoBehaviour
         DefaultStatus = new float[6];
         BaseStatus = new float[6];
         StatusAdd = new float[6];
-        BaseStatusAdd = new float[6];
     }
 
     private int compare(GameObject a, GameObject b)
@@ -99,6 +94,16 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Slash))
         {
             SaveData();
+        }
+
+        switch (NowChar)
+        {
+            case 1:
+                Char_1_SetStatus();
+                break;
+
+            default:
+                break;
         }
     }
 
@@ -139,8 +144,6 @@ public class GameManager : MonoBehaviour
         gameData.CharLevel[0] = CharLevel[0];
         gameData.Char_1_Card = Card;
         gameData.Char_1_BaseStatus = BaseStatus;
-        gameData.Char_1_BaseStatusPer = BaseStatusPer;
-        gameData.Char_1_BaseStatusAdd = BaseStatusAdd;
     }
 
     private void LoadGameData()
@@ -148,8 +151,6 @@ public class GameManager : MonoBehaviour
         CharLevel[0] = gameData.CharLevel[0];
         Card = gameData.Char_1_Card;
         BaseStatus = gameData.Char_1_BaseStatus;
-        BaseStatusPer = gameData.Char_1_BaseStatusPer;
-        BaseStatusAdd = gameData.Char_1_BaseStatusAdd;
     }
 
     private void Char_1_SetStatus()
@@ -173,9 +174,9 @@ public class GameManager : MonoBehaviour
             DefaultStatus[5] = BaseStatus[5];
         }
 
-        StatusPer[0] = CharLevel[0] / 5 * 3 + ItemStatusPer[0];
-        StatusPer[1] = CharLevel[0] / 5 * 3 + ItemStatusPer[1];
-        StatusPer[2] = CharLevel[0] / 5 * 3 + ItemStatusPer[2];
+        StatusPer[0] = (100 + CharLevel[0] / 5 * 3 + ItemStatusPer[0]) * 0.01f;
+        StatusPer[1] = (100 + CharLevel[0] / 5 * 3 + ItemStatusPer[1]) * 0.01f;
+        StatusPer[2] = (100 + CharLevel[0] / 5 * 3 + ItemStatusPer[2]) * 0.01f;
 
         if (CharLevel[0] > 1)
         {
@@ -206,17 +207,22 @@ public class GameData
 
     public float[] Char_1_BaseStatus = new float[6];
 
-    public float[] Char_1_BaseStatusPer = new float[3];
+    public List<ItemStatus> CharItemList = new List<ItemStatus>();
 
-    public float[] Char_1_BaseStatusAdd = new float[6];
 
-    public List<Vector2> ItemList = new List<Vector2>();
-
-    
 }
 
 public class MonsterData
 {
 
+}
+
+public class ItemStatusClass
+{
+    public int ItemType;
+
+    public float ItemValue;
+
+    public bool Used;
 }
 

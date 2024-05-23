@@ -8,7 +8,7 @@ public class TileSet : MonoBehaviour
     public GameObject AreaTile;
 
     [Header("TileGroup")]
-    public GameObject[] AreaTileGroup = new GameObject[3];
+    public GameObject TileArea;
 
     private float tempX, tempY;
 
@@ -34,7 +34,7 @@ public class TileSet : MonoBehaviour
             for (int n = 0; n < i + 3; n++)
             {
                 GameObject temp = Instantiate(AreaTile);
-                temp.transform.parent = AreaTileGroup[i].transform;
+                temp.transform.parent = TileArea.transform;
                 temp.transform.localPosition = new Vector2(n * 123, 282 + i * 141 - n * 70.5f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
                 temp.GetComponent<ItemCellButton>().CellRank = i + 1;
@@ -46,7 +46,7 @@ public class TileSet : MonoBehaviour
             for (int n = 0; n < i + 2; n++)
             {
                 GameObject temp = Instantiate(AreaTile);
-                temp.transform.parent = AreaTileGroup[i].transform;
+                temp.transform.parent = TileArea.transform;
                 temp.transform.localPosition = new Vector2(tempX, tempY - 141f - n * 141f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
                 temp.GetComponent<ItemCellButton>().CellRank = i + 1;
@@ -61,7 +61,7 @@ public class TileSet : MonoBehaviour
             for (int n = 0; n < i + 2; n++)
             {
                 GameObject temp = Instantiate(AreaTile);
-                temp.transform.parent = AreaTileGroup[i].transform;
+                temp.transform.parent = TileArea.transform;
                 temp.transform.localPosition = new Vector2(tempX - (n + 1) * 123, tempY - (n + 1) * 70.5f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
                 temp.GetComponent<ItemCellButton>().CellRank = i + 1;
@@ -76,7 +76,7 @@ public class TileSet : MonoBehaviour
             for (int n = 0; n < i + 2; n++)
             {
                 GameObject temp = Instantiate(AreaTile);
-                temp.transform.parent = AreaTileGroup[i].transform;
+                temp.transform.parent = TileArea.transform;
                 temp.transform.localPosition = new Vector2(tempX - (n + 1) * 123, tempY + (n + 1) * 70.5f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
                 temp.GetComponent<ItemCellButton>().CellRank = i + 1;
@@ -91,7 +91,7 @@ public class TileSet : MonoBehaviour
             for (int n = 0; n < i + 2; n++)
             {
                 GameObject temp = Instantiate(AreaTile);
-                temp.transform.parent = AreaTileGroup[i].transform;
+                temp.transform.parent = TileArea.transform;
                 temp.transform.localPosition = new Vector2(tempX, tempY + 141f + n * 141f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
                 temp.GetComponent<ItemCellButton>().CellRank = i + 1;
@@ -106,7 +106,7 @@ public class TileSet : MonoBehaviour
             for (int n = 0; n < i + 1; n++)
             {
                 GameObject temp = Instantiate(AreaTile);
-                temp.transform.parent = AreaTileGroup[i].transform;
+                temp.transform.parent = TileArea.transform;
                 temp.transform.localPosition = new Vector2(tempX + (n + 1) * 123, tempY + (n + 1) * 70.5f);
                 temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
                 temp.GetComponent<ItemCellButton>().CellRank = i + 1;
