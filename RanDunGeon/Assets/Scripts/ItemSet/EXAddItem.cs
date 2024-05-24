@@ -19,11 +19,15 @@ public class EXAddItem : MonoBehaviour
             float value = 3;
             int type = 2;
             ItemStatusClass temp = new ItemStatusClass();
-            temp.ItemType = UnityEngine.Random.Range(1, 7);
+            temp.ItemType = UnityEngine.Random.Range(0, 6);
             switch(temp.ItemType)
             {
-                case 1:
+                case 0:
                     value = UnityEngine.Random.Range(6f, 10f);
+                    type = UnityEngine.Random.Range(1, 3);
+                    break;
+                case 1:
+                    value = UnityEngine.Random.Range(4f, 7f);
                     type = UnityEngine.Random.Range(1, 3);
                     break;
                 case 2:
@@ -31,20 +35,19 @@ public class EXAddItem : MonoBehaviour
                     type = UnityEngine.Random.Range(1, 3);
                     break;
                 case 3:
-                    value = UnityEngine.Random.Range(4f, 7f);
-                    type = UnityEngine.Random.Range(1, 3);
+                    value = UnityEngine.Random.Range(3f, 5f);
+                    type = 2;
                     break;
                 case 4:
-                    value = UnityEngine.Random.Range(3f, 5f);
+                    value = UnityEngine.Random.Range(4f, 8f);
+                    type = 2;
                     break;
                 case 5:
-                    value = UnityEngine.Random.Range(4f, 8f);
-                    break;
-                case 6:
                     value = UnityEngine.Random.Range(1f, 3f);
+                    type = 2;
                     break;
             }
-            value = Mathf.Round(value * 10f) / 10f;
+            value = Mathf.Floor(value * 10f) / 10f;
 
             if (type == 1)
                 value += 10000;

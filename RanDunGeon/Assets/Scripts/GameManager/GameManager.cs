@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
     [Header("아이템 리스트")]
     public List<ItemStatusClass> ItemList = new List<ItemStatusClass>();
 
+    [Header("사용중인 아이템 리스트")]
+    public List<ItemStatus> UsingItemList = new List<ItemStatus>();
+
     public static GameManager Instance { get; private set; }
 
     private GameData gameData = new GameData();
@@ -90,6 +93,66 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("new data");
         }
+
+        UsingItemCheck();
+    }
+
+    public void UsingItemCheck()
+    {
+        ItemStatusPer = new float[3];
+        ItemStatusAdd = new float[6];
+
+        List<ItemStatus> NowItemList = new List<ItemStatus>();
+        UsingItemList.Clear();
+        for (int i = 0; i < 6; i++)
+        {
+            int numTemp = 0;
+
+            NowItemList.Clear();
+            for (int m = 0; m < ItemList.Count; m++)
+            {
+                Debug.Log(m);
+                if (ItemList[m].ItemType == i && ItemList[m].Used == true)
+                {
+                    GameObject _temp = new GameObject();
+                    _temp = null;
+                    _temp = new GameObject();
+                    ItemStatus temp = _temp.AddComponent<ItemStatus>();
+
+                    _temp.GetComponent<ItemStatus>().SetValue(ItemList[m].ItemType, ItemList[m].ItemValue, ItemList[m].Used);
+
+                    if (ItemList[m].ItemValue > 20000)
+                    {
+                        if(i <3)
+                        ItemStatusPer[i] += (ItemList[m].ItemValue - 20000);
+                        else
+                        ItemStatusAdd[i] += (ItemList[m].ItemValue - 20000);
+                    }
+                    else
+                    {
+                        ItemStatusAdd[i] += (ItemList[m].ItemValue - 10000);
+                    }
+                    temp = _temp.GetComponent<ItemStatus>();
+                    NowItemList.Add(temp);
+                    Debug.Log(temp.ItemType.ToString() + " / " + temp.ItemValue.ToString());
+                    Destroy(_temp.gameObject);
+
+                    numTemp++;
+                }
+                
+            }
+            NowItemList.Sort(compare);
+            foreach (ItemStatus itemtemp in NowItemList)
+            {
+                UsingItemList.Add(itemtemp);
+            }
+            
+        }
+    }
+
+    private int compare(ItemStatus a, ItemStatus b)
+    {
+        return a.ItemValue > b.ItemValue ? -1 : 1;
     }
 
     private void Update()
@@ -158,13 +221,15 @@ public class GameManager : MonoBehaviour
 
     private void Char_1_SetStatus()
     {
+    
         if (CharLevel[0] > 1)
         {
+            int LevelDiveide1 = Mathf.FloorToInt(CharLevel[0] / 10);
             DefaultStatus[0] = BaseStatus[0] + CharLevel[0] * 10;
             DefaultStatus[1] = BaseStatus[1] + CharLevel[0] * 10;
             DefaultStatus[2] = BaseStatus[2] + CharLevel[0] * 10;
-            DefaultStatus[3] = BaseStatus[3] + CharLevel[0] / 10 * 5;
-            DefaultStatus[4] = BaseStatus[4] + CharLevel[0] / 10 * 10;
+            DefaultStatus[3] = BaseStatus[3] + LevelDiveide1 * 5;
+            DefaultStatus[4] = BaseStatus[4] + LevelDiveide1 * 10;
             DefaultStatus[5] = BaseStatus[5];
         }
         else
@@ -177,9 +242,10 @@ public class GameManager : MonoBehaviour
             DefaultStatus[5] = BaseStatus[5];
         }
 
-        StatusPer[0] = (100 + CharLevel[0] / 5 * 3 + ItemStatusPer[0]) * 0.01f;
-        StatusPer[1] = (100 + CharLevel[0] / 5 * 3 + ItemStatusPer[1]) * 0.01f;
-        StatusPer[2] = (100 + CharLevel[0] / 5 * 3 + ItemStatusPer[2]) * 0.01f;
+        int LevelDiveide2 = Mathf.FloorToInt(CharLevel[0] / 5);
+        StatusPer[0] = (100 + LevelDiveide2 * 3 + ItemStatusPer[0]) * 0.01f;
+        StatusPer[1] = (100 + LevelDiveide2 * 3 + ItemStatusPer[1]) * 0.01f;
+        StatusPer[2] = (100 + LevelDiveide2 * 3 + ItemStatusPer[2]) * 0.01f;
 
         if (CharLevel[0] > 1)
         {

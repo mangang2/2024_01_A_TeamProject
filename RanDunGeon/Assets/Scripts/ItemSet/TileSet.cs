@@ -45,12 +45,11 @@ public class TileSet : MonoBehaviour
                 {
                     temp = Instantiate(NullAreaTile);
                 }
-                temp.transform.parent = TileArea.transform;
+                temp.transform.SetParent(TileArea.transform);
                 temp.transform.localPosition = new Vector2(n * 123, 282 + i * 141 - n * 70.5f);
                 if (i < 2)
                 {
-                    temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
-                    temp.GetComponent<ItemCellButton>().CellRank = i + 1;
+                    temp.GetComponentInChildren<ItemCellButton>().CellNum = ++cellNum;
                 }
                 tempX = temp.transform.localPosition.x;
                 tempY = temp.transform.localPosition.y;
@@ -69,12 +68,11 @@ public class TileSet : MonoBehaviour
                     temp = Instantiate(NullAreaTile);
                 }
 
-                temp.transform.parent = TileArea.transform;
+                temp.transform.SetParent(TileArea.transform);
                 temp.transform.localPosition = new Vector2(tempX, tempY - 141f - n * 141f);
                 if (i < 2)
                 {
-                    temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
-                    temp.GetComponent<ItemCellButton>().CellRank = i + 1;
+                    temp.GetComponentInChildren<ItemCellButton>().CellNum = ++cellNum;
                 }
                 if (n == i + 1)
                 {
@@ -95,12 +93,11 @@ public class TileSet : MonoBehaviour
                 {
                     temp = Instantiate(NullAreaTile);
                 }
-                temp.transform.parent = TileArea.transform;
+                temp.transform.SetParent(TileArea.transform);
                 temp.transform.localPosition = new Vector2(tempX - (n + 1) * 123, tempY - (n + 1) * 70.5f);
                 if (i < 2)
                 {
-                    temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
-                    temp.GetComponent<ItemCellButton>().CellRank = i + 1;
+                    temp.GetComponentInChildren<ItemCellButton>().CellNum = ++cellNum;
                 }
                 if (n == i + 1)
                 {
@@ -121,12 +118,11 @@ public class TileSet : MonoBehaviour
                 {
                     temp = Instantiate(NullAreaTile);
                 }
-                temp.transform.parent = TileArea.transform;
+                temp.transform.SetParent(TileArea.transform);
                 temp.transform.localPosition = new Vector2(tempX - (n + 1) * 123, tempY + (n + 1) * 70.5f);
                 if (i < 2)
                 {
-                    temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
-                    temp.GetComponent<ItemCellButton>().CellRank = i + 1;
+                    temp.GetComponentInChildren<ItemCellButton>().CellNum = ++cellNum;
                 }
                 if (n == i + 1)
                 {
@@ -147,12 +143,11 @@ public class TileSet : MonoBehaviour
                 {
                     temp = Instantiate(NullAreaTile);
                 }
-                temp.transform.parent = TileArea.transform;
+                temp.transform.SetParent(TileArea.transform);
                 temp.transform.localPosition = new Vector2(tempX, tempY + 141f + n * 141f);
                 if (i < 2)
                 {
-                    temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
-                    temp.GetComponent<ItemCellButton>().CellRank = i + 1;
+                    temp.GetComponentInChildren<ItemCellButton>().CellNum = ++cellNum;
                 }
                 if (n == i + 1)
                 {
@@ -173,12 +168,11 @@ public class TileSet : MonoBehaviour
                 {
                     temp = Instantiate(NullAreaTile);
                 }
-                temp.transform.parent = TileArea.transform;
+                temp.transform.SetParent(TileArea.transform);
                 temp.transform.localPosition = new Vector2(tempX + (n + 1) * 123, tempY + (n + 1) * 70.5f);
                 if (i < 2)
                 {
-                    temp.GetComponent<ItemCellButton>().CellNum = ++cellNum;
-                    temp.GetComponent<ItemCellButton>().CellRank = i + 1;
+                    temp.GetComponentInChildren<ItemCellButton>().CellNum = ++cellNum;
                 }
                 if (n == i + 1)
                 {

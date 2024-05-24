@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class ItemStatus : MonoBehaviour
 {
     public int ItemType;
     public float ItemValue;
     public bool Used;
-    public float ItemAdd;
+    public float ItemAdd = 0;
+    public bool EnhanceType = false;
 
+    public ItemStatusClass Origin;
 
+    private Button button;
     private Text text;
-    private bool EnhanceType;
+  
 
     // Start is called before the first frame update
     void Start()
     {
-        text = GetComponentInChildren<Text>();
+        button = GetComponent<Button>();
+        button.onClick.AddListener(ClickOn);
+        text = transform.parent.GetComponentInChildren<Text>();
         if (ItemValue > 20000)
         {
             EnhanceType = true;
@@ -45,7 +51,7 @@ public class ItemStatus : MonoBehaviour
         ItemType = type;
         ItemValue = value;
         
-        Used = used;
+        this.Used = used;
         if (ItemValue > 20000)
         {
             EnhanceType = true;
@@ -57,5 +63,21 @@ public class ItemStatus : MonoBehaviour
             ItemAdd = ItemValue - 10000;
         }
         ItemAdd = Mathf.Round(ItemAdd * 10f) / 10f;
+    }
+
+    public void ClickOn()
+    {
+        if(this.Used)
+        {
+            Debug.Log("∫Ò»∞º∫»≠ µ ");
+            this.Used = false;
+            Origin.Used = false;
+        }
+        else
+        {
+            Debug.Log("»∞º∫»≠ µ ");
+            this.Used = true;
+            Origin.Used = true;
+        }
     }
 }

@@ -26,7 +26,7 @@ public class CardListLoad : MonoBehaviour
         for(int i = 1; i <= listLenght; i++)
         {
             GameObject temp = Instantiate(CardListPrefabs);
-            temp.transform.parent = gameObject.transform;
+            temp.transform.SetParent(gameObject.transform);
             temp.GetComponent<CardSelectButton>().CardType = CardList[i - 1];
             temp.GetComponent<CardSelectButton>().SendPosY();
         }
