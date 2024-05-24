@@ -1417,7 +1417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &596063276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3588,7 +3588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.254717, g: 0.19999015, b: 0.18382877, a: 1}
+  m_Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3730,6 +3730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaTile: {fileID: 6747232158079608856, guid: 20dc2185f69b04fb0ae8a471ef121a03, type: 3}
+  NullAreaTile: {fileID: 4809929340157057096, guid: b0c91e5fa702742af85d7c8f9680614a, type: 3}
   TileArea: {fileID: 1909811617}
 --- !u!1 &2139494930
 GameObject:

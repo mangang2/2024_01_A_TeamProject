@@ -23,7 +23,7 @@ public class ItemCellButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CellRank <= ((GM.CharLevel[GM.NowChar - 1] + 20)/ 20))
+        if (CellRank <= ((GM.CharLevel[GM.NowChar - 1] + 10)/ 10))
         {
             Useable = true;
         }
