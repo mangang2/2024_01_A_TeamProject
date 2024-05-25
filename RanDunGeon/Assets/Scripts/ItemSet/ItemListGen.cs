@@ -9,6 +9,8 @@ public class ItemListGen : MonoBehaviour
 
     public GameObject ItemListGroup;
 
+    public GameObject Origin;
+
     public int Type;
 
     private GameManager GM;
@@ -31,7 +33,6 @@ public class ItemListGen : MonoBehaviour
 
     public void GenList()
     {
-        ItemStatusClass itemClass = new ItemStatusClass();
         Transform[] child = GetComponentsInChildren<Transform>();
         if(child != null)
         {
@@ -45,11 +46,10 @@ public class ItemListGen : MonoBehaviour
         {
             if (GM.ItemList[i].ItemType == Type)
             {
-                GameObject _temp = new GameObject();
-                ItemStatus temp = _temp.AddComponent<ItemStatus>();
+                GameObject _temp = Instantiate(Origin);
                 _temp.GetComponentInChildren<ItemStatus>().SetValue(GM.ItemList[i].ItemType, GM.ItemList[i].ItemValue, GM.ItemList[i].Used);
-                itemClass = GM.ItemList[i];
-                NowItemList.Add(temp);
+                _temp.GetComponentInChildren<ItemStatus>().Origin = GM.ItemList[i];
+                NowItemList.Add(_temp.GetComponentInChildren<ItemStatus>());
                 Destroy(_temp.gameObject);
             }
         }
@@ -61,7 +61,7 @@ public class ItemListGen : MonoBehaviour
             temp2.transform.SetParent(ItemListGroup.transform);
             temp2.transform.localScale = new Vector3(0.6666667f, 0.6666667f, 1);
             temp2.GetComponentInChildren<ItemStatus>().SetValue(NowItemList[j].ItemType, NowItemList[j].ItemValue, NowItemList[j].Used);
-            temp2.GetComponentInChildren<ItemStatus>().Origin = itemClass;
+            temp2.GetComponentInChildren<ItemStatus>().Origin = NowItemList[j].Origin;
         }
     }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     [Header("사용중인 아이템 리스트")]
     public List<ItemStatus> UsingItemList = new List<ItemStatus>();
+
+    public int NowUsingItemCount = 0;
 
     public static GameManager Instance { get; private set; }
 
@@ -97,6 +100,8 @@ public class GameManager : MonoBehaviour
         UsingItemCheck();
     }
 
+    
+
     public void UsingItemCheck()
     {
         ItemStatusPer = new float[3];
@@ -111,14 +116,12 @@ public class GameManager : MonoBehaviour
             NowItemList.Clear();
             for (int m = 0; m < ItemList.Count; m++)
             {
-                Debug.Log(m);
+                
                 if (ItemList[m].ItemType == i && ItemList[m].Used == true)
                 {
-                    GameObject _temp = new GameObject();
-                    _temp = null;
-                    _temp = new GameObject();
-                    ItemStatus temp = _temp.AddComponent<ItemStatus>();
-
+                    GameObject _temp = Instantiate(new GameObject());
+                    _temp.AddComponent<ItemStatus>();
+                    _temp.GetComponent<ItemStatus>().tempObject = true;
                     _temp.GetComponent<ItemStatus>().SetValue(ItemList[m].ItemType, ItemList[m].ItemValue, ItemList[m].Used);
 
                     if (ItemList[m].ItemValue > 20000)
@@ -132,22 +135,39 @@ public class GameManager : MonoBehaviour
                     {
                         ItemStatusAdd[i] += (ItemList[m].ItemValue - 10000);
                     }
-                    temp = _temp.GetComponent<ItemStatus>();
-                    NowItemList.Add(temp);
-                    Debug.Log(temp.ItemType.ToString() + " / " + temp.ItemValue.ToString());
-                    Destroy(_temp.gameObject);
+                    NowItemList.Add(_temp.GetComponent<ItemStatus>());
+                    Debug.Log("새로 추가되는 아이템 - " + _temp.GetComponent<ItemStatus>().ItemType.ToString() + " / " + _temp.GetComponent<ItemStatus>().ItemValue.ToString());
 
                     numTemp++;
+                    Destroy( _temp );
                 }
                 
             }
+
+
+
+
             NowItemList.Sort(compare);
             foreach (ItemStatus itemtemp in NowItemList)
             {
                 UsingItemList.Add(itemtemp);
+                for (int a = 0; a < UsingItemList.Count; a ++)
+                {
+                    Debug.Log("사용중 아이템 리스트 / " + UsingItemList[a].ItemValue.ToString() + " / 총 갯수 - " + UsingItemList.Count.ToString());
+                }
             }
             
         }
+        string texttemp;
+        texttemp = "";
+
+        for (int h = 0; h < ItemList.Count; h++)
+        {
+            if (ItemList[h].ItemType == 0)
+                texttemp += ItemList[h].ItemValue.ToString() + "(" + ItemList[h].Used + ") / ";
+        }
+
+        Debug.Log("HP 전체 리스트 - " + texttemp );
     }
 
     private int compare(ItemStatus a, ItemStatus b)
@@ -157,7 +177,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Slash))
+        NowUsingItemCount = UsingItemList.Count;
+
+
+        if (Input.GetKeyDown(KeyCode.Slash))
         {
             SaveData();
         }

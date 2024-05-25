@@ -12,6 +12,8 @@ public class ItemStatus : MonoBehaviour
     public float ItemAdd = 0;
     public bool EnhanceType = false;
 
+    public bool tempObject = false;
+
     public ItemStatusClass Origin;
 
     private Button button;
@@ -21,9 +23,13 @@ public class ItemStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(ClickOn);
-        text = transform.parent.GetComponentInChildren<Text>();
+        if (!tempObject)
+        {
+            button = GetComponent<Button>();
+            button.onClick.AddListener(ClickOn);
+            text = transform.parent.GetComponentInChildren<Text>();
+        }
+
         if (ItemValue > 20000)
         {
             EnhanceType = true;
@@ -40,10 +46,20 @@ public class ItemStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(EnhanceType)
-        text.text = ItemAdd.ToString() + "%";
-        else
-            text.text = "+" + ItemAdd.ToString();
+        if(!tempObject)
+        {
+            string tempT;
+            if (EnhanceType)
+             tempT = ItemAdd.ToString() + "%";
+            else
+            tempT = "+" + ItemAdd.ToString();
+
+            if(Used)
+            {
+                tempT += "*";
+            }
+            text.text = tempT;
+        }
     }
 
     public void SetValue(int type,float value, bool used)
@@ -67,17 +83,20 @@ public class ItemStatus : MonoBehaviour
 
     public void ClickOn()
     {
-        if(this.Used)
+        GameManager GM = GameManager.Instance;
+        if (this.Used)
         {
             Debug.Log("∫Ò»∞º∫»≠ µ ");
             this.Used = false;
             Origin.Used = false;
+            GM.UsingItemCheck();
         }
-        else
+        else if(!this.Used && GM.NowUsingItemCount < (GM.CharLevel[GM.NowChar - 1] - 10))
         {
             Debug.Log("»∞º∫»≠ µ ");
             this.Used = true;
             Origin.Used = true;
+            GM.UsingItemCheck();
         }
     }
 }

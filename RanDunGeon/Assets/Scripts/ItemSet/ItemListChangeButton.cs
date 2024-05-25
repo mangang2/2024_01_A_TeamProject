@@ -25,5 +25,6 @@ public class ItemListChangeButton : MonoBehaviour
         }
 
         ItemList[buttonNum].SetActive(true);
+        //ItemList[buttonNum].GetComponent<ItemListGen>().GenList();
     }
 }
