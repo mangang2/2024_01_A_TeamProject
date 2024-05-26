@@ -56,11 +56,11 @@ public class MainCellButton : MonoBehaviour
     {
         if (CellNum > 3)
         {
-            text.text = $"{cellName}\n{GM.DefaultStatus[CellNum -1]} ( + {GM.StatusAdd[CellNum - 1]})";
+            text.text = $"{cellName}\n{GM.DefaultStatus[CellNum -1]} ( + {GM.StatusAdd[CellNum - 1].ToString("F1")})";
         }
         else if (CellNum > 0)
         {
-            text.text = $"{cellName}\n{GM.DefaultStatus[CellNum -1]} ( + {(GM.DefaultStatus[CellNum - 1] * (GM.StatusPer[CellNum - 1]-1) + GM.StatusAdd[CellNum - 1]).ToString("F0")})";
+            text.text = $"{cellName}\n{GM.DefaultStatus[CellNum -1]} ( + {(GM.DefaultStatus[CellNum - 1] * (GM.StatusPer[CellNum - 1]-1) + GM.StatusAdd[CellNum - 1]).ToString("F1")})";
         }
         else if(CellNum == 0)
                 text.text = cellName;

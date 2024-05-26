@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
                 
                 if (ItemList[m].ItemType == i && ItemList[m].Used == true)
                 {
-                    GameObject _temp = Instantiate(new GameObject());
+                    GameObject _temp = new GameObject("EX");
                     _temp.AddComponent<ItemStatus>();
                     _temp.GetComponent<ItemStatus>().tempObject = true;
                     _temp.GetComponent<ItemStatus>().SetValue(ItemList[m].ItemType, ItemList[m].ItemValue, ItemList[m].Used);
@@ -233,6 +233,12 @@ public class GameManager : MonoBehaviour
         gameData.CharLevel[0] = CharLevel[0];
         gameData.Char_1_Card = Card;
         gameData.Char_1_BaseStatus = BaseStatus;
+        for (int L = 0; L < ItemList.Count; L++)
+        {
+            gameData.Char_1_ItemType.Add(ItemList[L].ItemType);
+            gameData.Char_1_ItemValue.Add(ItemList[L].ItemValue);
+            gameData.Char_1_ItemUsed.Add(ItemList[L].Used);
+        }
     }
 
     private void LoadGameData()
@@ -240,6 +246,13 @@ public class GameManager : MonoBehaviour
         CharLevel[0] = gameData.CharLevel[0];
         Card = gameData.Char_1_Card;
         BaseStatus = gameData.Char_1_BaseStatus;
+        for(int L = 0; L < gameData.Char_1_ItemType.Count; L++)
+        {
+            ItemList.Add(new ItemStatusClass()); 
+            ItemList[L].ItemType = gameData.Char_1_ItemType[L];
+            ItemList[L].ItemValue = gameData.Char_1_ItemValue[L];
+            ItemList[L].Used = gameData.Char_1_ItemUsed[L];
+        }
     }
 
     private void Char_1_SetStatus()
@@ -291,6 +304,7 @@ public class GameManager : MonoBehaviour
 
 }
 
+[System.Serializable]
 public class GameData
 {
     public int[] CharLevel = new int[1];
@@ -299,8 +313,11 @@ public class GameData
 
     public float[] Char_1_BaseStatus = new float[6];
 
-    public List<ItemStatus> CharItemList = new List<ItemStatus>();
+    public List<int> Char_1_ItemType = new List<int>();
 
+    public List<float> Char_1_ItemValue = new List<float>();
+
+    public List<bool> Char_1_ItemUsed = new List<bool>();
 
 }
 

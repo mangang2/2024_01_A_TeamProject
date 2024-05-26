@@ -4,16 +4,16 @@
     ],
     "Char_1_Card": [
         {
-            "instanceID": 23660
+            "instanceID": 0
         },
         {
-            "instanceID": 23646
+            "instanceID": 23956
         },
         {
-            "instanceID": 23654
+            "instanceID": 0
         },
         {
-            "instanceID": 23652
+            "instanceID": 23962
         }
     ],
     "Char_1_BaseStatus": [
@@ -24,18 +24,28 @@
         50.0,
         0.0
     ],
-    "Char_1_BaseStatusPer": [
-        0.0,
-        0.0,
-        0.0
+    "Char_1_ItemType": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
     ],
-    "Char_1_BaseStatusAdd": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+    "Char_1_ItemValue": [
+        20010,
+        20010,
+        20010,
+        20005,
+        20008,
+        20005
     ],
-    "ItemList": []
+    "Char_1_ItemUsed": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
 }
