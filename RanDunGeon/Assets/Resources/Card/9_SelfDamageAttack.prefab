@@ -323,7 +323,7 @@ MonoBehaviour:
   moveSpeed: 50
   Unlock: 0
   DoMerge: 0
-  cardType: 0
+  cardType: 9
   cardRank: 1
   skill: 0
   rankText: {fileID: 4834320325267724009}

@@ -35,6 +35,8 @@ public class DeckCard : MonoBehaviour
         CardSelectCavas.GetComponent<CanvasGroup>().alpha = 0;
     }
 
+    
+
     public void OnClick()
     {
         DeckManager.GetComponent<DeckManager>().NowSelecting = gameObject;
