@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
 
         if (File.Exists(path))
         {
-            LoadData();
+            Invoke("LoadData",0.05f);
         }
         else
         {
@@ -233,6 +233,9 @@ public class GameManager : MonoBehaviour
         gameData.CharLevel[0] = CharLevel[0];
         gameData.Char_1_Card = Card;
         gameData.Char_1_BaseStatus = BaseStatus;
+        gameData.Char_1_ItemType.Clear();
+        gameData.Char_1_ItemValue.Clear();
+        gameData.Char_1_ItemUsed.Clear();
         for (int L = 0; L < ItemList.Count; L++)
         {
             gameData.Char_1_ItemType.Add(ItemList[L].ItemType);
@@ -246,6 +249,7 @@ public class GameManager : MonoBehaviour
         CharLevel[0] = gameData.CharLevel[0];
         Card = gameData.Char_1_Card;
         BaseStatus = gameData.Char_1_BaseStatus;
+        ItemList.Clear();
         for(int L = 0; L < gameData.Char_1_ItemType.Count; L++)
         {
             ItemList.Add(new ItemStatusClass()); 

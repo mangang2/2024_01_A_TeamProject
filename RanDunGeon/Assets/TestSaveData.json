@@ -4,16 +4,16 @@
     ],
     "Char_1_Card": [
         {
-            "instanceID": 0
+            "instanceID": 23660
         },
         {
-            "instanceID": 23956
+            "instanceID": 23646
         },
         {
-            "instanceID": 0
+            "instanceID": 23654
         },
         {
-            "instanceID": 23962
+            "instanceID": 23652
         }
     ],
     "Char_1_BaseStatus": [
@@ -33,12 +33,12 @@
         5
     ],
     "Char_1_ItemValue": [
-        20010,
-        20010,
-        20010,
-        20005,
-        20008,
-        20005
+        20013.0,
+        20010.0,
+        20010.0,
+        20005.0,
+        20008.0,
+        20005.0
     ],
     "Char_1_ItemUsed": [
         false,

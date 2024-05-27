@@ -21,7 +21,7 @@ public class CardManager : MonoBehaviour
     void Start()
     {
         cardDrawing = true;
-        Invoke("LoadCard", 0.1f);
+        Invoke("LoadCard", 0.5f);
     }
 
     // Update is called once per frame
