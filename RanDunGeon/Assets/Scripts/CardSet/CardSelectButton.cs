@@ -43,10 +43,10 @@ public class CardSelectButton : MonoBehaviour
             holdTime += Time.deltaTime;
         }
 
-        if(holdTime > 0.5f && Clicking == true)
+        if(holdTime > 0.3f && Clicking == true)
         {
             notClick = true;
-            Debug.Log("카드 설명 표시");
+            Debug.Log("카드 설명 : " + CardType.GetComponent<CardInfo>().InfoText);
             Clicking = false;
         }
 

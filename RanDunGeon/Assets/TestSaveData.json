@@ -2,18 +2,26 @@
     "CharLevel": [
         1
     ],
+    "CardUnlock": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+    ],
     "Char_1_Card": [
         {
-            "instanceID": 105470
+            "instanceID": 24162
         },
         {
-            "instanceID": 23654
+            "instanceID": 24144
         },
         {
-            "instanceID": 98334
+            "instanceID": 24154
         },
         {
-            "instanceID": 23656
+            "instanceID": 24152
         }
     ],
     "Char_1_BaseStatus": [

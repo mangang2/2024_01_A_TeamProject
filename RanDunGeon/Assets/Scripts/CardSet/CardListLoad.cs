@@ -34,7 +34,7 @@ public class CardListLoad : MonoBehaviour
         for(int o = 1; o <= addNum; o++)
         {
             GameObject temp = Instantiate(CardListNull);
-            temp.transform.parent = gameObject.transform;
+            temp.transform.SetParent(gameObject.transform);
         }
     }
 
@@ -46,14 +46,19 @@ public class CardListLoad : MonoBehaviour
             transform.Translate(Vector3.up * Input.GetAxis("Mouse ScrollWheel") * -500);
         }
 
-        if (transform.position.y < 970)
+        if(transform.localPosition.y < 430)
         {
-            transform.position = new Vector2(transform.position.x, 970);
+            transform.localPosition = new Vector2(transform.localPosition.x, 430);
         }
 
-        if (transform.position.y > LastCardPosY + 1100)
+        if (transform.localPosition.y > LastCardPosY + 1030)
         {
-            transform.position = new Vector2(transform.position.x, LastCardPosY + 1100);
+            transform.localPosition = new Vector2(transform.localPosition.x, LastCardPosY + 1030);
         }
+    }
+
+    private void OnEnable()
+    {
+        transform.localPosition = new Vector2(transform.localPosition.x, 430);
     }
 }

@@ -24,6 +24,12 @@ public class DeckCard : MonoBehaviour
         DeckManager = GameObject.Find("DeckManager");
         GM = GameManager.Instance;
         CardType = GM.GetComponent<GameManager>().Card[DeckNum - 1];
+
+        if(CardType.GetComponent<CardState>().Unlock ==false )
+        {
+            CardType = null;
+        }
+
         if (CardType != null)
         {
             textBox.text = CardType.name.ToString();

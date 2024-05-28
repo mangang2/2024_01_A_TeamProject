@@ -88,6 +88,8 @@ public class GameManager : MonoBehaviour
 
         CardList.Sort(compare);
 
+        LoadData();    
+
         if (File.Exists(path))
         {
             Invoke("LoadData",0.05f);
@@ -242,6 +244,12 @@ public class GameManager : MonoBehaviour
             gameData.Char_1_ItemValue.Add(ItemList[L].ItemValue);
             gameData.Char_1_ItemUsed.Add(ItemList[L].Used);
         }
+
+        gameData.CardUnlock.Clear();
+        for (int c = 0; c < ItemList.Count; c++)
+        {
+            gameData.CardUnlock.Add(CardList[c].GetComponent<CardState>().Unlock);
+        }
     }
 
     private void LoadGameData()
@@ -256,6 +264,11 @@ public class GameManager : MonoBehaviour
             ItemList[L].ItemType = gameData.Char_1_ItemType[L];
             ItemList[L].ItemValue = gameData.Char_1_ItemValue[L];
             ItemList[L].Used = gameData.Char_1_ItemUsed[L];
+        }
+
+        for (int c = 0; c < ItemList.Count; c++)
+        {
+            CardList[c].GetComponent<CardState>().Unlock = gameData.CardUnlock[c]; 
         }
     }
 
@@ -312,6 +325,8 @@ public class GameManager : MonoBehaviour
 public class GameData
 {
     public int[] CharLevel = new int[1];
+
+    public List<bool> CardUnlock = new List<bool>();
 
     public GameObject[] Char_1_Card = new GameObject[4];
 

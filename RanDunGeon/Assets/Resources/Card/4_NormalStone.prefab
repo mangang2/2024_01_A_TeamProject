@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  Unlock: 1
+  Lock: 1
   DoMerge: 0
   cardType: 4
   cardRank: 1
