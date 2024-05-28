@@ -133,6 +133,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae12b6e1339dc45adb340a9ebaae48ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemSprites:
+  - {fileID: 21300000, guid: 1d5c8c261c6a1fd4ab243569863e5c78, type: 3}
+  - {fileID: 21300000, guid: d3a3d2d410113a6469ba6bee23add312, type: 3}
+  - {fileID: 21300000, guid: 5a800a32bf0c0244eb6074a488280a29, type: 3}
+  - {fileID: 21300000, guid: 7f0525567435ab3408d06dfd89aabecd, type: 3}
+  - {fileID: 21300000, guid: 0983dfdbd7fe14c4ebd461ad06bd4a36, type: 3}
+  - {fileID: 21300000, guid: 3d2b7daaf92474b4d9d3893b94e84ece, type: 3}
+  - {fileID: 21300000, guid: f3f76fb7b1eed4446983c161245bc7bf, type: 3}
+  - {fileID: 21300000, guid: 5ae4fc2847f2c0d418a0c604f224b1ce, type: 3}
   ItemListGroup: {fileID: 0}
   itemstatus: {fileID: 0}
   CellNum: 0
@@ -148,6 +157,7 @@ GameObject:
   - component: {fileID: 843295926495309421}
   - component: {fileID: 8059793980057752335}
   - component: {fileID: 928409693930943045}
+  - component: {fileID: 6687163690568565104}
   m_Layer: 5
   m_Name: BaseStatusUI
   m_TagString: Untagged
@@ -216,6 +226,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &6687163690568565104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327662742325173284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5176471}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6747232158079608856
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +287,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 173647832939636913}
     m_Modifications:
+    - target: {fileID: 69172380945023200, guid: b0c91e5fa702742af85d7c8f9680614a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca16c902195b544d6b3fc04d5e24d62c, type: 3}
     - target: {fileID: 3821095349409984688, guid: b0c91e5fa702742af85d7c8f9680614a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 5750937694371009155}
   - component: {fileID: 9061465801178158664}
   - component: {fileID: 6598390734305462226}
+  - component: {fileID: 4577963291050993174}
   m_Layer: 5
   m_Name: BaseStatusUI
   m_TagString: Untagged
@@ -154,6 +155,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Item
+--- !u!114 &4577963291050993174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807510684600572865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5176471}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4928014258319768905
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +207,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 95, y: 90}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1208524125686244078
 CanvasRenderer:
@@ -299,11 +315,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a055ed3fa0a049d492bc2f2385c3c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemSprites:
+  - {fileID: 21300000, guid: 1d5c8c261c6a1fd4ab243569863e5c78, type: 3}
+  - {fileID: 21300000, guid: d3a3d2d410113a6469ba6bee23add312, type: 3}
+  - {fileID: 21300000, guid: 5a800a32bf0c0244eb6074a488280a29, type: 3}
+  - {fileID: 21300000, guid: 7f0525567435ab3408d06dfd89aabecd, type: 3}
+  - {fileID: 21300000, guid: 0983dfdbd7fe14c4ebd461ad06bd4a36, type: 3}
+  - {fileID: 21300000, guid: 3d2b7daaf92474b4d9d3893b94e84ece, type: 3}
   ItemType: 0
   ItemValue: 0
   Used: 0
   ItemAdd: 0
   EnhanceType: 0
+  tempObject: 0
 --- !u!1 &5808149236057397630
 GameObject:
   m_ObjectHideFlags: 0

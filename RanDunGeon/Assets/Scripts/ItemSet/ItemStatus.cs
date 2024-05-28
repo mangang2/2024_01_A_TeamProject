@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ItemStatus : MonoBehaviour
 {
+    
+    public Sprite[] ItemSprites = new Sprite[6];
     public int ItemType;
     public float ItemValue;
     public bool Used;
@@ -16,6 +18,7 @@ public class ItemStatus : MonoBehaviour
 
     public ItemStatusClass Origin;
 
+    private Image CellImage;
     private Button button;
     private Text text;
   
@@ -28,6 +31,7 @@ public class ItemStatus : MonoBehaviour
             button = GetComponent<Button>();
             button.onClick.AddListener(ClickOn);
             text = transform.parent.GetComponentInChildren<Text>();
+            CellImage = transform.parent.GetChild(0).GetComponent<Image>();
         }
 
         if (ItemValue > 20000)
@@ -48,6 +52,8 @@ public class ItemStatus : MonoBehaviour
     {
         if(!tempObject)
         {
+            CellImage.sprite = ItemSprites[ItemType];
+
             string tempT;
             if (EnhanceType)
              tempT = ItemAdd.ToString() + "%";
