@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalDamageDown : MonoBehaviour
+public class NormalShield : MonoBehaviour
 {
     private GameObject TurnManager;
 
@@ -18,32 +18,35 @@ public class NormalDamageDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int playerLevel;
-        int playerDd;
-        int Dd = 5;
-        int DdTurn = 2;
+        float playerDf = 0;
+        float playerShield = 0;
+        float shieldRank = 0;
+        int shieldTurn = 3;
+        float shield = 0;
         int CardRank;
 
         if (GetComponent<CardState>().skill == true)
         {
-            playerLevel = player.GetComponent<CharacterStatus>().CharLevel;
-            playerDd = player.GetComponent<CharacterStatus>().DownDamage;
+            playerDf = player.GetComponent<CharacterStatus>().Defense;
+            playerShield = player.GetComponent<CharacterStatus>().Shield;
             CardRank = GetComponent<CardState>().cardRank;
 
-            if (CardRank == 1) Dd = 3 * playerLevel;
-            if (CardRank == 2) Dd = 4 * playerLevel;
-            if (CardRank == 3) Dd = 5 * playerLevel;
+            if (CardRank == 1) shieldRank = 2;
+            if (CardRank == 2) shieldRank = 2.7f;
+            if (CardRank == 3) shieldRank = 3.4f;
 
-            if (playerDd < Dd)
+            shield = playerDf * shieldRank;
+
+            if (playerShield < shield)
             {
-                player.GetComponent<CharacterStatus>().DownDamage = Dd;
-                player.GetComponent<CharacterStatus>().DownDamageTurn = DdTurn;
-                Debug.Log("2턴 동안 받는 피해가 " + Dd + "만큼 감소합니다.");
+                player.GetComponent<CharacterStatus>().Shield = shield;
+                player.GetComponent<CharacterStatus>().ShieldTurn = shieldTurn;
+                Debug.Log("3턴 동안 유지되는 " + shield + "만큼의 쉴드를 얻습니다.");
             }
-            else if (playerDd == Dd)
+            else if (playerShield == shield)
             {
-                player.GetComponent<CharacterStatus>().DownDamage = Dd;
-                player.GetComponent<CharacterStatus>().DownDamageTurn = DdTurn;
+                player.GetComponent<CharacterStatus>().Shield = shield;
+                player.GetComponent<CharacterStatus>().ShieldTurn = shieldTurn;
                 Debug.Log("이미 동일한 효과가 적용중입니다.");
             }
             else

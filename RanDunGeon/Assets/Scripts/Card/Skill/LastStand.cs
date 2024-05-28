@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelfDamageAttack : MonoBehaviour
+public class LastStand : MonoBehaviour
 {
+
     private GameObject TurnManager;
 
     private GameObject player;
@@ -23,7 +24,8 @@ public class SelfDamageAttack : MonoBehaviour
     {
         float playerAd;
         float playerHp;
-        float DisHp = 0;
+        float playerMaxHp;
+        float hpTemp = 0;
         float enemyDf;
         float enemyDd;
         float finalDamage1;
@@ -42,22 +44,24 @@ public class SelfDamageAttack : MonoBehaviour
             CardRank = GetComponent<CardState>().cardRank;
             criP = player.GetComponent<CharacterStatus>().CriPercent;
             ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
+            playerMaxHp = player.GetComponent<CharacterStatus>().MaxHp;
+            playerHp = player.GetComponent<CharacterStatus>().Hp;
 
 
             if (CardRank == 1)
             {
-                DamageRank = 1.6f;
-                HpDamageBuffRank = 0.4f;
+                DamageRank = 0.5f;
+                HpDamageBuffRank = 0.3f;
             }
             if (CardRank == 2)
             {
-                DamageRank = 1.8f;
-                HpDamageBuffRank = 0.6f;
+                DamageRank = 0.5f;
+                HpDamageBuffRank = 0.4f;
             }
             if (CardRank == 3)
             {
-                DamageRank = 2.0f;
-                HpDamageBuffRank = 0.8f;
+                DamageRank = 0.5f;
+                HpDamageBuffRank = 0.6f;
             }
 
 
@@ -74,24 +78,19 @@ public class SelfDamageAttack : MonoBehaviour
                 criD = 1f;
             }
 
-            playerHp = player.GetComponent<CharacterStatus>().Hp;
 
-            DisHp = playerHp * 0.2f;
+
+            hpTemp = playerMaxHp - playerHp;
 
             finalDamage1 = playerAd * DamageRank * enemyDf * criD * ED - enemyDd;
 
+            finalDamage2 = hpTemp * HpDamageBuffRank * enemyDf * criD * ED - enemyDd;
 
-            if(playerHp - DisHp >= 1)
-            {
-                player.GetComponent<CharacterStatus>().Hp -= DisHp;
-            }
-
-            finalDamage2 = DisHp * HpDamageBuffRank * enemyDf * criD * ED - enemyDd;
-
+            player.GetComponent<CharacterStatus>().Recover = hpTemp * 0.7f;
 
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage1;
             Invoke("AdditionalAttck", 0.2f);
-            Debug.Log(DisHp.ToString("F0") + "의 체력을 잃고, " + finalDamage2.ToString("F0") + "의 추가 피해와 " + finalDamage1.ToString("F0") + "의 물리피해를 입힙니다.");
+            Debug.Log((hpTemp * 0.7f).ToString("F0") + "의 체력을 회복하고, " + finalDamage2.ToString("F0") + "의 추가 피해와 " + finalDamage1.ToString("F0") + "의 물리피해를 입힙니다.");
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skill = false;
             Destroy(gameObject, 0.3f);
@@ -104,3 +103,4 @@ public class SelfDamageAttack : MonoBehaviour
         enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage2;
     }
 }
+

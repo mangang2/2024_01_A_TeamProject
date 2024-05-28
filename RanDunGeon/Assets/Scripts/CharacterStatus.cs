@@ -9,8 +9,10 @@ public class CharacterStatus : MonoBehaviour
     public GameObject TurnManager;
     public Text HpText;
     public Slider HpBar;
+    public Slider ShieldBar;
     public GameObject RecoveryAmount;
     public GameObject DamageAmount;
+    public GameObject ShieldAmount;
 
     public float Recover;
     public float FinalDamage;
@@ -84,6 +86,10 @@ public class CharacterStatus : MonoBehaviour
     [Header("지속피해 데미지 증가")]
     public float EnhanceDotsD;
 
+    [Header("쉴드")]
+    public float Shield;
+    public int ShieldTurn;
+
     private bool TurnDown = true;
 
     // Start is called before the first frame update
@@ -119,6 +125,7 @@ public class CharacterStatus : MonoBehaviour
                 if (CriDamageDebuffTrun > 0) CriDamageDebuffTrun--;
                 if (EnhanceDBuffTurn > 0) EnhanceDBuffTurn--;
                 if (EnhanceDDebuffTurn > 0) EnhanceDDebuffTurn--;
+                if (ShieldTurn > 0) ShieldTurn--;
                 TurnDown = false;
             }
 
@@ -140,6 +147,7 @@ public class CharacterStatus : MonoBehaviour
                 if (CriDamageDebuffTrun > 0) CriDamageDebuffTrun--;
                 if (EnhanceDBuffTurn > 0) EnhanceDBuffTurn--;
                 if (EnhanceDDebuffTurn > 0) EnhanceDDebuffTurn--;
+                if (ShieldTurn > 0) ShieldTurn--;
                 StartCoroutine(checkDotsDamage());
                 TurnDown = false;
             }
@@ -155,17 +163,47 @@ public class CharacterStatus : MonoBehaviour
 
         if(FinalDamage != 0)
         {
-            DamageAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
-            Instantiate(DamageAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
-            Hp -= FinalDamage;
-            FinalDamage = 0;
+            if (Shield > 0)
+            {
+                float damageTemp = Shield - FinalDamage;
+                Debug.Log(damageTemp);
+                if (damageTemp >= 0)
+                {
+                    ShieldAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
+                    Instantiate(ShieldAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
+                    Shield -= FinalDamage;
+                    FinalDamage = 0;
+                }
+                else if (damageTemp < 0)
+                {
+                    ShieldAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
+                    Instantiate(ShieldAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
+                    Shield = 0;
+                    ShieldTurn = 0;
+                    DamageAmount.GetComponent<TextMeshPro>().text = (FinalDamage - Shield).ToString("F0");
+                    Instantiate(DamageAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
+                    Hp -= FinalDamage - Shield;
+                    FinalDamage = 0;
+
+                }
+            }
+            else
+            {
+                DamageAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
+                Instantiate(DamageAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
+                Hp -= FinalDamage;
+                FinalDamage = 0;
+            }
         }
 
         if(Recover != 0)
         {
             RecoveryAmount.GetComponent<TextMeshPro>().text = Recover.ToString("F0");
             Instantiate(RecoveryAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
-            Hp += Recover;
+            if (Hp + Recover <= MaxHp)
+                Hp += Recover;
+            else
+                Hp = MaxHp;
             Recover = 0;
         }
 
@@ -174,9 +212,19 @@ public class CharacterStatus : MonoBehaviour
             HpText.text = "Hp : " + Hp.ToString("F0");
             HpBar.value = Hp / MaxHp;
         }
-        else if (Hp < 0) 
+        else if (Hp <= 0) 
         {
             HpText.text = "Die";
+        }
+
+        if(Shield > 0)
+        {
+            ShieldBar.gameObject.SetActive(true);
+            ShieldBar.value = Shield / MaxHp;
+        }
+        else
+        {
+            ShieldBar.gameObject.SetActive(false);
         }
 
         if (AdBuffTurn == 0) AdBuff = 1;
@@ -200,6 +248,8 @@ public class CharacterStatus : MonoBehaviour
         if (EnhanceDBuffTurn == 0) EnhanceDBuff = 0;
         if (EnhanceDBuffTurn == 0) EnhanceDDebuff = 0;
         EnhanceDamage = 100 + DefaultEnhanceD + EnhanceDAdd + EnhanceDBuff - EnhanceDDebuff;
+
+        if (ShieldTurn == 0) Shield = 0;
     }
 
     private IEnumerator checkDotsDamage()
