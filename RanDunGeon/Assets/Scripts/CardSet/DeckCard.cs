@@ -21,24 +21,7 @@ public class DeckCard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DeckManager = GameObject.Find("DeckManager");
-        GM = GameManager.Instance;
-        CardType = GM.GetComponent<GameManager>().Card[DeckNum - 1];
-
-        if(CardType.GetComponent<CardState>().Unlock ==false )
-        {
-            CardType = null;
-        }
-
-        if (CardType != null)
-        {
-            textBox.text = CardType.name.ToString();
-        }
-        else
-        {
-            textBox.text = "null";
-        }
-        CardSelectCavas.GetComponent<CanvasGroup>().alpha = 0;
+        Invoke("LoadCard", 0.2f);
     }
 
     
@@ -71,5 +54,27 @@ public class DeckCard : MonoBehaviour
         {
             textBox.text = "null";
         }
+    }
+
+    private void LoadCard()
+    {
+        DeckManager = GameObject.Find("DeckManager");
+        GM = GameManager.Instance;
+        CardType = GM.GetComponent<GameManager>().Card[DeckNum - 1];
+
+        if (CardType.GetComponent<CardState>().Unlock == false)
+        {
+            CardType = null;
+        }
+
+        if (CardType != null)
+        {
+            textBox.text = CardType.name.ToString();
+        }
+        else
+        {
+            textBox.text = "null";
+        }
+        CardSelectCavas.GetComponent<CanvasGroup>().alpha = 0;
     }
 }

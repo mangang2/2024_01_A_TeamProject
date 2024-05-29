@@ -11,18 +11,10 @@
         false
     ],
     "Char_1_Card": [
-        {
-            "instanceID": 24162
-        },
-        {
-            "instanceID": 24144
-        },
-        {
-            "instanceID": 24154
-        },
-        {
-            "instanceID": 24152
-        }
+        1,
+        2,
+        3,
+        4
     ],
     "Char_1_BaseStatus": [
         320.0,
