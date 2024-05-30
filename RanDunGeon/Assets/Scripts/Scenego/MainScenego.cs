@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainScenee : MonoBehaviour
+public class MainScenego : MonoBehaviour
 {
     public void MainScene()
     {
-        SceneManager.LoadScene("Stage");
+        SceneManager.LoadScene("MainScene");
     }
     // Start is called before the first frame update
     void Start()

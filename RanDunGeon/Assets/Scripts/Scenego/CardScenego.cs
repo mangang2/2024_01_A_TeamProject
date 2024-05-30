@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class exit : MonoBehaviour
+public class CardScenego : MonoBehaviour
 {
     public void MainScene()
     {
-        SceneManager.LoadScene("Stage");
+        SceneManager.LoadScene("CardSet");
     }
     // Start is called before the first frame update
     void Start()
