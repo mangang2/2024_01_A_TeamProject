@@ -31,7 +31,7 @@ public class TileSet : MonoBehaviour
     {
         int cellNum = 0;
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 9; i++)
         {
 
             for (int n = 0; n < i + 3; n++)
