@@ -53,7 +53,10 @@ public class ItemCellButton : MonoBehaviour
             CellImage.sprite = ItemSprites[itemstatus.ItemType];
         }
         else if (Useable)
+        {
             CellImage.sprite = ItemSprites[6];
+            text.text = "";
+        }
         else
         {
             CellImage.sprite = ItemSprites[7];
