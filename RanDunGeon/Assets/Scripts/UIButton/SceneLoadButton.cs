@@ -22,6 +22,7 @@ public class SceneLoadButton : MonoBehaviour
 
     public void ClickOn()
     {
+        //GameManager.Instance.SaveData();
         if(needChecking)
         {
             CheckUI.GetComponent<CheckUI>().SendInfo(SceneName, InfoText);

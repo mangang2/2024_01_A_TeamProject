@@ -97,7 +97,7 @@ public class CharacterStatus : MonoBehaviour
     {
         if (gameObject.transform.tag == "Player")
         {
-            Invoke("LoadStatus",0.1f);
+            LoadStatus();
         }
         else
         {

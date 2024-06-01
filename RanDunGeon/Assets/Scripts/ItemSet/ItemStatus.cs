@@ -92,14 +92,12 @@ public class ItemStatus : MonoBehaviour
         GameManager GM = GameManager.Instance;
         if (this.Used)
         {
-            Debug.Log("∫Ò»∞º∫»≠ µ ");
             this.Used = false;
             Origin.Used = false;
             GM.UsingItemCheck();
         }
         else if(!this.Used && GM.NowUsingItemCount < (GM.CharLevel[GM.NowChar - 1] - 10))
         {
-            Debug.Log("»∞º∫»≠ µ ");
             this.Used = true;
             Origin.Used = true;
             GM.UsingItemCheck();

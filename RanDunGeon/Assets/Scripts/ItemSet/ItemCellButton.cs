@@ -24,6 +24,7 @@ public class ItemCellButton : MonoBehaviour
         button.onClick.AddListener(OnClick);
         text = transform.parent.GetComponentInChildren<Text>();
         GM = GameManager.Instance;
+        GM.UsingItemCheck();
         ItemListGroup = GameObject.Find("FindItemListGroup").GetComponent<FindGroup>().group;
         CellImage = transform.parent.GetChild(0).GetComponent<Image>();
     }

@@ -51,7 +51,7 @@ public class LoadSceneController : MonoBehaviour
             if(op.progress >= 0.9f && temp == false)
             {
                 temp = true;
-                Invoke("LoadSceneDone", 3);
+                Invoke("LoadSceneDone", UnityEngine.Random.Range(0.5f,2.5f));
                 
             }
 

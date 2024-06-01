@@ -271,7 +271,7 @@ public class GameManager : MonoBehaviour
             ItemList[L].Used = gameData.Char_1_ItemUsed[L];
         }
 
-        for (int c = 0; c < ItemList.Count; c++)
+        for (int c = 0; c < CardList.Count; c++)
         {
             CardList[c].GetComponent<CardState>().Unlock = gameData.CardUnlock[c]; 
         }
