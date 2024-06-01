@@ -106,8 +106,7 @@ public class GameManager : MonoBehaviour
 
     public void UsingItemCheck()
     {
-        ItemStatusPer = new float[3];
-        ItemStatusAdd = new float[6];
+
 
         List<ItemStatus> NowItemList = new List<ItemStatus>();
         UsingItemList.Clear();
@@ -280,42 +279,23 @@ public class GameManager : MonoBehaviour
 
     private void Char_1_SetStatus()
     {
-    
-        if (CharLevel[0] > 1)
-        {
-            int LevelDiveide1 = Mathf.FloorToInt(CharLevel[0] / 10);
-            DefaultStatus[0] = BaseStatus[0] + CharLevel[0] * 10;
-            DefaultStatus[1] = BaseStatus[1] + CharLevel[0] * 10;
-            DefaultStatus[2] = BaseStatus[2] + CharLevel[0] * 10;
-            DefaultStatus[3] = BaseStatus[3] + LevelDiveide1 * 5;
-            DefaultStatus[4] = BaseStatus[4] + LevelDiveide1 * 10;
-            DefaultStatus[5] = BaseStatus[5];
-        }
-        else
-        {
-            DefaultStatus[0] = BaseStatus[0];
-            DefaultStatus[1] = BaseStatus[1];
-            DefaultStatus[2] = BaseStatus[2];
-            DefaultStatus[3] = BaseStatus[3];
-            DefaultStatus[4] = BaseStatus[4];
-            DefaultStatus[5] = BaseStatus[5];
-        }
+        int LevelDiveide1 = Mathf.FloorToInt(CharLevel[0] / 10);
+        DefaultStatus[0] = BaseStatus[0] + (CharLevel[0] - 1) * 10;
+        DefaultStatus[1] = BaseStatus[1] + (CharLevel[0] - 1) * 10;
+        DefaultStatus[2] = BaseStatus[2] + (CharLevel[0] - 1) * 10;
+        DefaultStatus[3] = BaseStatus[3] + LevelDiveide1 * 5;
+        DefaultStatus[4] = BaseStatus[4] + LevelDiveide1 * 10;
+        DefaultStatus[5] = BaseStatus[5];
+
 
         int LevelDiveide2 = Mathf.FloorToInt(CharLevel[0] / 5);
-        StatusPer[0] = (100 + LevelDiveide2 * 3 + ItemStatusPer[0]) * 0.01f;
-        StatusPer[1] = (100 + LevelDiveide2 * 3 + ItemStatusPer[1]) * 0.01f;
-        StatusPer[2] = (100 + LevelDiveide2 * 3 + ItemStatusPer[2]) * 0.01f;
+        StatusPer[0] = (LevelDiveide2 * 3 + ItemStatusPer[0]) * 0.01f;
+        StatusPer[1] = (LevelDiveide2 * 3 + ItemStatusPer[1]) * 0.01f;
+        StatusPer[2] = (LevelDiveide2 * 3 + ItemStatusPer[2]) * 0.01f;
 
-        if (CharLevel[0] > 1)
-        {
-            StatusAdd[0] = CharLevel[0] * 10 + ItemStatusAdd[0];
-            StatusAdd[1] = CharLevel[0] * 5 + ItemStatusAdd[1];
-        }
-        else
-        {
-            StatusAdd[0] = ItemStatusAdd[0];
-            StatusAdd[1] = ItemStatusAdd[1];
-        }
+
+        StatusAdd[0] = (CharLevel[0] - 1) * 10 + ItemStatusAdd[0];
+        StatusAdd[1] = (CharLevel[0] - 1) * 5 + ItemStatusAdd[1];
         StatusAdd[2] = ItemStatusAdd[2];
         StatusAdd[3] = ItemStatusAdd[3];
         StatusAdd[4] = ItemStatusAdd[4];
