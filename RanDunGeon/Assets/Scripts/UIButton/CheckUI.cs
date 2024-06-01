@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CheckUI : MonoBehaviour
 {
@@ -36,9 +37,14 @@ public class CheckUI : MonoBehaviour
 
     public void YesButton()
     {
-        if(nextScene == "Quit")
+        Time.timeScale = 1;
+        if (nextScene == "Quit")
         {
             Application.Quit();
+        }
+        else if(nextScene == "Restart")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
         LoadSceneController.LoadScene(nextScene);

@@ -85,6 +85,7 @@ public class CardManager : MonoBehaviour
 
     private IEnumerator AddCard()
     {
+        AudioManager.instance.PlaySound("CardDraw");
         int cardType;
         float addCardCoolTime;
         cardType = Random.Range(0, 4);
@@ -93,7 +94,7 @@ public class CardManager : MonoBehaviour
  
         Instantiate(spawnCard, transform);
         
-        addCardCoolTime = 0.6f;
+        addCardCoolTime = 0.3f;
         while(addCardCoolTime >=0)
         {
             addCardCoolTime -= Time.deltaTime;
