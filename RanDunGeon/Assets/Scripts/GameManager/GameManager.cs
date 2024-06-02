@@ -78,6 +78,36 @@ public class GameManager : MonoBehaviour
         CardList.Sort(compare);
     }
 
+    private void Update()
+    {
+        NowUsingItemCount = UsingItemList.Count;
+
+
+        if (Input.GetKeyDown(KeyCode.Slash))
+        {
+            SaveData();
+        }
+
+        switch (NowChar)
+        {
+            case 1:
+                Char_1_SetStatus();
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public void ItemClear()
+    {
+        for(int i = 0; i < ItemList.Count; i++)
+        {
+            ItemList[i].Used = false;
+        }
+        UsingItemCheck();
+    }
+
     private int compare(GameObject a, GameObject b)
     {
         return a.GetComponent<CardState>().cardType < b.GetComponent<CardState>().cardType ? -1 : 1;
@@ -115,7 +145,7 @@ public class GameManager : MonoBehaviour
             NowItemList.Clear();
             for (int m = 0; m < ItemList.Count; m++)
             {
-                
+
                 if (ItemList[m].ItemType == i && ItemList[m].Used == true)
                 {
                     GameObject _temp = new GameObject("EX");
@@ -125,10 +155,10 @@ public class GameManager : MonoBehaviour
 
                     if (ItemList[m].ItemValue > 20000)
                     {
-                        if(i <3)
-                        ItemStatusPer[i] += (ItemList[m].ItemValue - 20000);
+                        if (i < 3)
+                            ItemStatusPer[i] += (ItemList[m].ItemValue - 20000);
                         else
-                        ItemStatusAdd[i] += (ItemList[m].ItemValue - 20000);
+                            ItemStatusAdd[i] += (ItemList[m].ItemValue - 20000);
                     }
                     else
                     {
@@ -138,9 +168,9 @@ public class GameManager : MonoBehaviour
                     Debug.Log("새로 추가되는 아이템 - " + _temp.GetComponent<ItemStatus>().ItemType.ToString() + " / " + _temp.GetComponent<ItemStatus>().ItemValue.ToString());
 
                     numTemp++;
-                    Destroy( _temp );
+                    Destroy(_temp);
                 }
-                
+
             }
 
 
@@ -150,23 +180,9 @@ public class GameManager : MonoBehaviour
             foreach (ItemStatus itemtemp in NowItemList)
             {
                 UsingItemList.Add(itemtemp);
-                for (int a = 0; a < UsingItemList.Count; a ++)
-                {
-                    Debug.Log("사용중 아이템 리스트 / " + UsingItemList[a].ItemValue.ToString() + " / 총 갯수 - " + UsingItemList.Count.ToString());
-                }
             }
-            
-        }
-        string texttemp;
-        texttemp = "";
 
-        for (int h = 0; h < ItemList.Count; h++)
-        {
-            if (ItemList[h].ItemType == 0)
-                texttemp += ItemList[h].ItemValue.ToString() + "(" + ItemList[h].Used + ") / ";
         }
-
-        Debug.Log("HP 전체 리스트 - " + texttemp );
     }
 
     private int compare(ItemStatus a, ItemStatus b)
@@ -174,26 +190,7 @@ public class GameManager : MonoBehaviour
         return a.ItemValue > b.ItemValue ? -1 : 1;
     }
 
-    private void Update()
-    {
-        NowUsingItemCount = UsingItemList.Count;
-
-
-        if (Input.GetKeyDown(KeyCode.Slash))
-        {
-            SaveData();
-        }
-
-        switch (NowChar)
-        {
-            case 1:
-                Char_1_SetStatus();
-                break;
-
-            default:
-                break;
-        }
-    }
+    
 
     public void LoadAllStatus()
     {

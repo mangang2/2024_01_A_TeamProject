@@ -9,6 +9,9 @@ public class MainCellButton : MonoBehaviour
 
     public GameObject ItemListGroup;
 
+    [SerializeField]
+    private GameObject CheckUI;
+
     private GameManager GM;
 
     private Button button;
@@ -26,7 +29,7 @@ public class MainCellButton : MonoBehaviour
         switch(CellNum)
         {
             case 0:
-                cellName = "Back";
+                cellName = "Clear";
                 break;
             case 1:
                 cellName = "HP";
@@ -71,7 +74,9 @@ public class MainCellButton : MonoBehaviour
         if (CellNum != 0)
             ItemListGroup.SetActive(true);
         else
-            GM.UsingItemCheck();
-        
+        {
+            CheckUI.SetActive(true);
+            CheckUI.GetComponent<CheckUI>().SendInfo("ItemClear", "Clear?");
+        }
     }
 }

@@ -46,6 +46,11 @@ public class CheckUI : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        else if (nextScene == "ItemClear")
+        {
+            gameObject.SetActive(false);
+            GameManager.Instance.ItemClear();
+        }
         else
         LoadSceneController.LoadScene(nextScene);
     }
