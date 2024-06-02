@@ -67,6 +67,15 @@ public class GameManager : MonoBehaviour
         DefaultStatus = new float[6];
         BaseStatus = new float[6];
         StatusAdd = new float[6];
+
+        CardList = new List<GameObject>();
+        var cardlist = Resources.LoadAll<GameObject>("Card");
+        foreach (GameObject c in cardlist)
+        {
+            CardList.Add(c);
+        }
+
+        CardList.Sort(compare);
     }
 
     private int compare(GameObject a, GameObject b)
@@ -77,18 +86,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CardList = new List<GameObject>();
         ItemList = new List<ItemStatusClass>();
-
-        var cardlist = Resources.LoadAll<GameObject>("Card");
-        foreach (GameObject c in cardlist)
-        {
-            CardList.Add(c);
-        }
-
-        CardList.Sort(compare);
-
-        LoadData();    
 
         if (File.Exists(path))
         {
@@ -248,7 +246,7 @@ public class GameManager : MonoBehaviour
         }
 
         gameData.CardUnlock.Clear();
-        for (int c = 0; c < ItemList.Count; c++)
+        for (int c = 0; c < CardList.Count; c++)
         {
             gameData.CardUnlock.Add(CardList[c].GetComponent<CardState>().Unlock);
         }
@@ -273,7 +271,15 @@ public class GameManager : MonoBehaviour
 
         for (int c = 0; c < CardList.Count; c++)
         {
-            CardList[c].GetComponent<CardState>().Unlock = gameData.CardUnlock[c]; 
+            if (c < gameData.CardUnlock.Count)
+            {
+                CardList[c].GetComponent<CardState>().Unlock = gameData.CardUnlock[c];
+            }
+            else
+            {
+                CardList[c].GetComponent<CardState>().Unlock = false;
+                gameData.CardUnlock.Add(false);
+            }
         }
     }
 
