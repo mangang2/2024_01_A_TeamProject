@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43821484, g: 0.48623484, b: 0.56651336, a: 1}
+  m_IndirectSpecularColor: {r: 0.43821454, g: 0.48623425, b: 0.566512, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -839,6 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 368215423}
+  ClickChecker: {fileID: 34537364}
 --- !u!1 &277280308
 GameObject:
   m_ObjectHideFlags: 0
