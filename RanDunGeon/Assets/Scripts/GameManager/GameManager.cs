@@ -140,6 +140,11 @@ public class GameManager : MonoBehaviour
         UsingItemList.Clear();
         for (int i = 0; i < 6; i++)
         {
+            if (i < 3)
+                ItemStatusPer[i] = 0;
+
+            ItemStatusAdd[i] = 0;
+
             int numTemp = 0;
 
             NowItemList.Clear();
