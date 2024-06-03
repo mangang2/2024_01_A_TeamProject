@@ -13,7 +13,7 @@ public class CharacterStatus : MonoBehaviour
     public GameObject RecoveryAmount;
     public GameObject DamageAmount;
     public GameObject ShieldAmount;
-
+    
     public float Recover;
     public float FinalDamage;
 
@@ -98,12 +98,6 @@ public class CharacterStatus : MonoBehaviour
         if (gameObject.transform.tag == "Player")
         {
             LoadStatus();
-        }
-        else
-        {
-            MaxHp = DefaultHp * (1 + HpPer * 0.01f) + HpAdd;
-            Hp = MaxHp;
-            HpBar.value = Hp / MaxHp;
         }
     }
 
@@ -297,4 +291,12 @@ public class CharacterStatus : MonoBehaviour
         Hp = MaxHp;
         HpBar.value = Hp / MaxHp;
     }
+
+    public void LoadHp()
+    {
+        MaxHp = DefaultHp * (1 + HpPer * 0.01f) + HpAdd;
+        Hp = MaxHp;
+        HpBar.value = Hp / MaxHp;
+    }
+
 }

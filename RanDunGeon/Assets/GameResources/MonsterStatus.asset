@@ -1,0 +1,213 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24de765830a864d6da273b01ae1123ae, type: 3}
+  m_Name: MonsterStatus
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: Chapter 0
+    list:
+    - Index: 1
+      LV: 1
+      HP: 320
+      AD: 10
+      Df: 10
+      CriP: 0
+      CriD: 0
+      ED: 0
+      DotsED: 0
+      Gold: 1000
+      ItemRank: 0
+      Image: 1
+  - name: Chapter 1
+    list:
+    - Index: 1
+      LV: 5
+      HP: 1000
+      AD: 15
+      Df: 30
+      CriP: 0
+      CriD: 0
+      ED: 0
+      DotsED: 0
+      Gold: 1500
+      ItemRank: 0
+      Image: 11
+    - Index: 2
+      LV: 10
+      HP: 2000
+      AD: 25
+      Df: 30
+      CriP: 0
+      CriD: 0
+      ED: 0
+      DotsED: 0
+      Gold: 2000
+      ItemRank: 0
+      Image: 11
+    - Index: 3
+      LV: 15
+      HP: 4000
+      AD: 55
+      Df: 100
+      CriP: 0
+      CriD: 0
+      ED: 0
+      DotsED: 0
+      Gold: 4000
+      ItemRank: 1
+      Image: 12
+    - Index: 4
+      LV: 20
+      HP: 10000
+      AD: 100
+      Df: 100
+      CriP: 15
+      CriD: 25
+      ED: 0
+      DotsED: 0
+      Gold: 10000
+      ItemRank: 1
+      Image: 12
+    - Index: 5
+      LV: 30
+      HP: 16000
+      AD: 150
+      Df: 150
+      CriP: 25
+      CriD: 50
+      ED: 0
+      DotsED: 0
+      Gold: 16000
+      ItemRank: 2
+      Image: 13
+  - name: Chapter 2
+    list:
+    - Index: 1
+      LV: 30
+      HP: 18000
+      AD: 150
+      Df: 150
+      CriP: 25
+      CriD: 50
+      ED: 0
+      DotsED: 0
+      Gold: 15000
+      ItemRank: 2
+      Image: 21
+    - Index: 2
+      LV: 30
+      HP: 20000
+      AD: 180
+      Df: 150
+      CriP: 25
+      CriD: 50
+      ED: 0
+      DotsED: 0
+      Gold: 20000
+      ItemRank: 2
+      Image: 21
+    - Index: 3
+      LV: 30
+      HP: 24000
+      AD: 210
+      Df: 200
+      CriP: 25
+      CriD: 50
+      ED: 0
+      DotsED: 0
+      Gold: 24000
+      ItemRank: 2
+      Image: 21
+    - Index: 4
+      LV: 30
+      HP: 27000
+      AD: 300
+      Df: 200
+      CriP: 25
+      CriD: 50
+      ED: 0
+      DotsED: 0
+      Gold: 27000
+      ItemRank: 2
+      Image: 21
+    - Index: 5
+      LV: 40
+      HP: 30000
+      AD: 350
+      Df: 300
+      CriP: 25
+      CriD: 50
+      ED: 0
+      DotsED: 0
+      Gold: 30000
+      ItemRank: 3
+      Image: 22
+    - Index: 6
+      LV: 40
+      HP: 40000
+      AD: 600
+      Df: 300
+      CriP: 0
+      CriD: 0
+      ED: 0
+      DotsED: 15
+      Gold: 40000
+      ItemRank: 3
+      Image: 22
+    - Index: 7
+      LV: 40
+      HP: 55000
+      AD: 500
+      Df: 350
+      CriP: 25
+      CriD: 50
+      ED: 5
+      DotsED: 0
+      Gold: 55000
+      ItemRank: 3
+      Image: 22
+    - Index: 8
+      LV: 40
+      HP: 75000
+      AD: 600
+      Df: 400
+      CriP: 25
+      CriD: 50
+      ED: 5
+      DotsED: 0
+      Gold: 75000
+      ItemRank: 3
+      Image: 22
+    - Index: 9
+      LV: 40
+      HP: 100000
+      AD: 700
+      Df: 450
+      CriP: 25
+      CriD: 50
+      ED: 10
+      DotsED: 0
+      Gold: 100000
+      ItemRank: 4
+      Image: 22
+    - Index: 10
+      LV: 50
+      HP: 160000
+      AD: 1000
+      Df: 500
+      CriP: 25
+      CriD: 75
+      ED: 15
+      DotsED: 0
+      Gold: 160000
+      ItemRank: 4
+      Image: 23
