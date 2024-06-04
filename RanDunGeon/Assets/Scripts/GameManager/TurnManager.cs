@@ -46,12 +46,14 @@ public class TurnManager : MonoBehaviour
         if(Player.Hp <= 0 && Playing)
         {
             StopGame();
+            OverUI.SetActive(true);
             OverUI.GetComponent<GameOverUI>().Lose();
         }
 
         if(Enemy.Hp <= 0 && Playing)
         {
             StopGame();
+            OverUI.SetActive(true);
             OverUI.GetComponent<GameOverUI>().Win();
         }
     }

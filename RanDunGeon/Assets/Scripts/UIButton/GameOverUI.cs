@@ -5,8 +5,9 @@ using TMPro;
 
 public class GameOverUI : MonoBehaviour
 {
-    public TextMeshPro text;
+    public TextMeshProUGUI text;
 
+    [SerializeField]
     private StageManager stageManager;
 
     private GameManager GM;
@@ -36,6 +37,7 @@ public class GameOverUI : MonoBehaviour
 
     private void reward()
     {
+        GM = GameManager.Instance;
         GM.Gold += stageManager.gold;
     }
 }

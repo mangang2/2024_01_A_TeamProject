@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public int NowUsingItemCount = 0;
 
-    public static GameManager Instance { get; private set; }
+    public static GameManager Instance;
 
     private GameData gameData = new GameData();
 
