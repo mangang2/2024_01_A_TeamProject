@@ -27,6 +27,7 @@ MonoBehaviour:
       Gold: 1000
       ItemRank: 0
       Image: 1
+      RewardCard: 0
   - name: Chapter 1
     list:
     - Index: 1
@@ -41,6 +42,7 @@ MonoBehaviour:
       Gold: 1500
       ItemRank: 0
       Image: 11
+      RewardCard: 0
     - Index: 2
       LV: 10
       HP: 2000
@@ -53,6 +55,7 @@ MonoBehaviour:
       Gold: 2000
       ItemRank: 0
       Image: 11
+      RewardCard: 0
     - Index: 3
       LV: 15
       HP: 4000
@@ -65,6 +68,7 @@ MonoBehaviour:
       Gold: 4000
       ItemRank: 1
       Image: 12
+      RewardCard: 6
     - Index: 4
       LV: 20
       HP: 10000
@@ -77,6 +81,7 @@ MonoBehaviour:
       Gold: 10000
       ItemRank: 1
       Image: 12
+      RewardCard: 0
     - Index: 5
       LV: 30
       HP: 16000
@@ -89,6 +94,7 @@ MonoBehaviour:
       Gold: 16000
       ItemRank: 2
       Image: 13
+      RewardCard: 10
   - name: Chapter 2
     list:
     - Index: 1
@@ -103,6 +109,7 @@ MonoBehaviour:
       Gold: 15000
       ItemRank: 2
       Image: 21
+      RewardCard: 0
     - Index: 2
       LV: 30
       HP: 20000
@@ -115,6 +122,7 @@ MonoBehaviour:
       Gold: 20000
       ItemRank: 2
       Image: 21
+      RewardCard: 0
     - Index: 3
       LV: 30
       HP: 24000
@@ -127,6 +135,7 @@ MonoBehaviour:
       Gold: 24000
       ItemRank: 2
       Image: 21
+      RewardCard: 0
     - Index: 4
       LV: 30
       HP: 27000
@@ -139,6 +148,7 @@ MonoBehaviour:
       Gold: 27000
       ItemRank: 2
       Image: 21
+      RewardCard: 0
     - Index: 5
       LV: 40
       HP: 30000
@@ -151,6 +161,7 @@ MonoBehaviour:
       Gold: 30000
       ItemRank: 3
       Image: 22
+      RewardCard: 0
     - Index: 6
       LV: 40
       HP: 40000
@@ -163,6 +174,7 @@ MonoBehaviour:
       Gold: 40000
       ItemRank: 3
       Image: 22
+      RewardCard: 0
     - Index: 7
       LV: 40
       HP: 55000
@@ -175,6 +187,7 @@ MonoBehaviour:
       Gold: 55000
       ItemRank: 3
       Image: 22
+      RewardCard: 0
     - Index: 8
       LV: 40
       HP: 75000
@@ -187,6 +200,7 @@ MonoBehaviour:
       Gold: 75000
       ItemRank: 3
       Image: 22
+      RewardCard: 0
     - Index: 9
       LV: 40
       HP: 100000
@@ -199,6 +213,7 @@ MonoBehaviour:
       Gold: 100000
       ItemRank: 4
       Image: 22
+      RewardCard: 0
     - Index: 10
       LV: 50
       HP: 160000
@@ -211,3 +226,4 @@ MonoBehaviour:
       Gold: 160000
       ItemRank: 4
       Image: 23
+      RewardCard: 0

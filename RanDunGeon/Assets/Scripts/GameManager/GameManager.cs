@@ -338,11 +338,6 @@ public class GameData
 
 }
 
-public class MonsterData
-{
-
-}
-
 public class ItemStatusClass
 {
     public int ItemType;

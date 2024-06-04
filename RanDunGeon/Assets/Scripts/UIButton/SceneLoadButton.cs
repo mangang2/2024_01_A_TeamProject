@@ -32,10 +32,19 @@ public class SceneLoadButton : MonoBehaviour
         {
             if(needLoading)
             {
+                if (SceneName == "Restart")
+                {
+                    LoadSceneController.LoadScene(SceneManager.GetActiveScene().name);
+                }
+                else
                 LoadSceneController.LoadScene(SceneName);
             }
             else
             {
+                if (SceneName == "Restart")
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
                 SceneManager.LoadScene(SceneName);
             }
         }

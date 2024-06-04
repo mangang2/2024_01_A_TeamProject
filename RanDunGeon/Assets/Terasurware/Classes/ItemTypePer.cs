@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MonsterStatus : ScriptableObject
+public class ItemTypePer : ScriptableObject
 {	
 	public List<Sheet> sheets = new List<Sheet> ();
 
@@ -17,19 +17,16 @@ public class MonsterStatus : ScriptableObject
 	public class Param
 	{
 		
-		public int Index;
-		public int LV;
-		public float HP;
-		public float AD;
-		public float Df;
-		public float CriP;
-		public float CriD;
-		public float ED;
-		public float DotsED;
-		public int Gold;
-		public int ItemRank;
-		public int Image;
-		public int RewardCard;
+		public int RewardRank;
+		public float HPPer;
+		public float ADPer;
+		public float DFPer;
+		public float HPAdd;
+		public float ADAdd;
+		public float DfAdd;
+		public float CriPAdd;
+		public float CriDAdd;
+		public float EDAdd;
 	}
 }
 

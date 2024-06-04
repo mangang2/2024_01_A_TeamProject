@@ -62,6 +62,7 @@ public class MonsterStatus_importer : AssetPostprocessor {
 					cell = row.GetCell(9); p.Gold = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(10); p.ItemRank = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(11); p.Image = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(12); p.RewardCard = (int)(cell == null ? 0 : cell.NumericCellValue);
 						s.list.Add (p);
 					}
 					data.sheets.Add(s);

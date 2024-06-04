@@ -693,7 +693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -251}
+  m_AnchoredPosition: {x: 0, y: -362}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &141843659
@@ -709,8 +709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 1889838597}
-  needChecking: 1
-  needLoading: 0
+  needChecking: 0
+  needLoading: 1
   SceneName: Stage
   InfoText: OutStage?
 --- !u!114 &141843660
@@ -3547,6 +3547,66 @@ MonoBehaviour:
   needLoading: 0
   SceneName: Restart
   InfoText: Restart?
+--- !u!1 &1130227976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130227977}
+  - component: {fileID: 1130227978}
+  m_Layer: 5
+  m_Name: RewardLayout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1130227977
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130227976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1270026507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -126}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1130227978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130227976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 1
+  m_CellSize: {x: 150, y: 150}
+  m_Spacing: {x: 10, y: 0}
+  m_Constraint: 2
+  m_ConstraintCount: 1
 --- !u!1 &1204981356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,6 +4059,7 @@ RectTransform:
   m_Children:
   - {fileID: 1522176165}
   - {fileID: 1330912630}
+  - {fileID: 1130227977}
   - {fileID: 141843658}
   - {fileID: 1808747244}
   - {fileID: 1743722948}
@@ -4022,6 +4083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1330912631}
+  rewardLayout: {fileID: 1130227976}
+  rewardPrefabs: {fileID: 2943331093845647771, guid: e20ba90b2ea314f17ab2d201292dd51d, type: 3}
   stageManager: {fileID: 2002313767}
 --- !u!1 &1275788388
 GameObject:
@@ -5535,7 +5598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: -251}
+  m_AnchoredPosition: {x: 250, y: -362}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1743722949
@@ -5551,8 +5614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 1889838597}
-  needChecking: 1
-  needLoading: 0
+  needChecking: 0
+  needLoading: 1
   SceneName: Restart
   InfoText: Restart?
 --- !u!114 &1743722950
@@ -5797,7 +5860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: -251}
+  m_AnchoredPosition: {x: -250, y: -362}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808747245
@@ -6327,9 +6390,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 0
   itemRank: 0
+  rewardCard: 0
   enemy: {fileID: 737671621}
   player: {fileID: 545915828}
   monsterStatus: {fileID: 11400000, guid: f3d5ec8550d6c4c078c6d563f69bdf12, type: 2}
+  itemTypePer: {fileID: 11400000, guid: 14d178b3f8c5f4f0da48592f26040de7, type: 2}
+  itemRankPer: {fileID: 11400000, guid: ffb1877ec13874dd7a58ce41eced55b2, type: 2}
+  itemStatusPer: {fileID: 11400000, guid: 4ff77d27bf8ac4f83b7384a991022f11, type: 2}
 --- !u!4 &2002313768
 Transform:
   m_ObjectHideFlags: 0

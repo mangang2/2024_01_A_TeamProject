@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23437df863db542a5a020784d6317f4e, type: 3}
+  m_Name: ItemStatusPer
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: ItemStatusPer
+    list:
+    - ItemType: HPPer
+      ItemRank1: 3.2
+      ItemRank2: 5.4
+      ItemRank3: 9.2
+      ItemRank4: 12.2
+    - ItemType: ADPer
+      ItemRank1: 2.8
+      ItemRank2: 4.6
+      ItemRank3: 6.2
+      ItemRank4: 9.8
+    - ItemType: DFPer
+      ItemRank1: 2.2
+      ItemRank2: 4.4
+      ItemRank3: 6.2
+      ItemRank4: 8.4
+    - ItemType: HPAdd
+      ItemRank1: 12
+      ItemRank2: 24
+      ItemRank3: 36
+      ItemRank4: 48
+    - ItemType: ADAdd
+      ItemRank1: 8
+      ItemRank2: 16
+      ItemRank3: 24
+      ItemRank4: 32
+    - ItemType: DFAdd
+      ItemRank1: 8
+      ItemRank2: 18
+      ItemRank3: 28
+      ItemRank4: 38
+    - ItemType: CriPAdd
+      ItemRank1: 1.8
+      ItemRank2: 2.8
+      ItemRank3: 3.2
+      ItemRank4: 4.8
+    - ItemType: CriDAdd
+      ItemRank1: 3.8
+      ItemRank2: 4.8
+      ItemRank3: 6.2
+      ItemRank4: 7.8
+    - ItemType: EDAdd
+      ItemRank1: 0.8
+      ItemRank2: 1.6
+      ItemRank3: 2.8
+      ItemRank4: 4.8

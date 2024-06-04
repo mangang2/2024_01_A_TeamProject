@@ -18,7 +18,7 @@ public class TurnManager : MonoBehaviour
     public bool pTurn;
     public bool eTurn;
 
-    public bool Playing = true;
+    public bool Playing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +57,7 @@ public class TurnManager : MonoBehaviour
             OverUI.GetComponent<GameOverUI>().Win();
         }
     }
+    
 
     private void StopGame()
     {

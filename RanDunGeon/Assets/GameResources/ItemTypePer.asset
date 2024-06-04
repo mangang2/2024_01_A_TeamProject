@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46539377f8804f6885d4c03dc2e5b6d, type: 3}
+  m_Name: ItemTypePer
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: ItemTypePer
+    list:
+    - RewardRank: 1
+      HPPer: 0
+      ADPer: 0
+      DFPer: 0
+      HPAdd: 33
+      ADAdd: 34
+      DfAdd: 33
+      CriPAdd: 0
+      CriDAdd: 0
+      EDAdd: 0
+    - RewardRank: 2
+      HPPer: 8
+      ADPer: 9
+      DFPer: 6
+      HPAdd: 25
+      ADAdd: 34
+      DfAdd: 18
+      CriPAdd: 0
+      CriDAdd: 0
+      EDAdd: 0
+    - RewardRank: 3
+      HPPer: 20
+      ADPer: 23
+      DFPer: 17
+      HPAdd: 10
+      ADAdd: 10
+      DfAdd: 5
+      CriPAdd: 6
+      CriDAdd: 6
+      EDAdd: 3
+    - RewardRank: 4
+      HPPer: 25
+      ADPer: 29
+      DFPer: 19
+      HPAdd: 1
+      ADAdd: 1
+      DfAdd: 1
+      CriPAdd: 9
+      CriDAdd: 9
+      EDAdd: 6
