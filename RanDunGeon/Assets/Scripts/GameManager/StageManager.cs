@@ -9,6 +9,8 @@ public class StageManager : MonoBehaviour
 
     [SerializeField]
     private GameObject enemy;
+    [SerializeField]
+    private GameObject player;
     private CharacterStatus enemyStasus;
     [SerializeField]
     private MonsterStatus monsterStatus;

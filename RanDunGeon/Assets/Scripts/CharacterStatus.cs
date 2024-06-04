@@ -262,7 +262,7 @@ public class CharacterStatus : MonoBehaviour
         yield break;
     }
 
-    private void LoadStatus()
+    public void LoadStatus()
     {
         GameManager temp = GameManager.Instance;
         switch (CharNum)

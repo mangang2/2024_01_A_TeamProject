@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     private GameObject enemy;
     private bool skillWork = false;
     private int EWCount;
+    private int skillNum;
 
 
     // Start is called before the first frame update
@@ -26,21 +27,34 @@ public class EnemyAI : MonoBehaviour
         if (EWCount == 0)
         {
             eTurn = false;
+            StopAllCoroutines();
         }
 
-        int skillNum;
+        
 
         EWCount = TurnManager.GetComponent<TurnManager>().EWorkCount;
 
         if (skillWork == false && EWCount > 0 && eTurn == true)
         {
-            skillNum = Random.Range(1, 4);
-
-            if (skillNum == 1) Invoke("Skill_1", 0.5f);
-            if (skillNum == 2) Invoke("Skill_2", 0.5f);
-            if (skillNum == 3) Invoke("Skill_3", 0.5f);
             skillWork = true;
+            StartCoroutine(UseSkill());
         }
+    }
+
+    private IEnumerator UseSkill()
+    {
+        float timecheck = 0;
+        while(timecheck < 0.5f)
+        {
+            timecheck += Time.deltaTime;
+            yield return null;
+        }
+
+        skillNum = Random.Range(1, 4);
+
+        if (skillNum == 1) Skill_1();
+        if (skillNum == 2) Skill_2();
+        if (skillNum == 3) Skill_3();
     }
 
     private void Skill_1()

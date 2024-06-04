@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
 
     public int nowChapter,nowStage;
 
+    public long Gold = 0;
+
     private string path = Path.Combine(Application.dataPath, "TestSaveData.json");
     //private string monsterPath = Path.
 
