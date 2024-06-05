@@ -27,7 +27,7 @@ public class NormalShield : MonoBehaviour
 
         if (GetComponent<CardState>().skill == true)
         {
-            playerDf = player.GetComponent<CharacterStatus>().Defense;
+            playerDf = player.GetComponent<CharacterStatus>().LastDefense;
             playerShield = player.GetComponent<CharacterStatus>().Shield;
             CardRank = GetComponent<CardState>().cardRank;
 

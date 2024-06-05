@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 1203089990}
   - component: {fileID: 1203089989}
   m_Layer: 5
-  m_Name: CharacterSetting (1)
+  m_Name: Store
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 0}
   needChecking: 0
-  needLoading: 0
+  needLoading: 1
   SceneName: Store
   InfoText: 
 --- !u!114 &1203089990
@@ -772,6 +772,11 @@ MonoBehaviour:
   NowUsingItemCount: 0
   nowChapter: 0
   nowStage: 1
+  StoreCard:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  BeStoreCard: 0
   Gold: 0
 --- !u!4 &1230509982
 Transform:

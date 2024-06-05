@@ -46,11 +46,24 @@
         20004.80078125
     ],
     "Char_1_ItemUsed": [
-        true,
-        true,
-        true,
-        true,
-        true,
-        true
-    ]
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "Gold": 0,
+    "StoreCard": [
+        {
+            "instanceID": 0
+        },
+        {
+            "instanceID": 0
+        },
+        {
+            "instanceID": 0
+        }
+    ],
+    "BeStore": false
 }

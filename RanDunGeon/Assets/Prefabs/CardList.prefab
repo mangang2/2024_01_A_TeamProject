@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9af3a34ec5c41b6b8350bdfc51d4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardListLoader: {fileID: 0}
   CardType: {fileID: 5293796684268122817, guid: d52fc99b66493a44780af6eaef8be42d, type: 3}
   nameText: {fileID: 2070572491714347586}
   Clicking: 0
@@ -250,7 +251,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 9c77076ed7c2842ddb811784fd65826a, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0

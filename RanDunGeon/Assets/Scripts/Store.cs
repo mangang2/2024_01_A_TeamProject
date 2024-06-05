@@ -31,22 +31,20 @@ public class Store : MonoBehaviour
     { 
         GM = GameManager.Instance;
 
+        cardList = GM.CardList;
         if (GM.BeStoreCard == true)
         {
-            nowStoreCard = GM.StoreCard;
+            LoadCard();
         }
         else
         {
             addCard();
         }
-
-        cardList = GM.CardList;
-        
         StopAllCoroutines();
         StartCoroutine(typingMotion("사장님", "어서오게나"));
     }
 
-    private void addCard()
+    private void LoadCard()
     {
         ableCard.Clear();
         cardCount = 0;
@@ -57,6 +55,35 @@ public class Store : MonoBehaviour
                 ableCard.Add(c);
             }
         }
+        for (int i = 0; i < 3; i++)
+        {
+            nowStoreCard[i] = GM.StoreCard[i];
+
+            int price = checkPrice(nowStoreCard[i].GetComponent<CardState>().cardRare) / 1000;
+            if (nowStoreCard[i].GetComponent<CardState>().Unlock == true)
+            {
+                StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = "품절";
+            }
+            else
+            {
+                StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = price.ToString() + ",000G";
+            }
+            ableCard.Remove(nowStoreCard[i]);
+            cardCount++;
+        }
+    }
+
+    private void addCard()
+    {
+        ableCard.Clear();
+        cardCount = 0;
+        foreach (GameObject c in cardList)
+        {
+            if (c.GetComponent<CardState>().Unlock == false && c.GetComponent<CardState>().cardRare != 0)
+            {    
+                ableCard.Add(c);
+            }
+        }
 
         int countTemp;
 
@@ -64,49 +91,26 @@ public class Store : MonoBehaviour
             countTemp = 3;
         else
             countTemp = ableCard.Count;
-
-        if (GM.BeStoreCard == true)
+       
+        for (int i = 0; i < 3; i++)
         {
-            for (int i = 0; i < 3; i++)
+            if (i < countTemp)
             {
-                if (GM.StoreCard[i] != null)
-                {
-                    nowStoreCard[i] = GM.StoreCard[i];
+                nowStoreCard[i] = ableCard[Random.Range(0, ableCard.Count)];
 
-                    int price = checkPrice(nowStoreCard[i].GetComponent<CardState>().cardRare) / 1000;
-
-                    StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = price.ToString() + ",000G";
-                    ableCard.Remove(nowStoreCard[i]);
-                }
-                else
-                {
-                    StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = "Null";
-                    nowStoreCard[i] = null;
-                }
-                cardCount++;
+                int price = checkPrice(nowStoreCard[i].GetComponent<CardState>().cardRare) / 1000;
+                StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = price.ToString() + ",000G";
+                ableCard.Remove(nowStoreCard[i]);
             }
-        }
-        else
-        {
-            for (int i = 0; i < 3; i++)
+            else
             {
-                if (i < countTemp)
-                {
-                    nowStoreCard[i] = ableCard[Random.Range(0, ableCard.Count)];
-
-                    int price = checkPrice(nowStoreCard[i].GetComponent<CardState>().cardRare) / 1000;
-
-                    StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = price.ToString() + ",000G";
-                    ableCard.Remove(nowStoreCard[i]);
-                }
-                else
-                {
-                    StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = "Null";
-                    nowStoreCard[i] = null;
-                }
-                cardCount++;
+                StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = "Null";
+                nowStoreCard[i] = null;
             }
+            cardCount++;
         }
+        
+        GM.StoreCard = nowStoreCard;
         GM.BeStoreCard = true;
     }
 
@@ -146,13 +150,13 @@ public class Store : MonoBehaviour
                     StartCoroutine(typingMotion("사장님", "자네 물건을 살 생각은 있는거겠지?"));
                     break;
                 case 4:
-                    StartCoroutine(typingMotion("사장님", "행상인도 나름 힘든 직업이라네 내 덕분에 자네가 편하게 카드를 구매할 수 있는거지 껄껄"));
+                    StartCoroutine(typingMotion("사장님", "행상인도 나름 힘든 직업이라네 내 덕분에 자네가 편하게 카드를 구매할 수 있는거지"));
                     break;
             }
         }
         else if(nowStoreCard[num] != null)
         {
-            if (nowStoreCard[num].GetComponentInChildren<TextMeshProUGUI>().text == "품절")
+            if (nowStoreCard[num].GetComponent<CardState>().Unlock == true)
             {
                 switch (Random.Range(0, 3))
                 {
