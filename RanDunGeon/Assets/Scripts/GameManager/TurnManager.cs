@@ -18,10 +18,11 @@ public class TurnManager : MonoBehaviour
     public bool pTurn;
     public bool eTurn;
 
-    public bool Playing = false;
+    public bool Playing;
     // Start is called before the first frame update
     void Start()
     {
+        Playing = false;
         PWorkCount = 2;
         pTurn = true;
     }

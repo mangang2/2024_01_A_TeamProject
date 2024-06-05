@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
 
     public int nowChapter,nowStage;
 
+    public GameObject[] StoreCard = new GameObject[3];
+
+    public bool BeStoreCard = false;
+
     public long Gold = 0;
 
     private string path = Path.Combine(Application.dataPath, "TestSaveData.json");
@@ -179,18 +183,12 @@ public class GameManager : MonoBehaviour
                     numTemp++;
                     Destroy(_temp);
                 }
-
             }
-
-
-
-
             NowItemList.Sort(compare);
             foreach (ItemStatus itemtemp in NowItemList)
             {
                 UsingItemList.Add(itemtemp);
             }
-
         }
     }
 
@@ -256,6 +254,12 @@ public class GameManager : MonoBehaviour
         {
             gameData.CardUnlock.Add(CardList[c].GetComponent<CardState>().Unlock);
         }
+
+        gameData.Gold = Gold;
+
+        gameData.StoreCard = StoreCard;
+
+        gameData.BeStore = BeStoreCard;
     }
 
     private void LoadGameData()
@@ -287,6 +291,12 @@ public class GameManager : MonoBehaviour
                 gameData.CardUnlock.Add(false);
             }
         }
+
+        Gold = gameData.Gold;
+
+        StoreCard = gameData.StoreCard;
+
+        BeStoreCard = gameData.BeStore;
     }
 
     private void Char_1_SetStatus()
@@ -335,6 +345,12 @@ public class GameData
     public List<float> Char_1_ItemValue = new List<float>();
 
     public List<bool> Char_1_ItemUsed = new List<bool>();
+
+    public long Gold;
+
+    public GameObject[] StoreCard = new GameObject[3];
+
+    public bool BeStore;
 
 }
 

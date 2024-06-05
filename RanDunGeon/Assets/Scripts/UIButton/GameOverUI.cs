@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameOverUI : MonoBehaviour
 {
     public TextMeshProUGUI text;
+
+    public Sprite[] ItemSprite = new Sprite[6];
 
     public GameObject rewardLayout, rewardPrefabs;
 
@@ -71,6 +74,9 @@ public class GameOverUI : MonoBehaviour
 
                 GameObject itemTemp = Instantiate(rewardPrefabs);
                 itemTemp.transform.SetParent(rewardLayout.transform);
+                
+                itemTemp.transform.GetChild(0).GetComponent<Image>().sprite = ItemSprite[newItemStatus.ItemType];
+                itemTemp.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(150, 129.75f);
 
                 string temp = "";
 

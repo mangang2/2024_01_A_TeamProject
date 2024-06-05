@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterStatusScene.unity
     guid: b503439eaa29545d984a7b88bee577b2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gameover.unity
     guid: 5ead1e86791de2b4197dc4314e16b3dd
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Store.unity
+    guid: bc6bcce17ef2549c6a679306a7a96795
   - enabled: 1
     path: Assets/Scenes/ItemSettingScene.unity
     guid: 2bbc58f8bedf34a27aed1253a5fb540d

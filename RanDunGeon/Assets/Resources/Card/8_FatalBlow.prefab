@@ -325,6 +325,7 @@ MonoBehaviour:
   DoMerge: 0
   cardType: 8
   cardRank: 1
+  cardRare: 3
   skill: 0
   rankText: {fileID: 4834320325267724009}
 --- !u!114 &-7612886901748817763
@@ -339,9 +340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c23e56975ed42058a5d40330ff453e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoText: "\uACF5\uACA9\uB825\uC758 70/120/270% \uB9CC\uD07C\uC758 \uBB3C\uB9AC\uD53C\uD574\uB97C
-    \uC785\uD799\uB2C8\uB2E4.(\uC774\uBC88 \uACF5\uACA9\uC758 \uCE58\uBA85\uD0C0
-    \uD53C\uD574\uAC00 70/70/100 %\uB9CC\uD07C \uC99D\uAC00\uD569\uB2C8\uB2E4.)"
+  NameText: "\uCE58\uBA85\uC801 \uC77C\uACA9"
+  InfoText: "\uACF5\uACA9\uB825\uC758 70 / 120 / 270% \uB9CC\uD07C\uC758 \uBB3C\uB9AC\uD53C\uD574\uB97C
+    \uC785\uD799\uB2C8\uB2E4. (\uC774\uBC88 \uACF5\uACA9\uC758 \uCE58\uBA85\uD0C0
+    \uD53C\uD574\uAC00 70 / 70 / 100%\uB9CC\uD07C \uC99D\uAC00\uD569\uB2C8\uB2E4.)"
 --- !u!114 &391758182376713783
 MonoBehaviour:
   m_ObjectHideFlags: 0

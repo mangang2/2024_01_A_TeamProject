@@ -54,6 +54,8 @@ public class CharacterStatus : MonoBehaviour
     public float CriDamage;
     public float EnhanceDamage;
 
+    public float LastDefense;
+
     [Header("버프")]
     public float AdBuff = 1;
     public float DefenseBuff = 1;
@@ -227,7 +229,8 @@ public class CharacterStatus : MonoBehaviour
 
         if (DefenseBuffTurn == 0) DefenseBuff = 1;
         if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
-        Defense = 1000 / (1000 + ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * DefenseBuff * DefenseDebuff);
+        LastDefense = ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * DefenseBuff * DefenseDebuff;
+        Defense = 1000 / (1000 + LastDefense);
 
         if(DownDamageTurn == 0) DownDamage = 0;
 
