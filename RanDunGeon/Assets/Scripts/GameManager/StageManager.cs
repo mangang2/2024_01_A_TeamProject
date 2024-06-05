@@ -38,7 +38,7 @@ public class StageManager : MonoBehaviour
         gold = monster.Gold;
         itemRank = monster.ItemRank;
         rewardCard = monster.RewardCard;
-        LoadItemStatus(itemRank);
+        LoadItemStatus(itemRank -1);
 
         enemyStasus = enemy.GetComponent<CharacterStatus>();
         if (enemyStasus)

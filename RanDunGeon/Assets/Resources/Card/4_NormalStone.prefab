@@ -321,10 +321,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  Lock: 1
+  Unlock: 1
   DoMerge: 0
   cardType: 4
   cardRank: 1
+  cardRare: 0
   skill: 0
   rankText: {fileID: 5674482564869834759}
 --- !u!114 &-5723053021552198173
@@ -351,5 +352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c23e56975ed42058a5d40330ff453e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoText: "\uACF5\uACA9\uB825\uC758 160/180/200% \uB9CC\uD07C \uBB3C\uB9AC\uD53C\uD574\uB97C
+  NameText: "\uAC15\uC57D\uC57D\uAC15"
+  InfoText: "\uACF5\uACA9\uB825\uC758 160 / 180 / 200% \uB9CC\uD07C \uBB3C\uB9AC\uD53C\uD574\uB97C
     \uC785\uD799\uB2C8\uB2E4."

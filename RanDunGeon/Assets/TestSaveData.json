@@ -8,6 +8,11 @@
         true,
         true,
         false,
+        false,
+        false,
+        false,
+        false,
+        false,
         false
     ],
     "Char_1_Card": [
@@ -33,19 +38,19 @@
         5
     ],
     "Char_1_ItemValue": [
-        20012.2,
-        20009.8,
-        20008.4,
-        20004.8,
-        20007.2,
-        20004.8
+        20012.19921875,
+        20009.80078125,
+        20008.400390625,
+        20004.80078125,
+        20007.19921875,
+        20004.80078125
     ],
     "Char_1_ItemUsed": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
     ]
 }

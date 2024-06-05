@@ -4083,6 +4083,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1330912631}
+  ItemSprite:
+  - {fileID: 21300000, guid: 1d5c8c261c6a1fd4ab243569863e5c78, type: 3}
+  - {fileID: 21300000, guid: d3a3d2d410113a6469ba6bee23add312, type: 3}
+  - {fileID: 21300000, guid: 5a800a32bf0c0244eb6074a488280a29, type: 3}
+  - {fileID: 21300000, guid: 7f0525567435ab3408d06dfd89aabecd, type: 3}
+  - {fileID: 21300000, guid: 0983dfdbd7fe14c4ebd461ad06bd4a36, type: 3}
+  - {fileID: 21300000, guid: 3d2b7daaf92474b4d9d3893b94e84ece, type: 3}
   rewardLayout: {fileID: 1130227976}
   rewardPrefabs: {fileID: 2943331093845647771, guid: e20ba90b2ea314f17ab2d201292dd51d, type: 3}
   stageManager: {fileID: 2002313767}

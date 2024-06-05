@@ -11,6 +11,8 @@ public class CheckUI : MonoBehaviour
 
     public string InfoText = "NoneText";
 
+    public bool store = false;
+
     [SerializeField]
     private GameObject CheckBox;
 
@@ -19,6 +21,7 @@ public class CheckUI : MonoBehaviour
 
     private void Update()
     {
+        if(store == false)
         InfoUI.text = InfoText;
     }
 

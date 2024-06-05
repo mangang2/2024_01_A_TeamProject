@@ -20,6 +20,7 @@ public class CardState : MonoBehaviour
 
     public int cardType;
     public int cardRank = 1;
+    public int cardRare;
     public bool skill = false;
 
     public TextMeshPro rankText;

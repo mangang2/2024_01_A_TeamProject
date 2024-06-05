@@ -60,7 +60,7 @@ public class DeckManager : MonoBehaviour
             GM.Card[1] = CardDeck2.GetComponent<DeckCard>().CardType;
             GM.Card[2] = CardDeck3.GetComponent<DeckCard>().CardType;
             GM.Card[3] = CardDeck4.GetComponent<DeckCard>().CardType;
-            GM.SaveData();
+            //GM.SaveData();
             Debug.Log("카드 저장");
         }
         else

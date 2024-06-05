@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
 
     public int nowChapter,nowStage;
 
+    public GameObject[] StoreCard = new GameObject[3];
+    public bool BeStoreCard = false;
+
     public long Gold = 0;
 
     private string path = Path.Combine(Application.dataPath, "TestSaveData.json");
