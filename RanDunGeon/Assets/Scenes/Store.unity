@@ -1704,7 +1704,12 @@ MonoBehaviour:
   UsingItemList: []
   NowUsingItemCount: 0
   nowChapter: 0
-  nowStage: 0
+  nowStage: 1
+  StoreCard:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  BeStoreCard: 0
   Gold: 0
 --- !u!4 &1143764116
 Transform:
@@ -1759,10 +1764,6 @@ MonoBehaviour:
   CheckUI: {fileID: 5061492624252134685}
   cardList: []
   ableCard: []
-  nowStoreCard:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &1188278339
 Transform:
   m_ObjectHideFlags: 0
