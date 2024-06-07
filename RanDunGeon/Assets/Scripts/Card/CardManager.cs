@@ -16,12 +16,16 @@ public class CardManager : MonoBehaviour
     private int isCard;
     private float checkTime, checkTime2;
 
+    [SerializeField]
+    private int[] nowCount = new int[4];
+
 
     // Start is called before the first frame update
     void Start()
     {
         cardDrawing = true;
         Invoke("LoadCard", 0.5f);
+        nowCount = new int[] { 0, 0, 0, 0 };
     }
 
     // Update is called once per frame
@@ -83,16 +87,66 @@ public class CardManager : MonoBehaviour
         cardDrawing = false;
     }
 
+    private int checkCount(GameObject card)
+    {
+        switch(card.GetComponent<CardState>().cardRank)
+        {
+            case 1:
+                return 1;
+            case 2:
+                return 2;
+            case 3:
+                return 4;
+            default:
+                return 0;
+        }
+    }
+
+    private int checkCard(GameObject card)
+    {
+        if(card.GetComponent<CardState>().cardType == Card[0].GetComponent<CardState>().cardType)
+        {
+            return 0;
+        }
+        else if (card.GetComponent<CardState>().cardType == Card[1].GetComponent<CardState>().cardType)
+        {
+            return 1;
+        }
+        else if (card.GetComponent<CardState>().cardType == Card[2].GetComponent<CardState>().cardType)
+        {
+            return 2;
+        }
+        else if (card.GetComponent<CardState>().cardType == Card[3].GetComponent<CardState>().cardType)
+        {
+            return 3;
+        }
+        return 0;
+    }
+
     private IEnumerator AddCard()
     {
         AudioManager.instance.PlaySound("CardDraw");
         int cardType;
         float addCardCoolTime;
+
+        nowCount = new int[] { 0, 0, 0, 0 };
+
+        for (int i = 0; i < isCard; i++)
+        {
+            nowCount[checkCard(transform.GetChild(i).gameObject)] += checkCount(transform.GetChild(i).gameObject);
+        }
+
         cardType = Random.Range(0, 4);
- 
-        spawnCard = Card[cardType];
- 
-        Instantiate(spawnCard, transform);
+
+        if (nowCount[checkCard(Card[cardType])] < 4)
+        {
+            spawnCard = Card[cardType];
+            Instantiate(spawnCard, transform);
+        }
+        else
+        {
+            StartCoroutine(AddCard());
+        }
         
         addCardCoolTime = 0.3f;
         while(addCardCoolTime >=0)
