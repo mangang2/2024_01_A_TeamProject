@@ -201,6 +201,24 @@ public class Store : MonoBehaviour
                     break;
             }
         }
+        else
+        {
+            int temp = selectCard;
+            StopAllCoroutines();
+            switch (Random.Range(0, 3))
+            {
+                case 0:
+                    StartCoroutine(typingMotion("사장님", "자네 돈은 있는겐가?"));
+                    break;
+                case 1:
+                    StartCoroutine(typingMotion("사장님", "먼저 돈부터 주시게"));
+                    break;
+                case 2:
+                    StartCoroutine(typingMotion("사장님", "가격은 제대로 본거겠지?"));
+                    break;
+            }
+            selectCard = temp;
+        }
     }
 
     public void ResetCheck()
