@@ -8,8 +8,8 @@ using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 
 public class MonsterStatus_importer : AssetPostprocessor {
-	private static readonly string filePath = "Assets/GameResources/MonsterStatus.xlsx";
-	private static readonly string exportPath = "Assets/GameResources/MonsterStatus.asset";
+	private static readonly string filePath = "Assets/GameResources/ExelInforter/MonsterStatus.xlsx";
+	private static readonly string exportPath = "Assets/GameResources/ExelInforter/MonsterStatus.asset";
 	private static readonly string[] sheetNames = { "Chapter 0","Chapter 1","Chapter 2", };
 	
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
