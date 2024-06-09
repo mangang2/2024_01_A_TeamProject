@@ -8,6 +8,9 @@ using DG.Tweening;
 
 public class CardState : MonoBehaviour
 {
+    public Sprite SkillSprite;
+    public GameObject SpriteObject;
+
     public float moveSpeed;
     private GameObject target1;
     private GameObject target2;
@@ -23,7 +26,7 @@ public class CardState : MonoBehaviour
     public int cardRare;
     public bool skill = false;
 
-    public TextMeshPro rankText;
+    public TextMeshPro rankText,NameText,InfoText;
 
     private Material Mt;
 
@@ -46,13 +49,14 @@ public class CardState : MonoBehaviour
         rankText.text = cardRank.ToString();
         Mt = GetComponent<MeshRenderer>().material;
         FadeOut = new Color(Mt.color.r,Mt.color.g,Mt.color.b, 1);
+        SpriteObject.GetComponent<SpriteRenderer>().sprite = SkillSprite;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
+        NameText.text = GetComponent<CardInfo>().NameText;
+        InfoText.text = GetComponent<CardInfo>().InfoText;
 
         if (DoMove == false && CardManager.GetComponent<CardManager>().UsingCard == false)
         {

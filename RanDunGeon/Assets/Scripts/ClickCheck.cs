@@ -13,6 +13,7 @@ public class ClickCheck : MonoBehaviour
     public bool click = true;
 
     private RaycastHit hit;
+    [SerializeField]
     private float holdTime = 0;
     private bool Click = true;
 

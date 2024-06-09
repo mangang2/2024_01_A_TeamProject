@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CardInfo : MonoBehaviour
 {
+    [TextArea]
     public string NameText;
+    [TextArea]
     public string InfoText;
 }
