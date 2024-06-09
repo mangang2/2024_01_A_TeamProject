@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     public long Gold = 0;
 
+    public int ClearStage;
+
     private string path = Path.Combine(Application.dataPath, "TestSaveData.json");
     //private string monsterPath = Path.
 
@@ -260,6 +262,8 @@ public class GameManager : MonoBehaviour
         gameData.StoreCard = StoreCard;
 
         gameData.BeStore = BeStoreCard;
+
+        gameData.ClearStage = ClearStage;
     }
 
     private void LoadGameData()
@@ -297,6 +301,8 @@ public class GameManager : MonoBehaviour
         StoreCard = gameData.StoreCard;
 
         BeStoreCard = gameData.BeStore;
+
+        ClearStage = gameData.ClearStage;
     }
 
     private void Char_1_SetStatus()
@@ -352,6 +358,7 @@ public class GameData
 
     public bool BeStore;
 
+    public int ClearStage;
 }
 
 public class ItemStatusClass

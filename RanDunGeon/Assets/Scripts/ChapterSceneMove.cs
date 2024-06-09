@@ -11,7 +11,12 @@ public class ChapterSceneMove : MonoBehaviour
     {
         GM = GameManager.Instance;
 
-        if (GM.nowChapter == 0 && GM.nowChapter == 1)
+        if (GM.nowChapter == 0)
+        {
+            GM.nowChapter = 1;
+        }
+
+        if (GM.nowChapter == 1)
         {
             transform.position = new Vector2(1344, 764);
         }

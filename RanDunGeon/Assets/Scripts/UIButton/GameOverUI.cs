@@ -43,12 +43,13 @@ public class GameOverUI : MonoBehaviour
     private void reward()
     {
         GM = GameManager.Instance;
+        GM.ClearStage = GM.nowChapter * 100 + GM.nowStage;
         CardState rewardTemp;
         GM.Gold += stageManager.gold;
 
         GameObject goldTemp = Instantiate(rewardPrefabs);
         goldTemp.transform.SetParent(rewardLayout.transform);
-        goldTemp.GetComponentInChildren<TextMeshProUGUI>().text = GM.Gold.ToString();
+        goldTemp.GetComponentInChildren<TextMeshProUGUI>().text = stageManager.gold.ToString();
 
         if(stageManager.rewardCard != 0)
         {

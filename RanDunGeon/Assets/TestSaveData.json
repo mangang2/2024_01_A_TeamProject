@@ -65,5 +65,6 @@
             "instanceID": 0
         }
     ],
-    "BeStore": false
+    "BeStore": false,
+    "ClearStage": 0
 }
