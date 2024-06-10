@@ -43,7 +43,10 @@ public class GameOverUI : MonoBehaviour
     private void reward()
     {
         GM = GameManager.Instance;
-        GM.ClearStage = GM.nowChapter * 100 + GM.nowStage;
+        if (GM.ClearStage < GM.nowChapter * 100 + GM.nowStage)
+        {
+            GM.ClearStage = GM.nowChapter * 100 + GM.nowStage;
+        }
         CardState rewardTemp;
         GM.Gold += stageManager.gold;
 
