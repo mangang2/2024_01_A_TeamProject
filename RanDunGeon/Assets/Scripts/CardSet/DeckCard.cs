@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using DG.Tweening;
 
 public class DeckCard : MonoBehaviour
 {
     public GameObject CardSelectCavas;
-    public Text textBox;
+    public TextMeshProUGUI textBox;
+    public Image SkillImange;
+    public TextMeshProUGUI InfoText;
 
     [SerializeField]
     private int DeckNum;
@@ -21,7 +24,7 @@ public class DeckCard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("LoadCard", 0.2f);
+        LoadCard();
     }
 
     
@@ -48,11 +51,15 @@ public class DeckCard : MonoBehaviour
     {
         if (CardType != null)
         {
-            textBox.text = CardType.name.ToString();
+            textBox.text = CardType.GetComponent<CardInfo>().NameText;
+            SkillImange.sprite = CardType.GetComponent<CardState>().SkillSprite;
+            SkillImange.enabled = true;
+            InfoText.text = CardType.GetComponent<CardInfo>().InfoText;
         }
         else
         {
-            textBox.text = "null";
+            textBox.text = "";
+            SkillImange.enabled = false;
         }
     }
 
@@ -62,19 +69,18 @@ public class DeckCard : MonoBehaviour
         GM = GameManager.Instance;
         CardType = GM.GetComponent<GameManager>().Card[DeckNum - 1];
 
-        if (CardType.GetComponent<CardState>().Unlock == false)
-        {
-            CardType = null;
-        }
-
         if (CardType != null)
         {
-            textBox.text = CardType.name.ToString();
+            textBox.text = CardType.GetComponent<CardInfo>().NameText;
+            InfoText.text = CardType.GetComponent<CardInfo>().InfoText;
         }
         else
         {
-            textBox.text = "null";
+            textBox.text = "카드가 없어!";
         }
+
+        SkillImange.sprite = CardType.GetComponent<CardState>().SkillSprite;
+        SkillImange.enabled = true;
         CardSelectCavas.GetComponent<CanvasGroup>().alpha = 0;
     }
 }

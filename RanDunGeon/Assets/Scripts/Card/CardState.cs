@@ -56,7 +56,9 @@ public class CardState : MonoBehaviour
     void Update()
     {
         NameText.text = GetComponent<CardInfo>().NameText;
+        //NameText.enableAutoSizing = true;
         InfoText.text = GetComponent<CardInfo>().InfoText;
+        //InfoText.enableAutoSizing = true;
 
         if (DoMove == false && CardManager.GetComponent<CardManager>().UsingCard == false)
         {

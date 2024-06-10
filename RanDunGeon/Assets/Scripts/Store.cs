@@ -8,6 +8,8 @@ using DG.Tweening;
 public class Store : MonoBehaviour
 {
     public Button[] StoreCardButton = new Button[3];
+    public TextMeshProUGUI[] StoreNameText, PriceText = new TextMeshProUGUI[3];
+    public Image[] SkillImage = new Image[3];
 
     public TextMeshProUGUI NameText, InfoText;
 
@@ -58,15 +60,17 @@ public class Store : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             nowStoreCard[i] = GM.StoreCard[i];
+            StoreNameText[cardCount].text = nowStoreCard[i].GetComponent<CardInfo>().NameText;
+            SkillImage[cardCount].sprite = nowStoreCard[i].GetComponent<CardState>().SkillSprite;
 
             int price = checkPrice(nowStoreCard[i].GetComponent<CardState>().cardRare) / 1000;
             if (nowStoreCard[i].GetComponent<CardState>().Unlock == true)
             {
-                StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = "품절";
+                PriceText[cardCount].text = "품절";
             }
             else
             {
-                StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = price.ToString() + ",000G";
+                PriceText[cardCount].text = price.ToString() + ",000G";
             }
             ableCard.Remove(nowStoreCard[i]);
             cardCount++;
@@ -97,14 +101,17 @@ public class Store : MonoBehaviour
             if (i < countTemp)
             {
                 nowStoreCard[i] = ableCard[Random.Range(0, ableCard.Count)];
+                StoreNameText[cardCount].text = nowStoreCard[i].GetComponent<CardInfo>().NameText;
+                SkillImage[cardCount].sprite = nowStoreCard[i].GetComponent<CardState>().SkillSprite;
 
                 int price = checkPrice(nowStoreCard[i].GetComponent<CardState>().cardRare) / 1000;
-                StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = price.ToString() + ",000G";
+                PriceText[cardCount].text = price.ToString() + ",000G";
                 ableCard.Remove(nowStoreCard[i]);
             }
             else
             {
-                StoreCardButton[cardCount].GetComponentInChildren<TextMeshProUGUI>().text = "Null";
+                PriceText[cardCount].text = "품절";
+                StoreNameText[cardCount].text = "";
                 nowStoreCard[i] = null;
             }
             cardCount++;
@@ -186,7 +193,7 @@ public class Store : MonoBehaviour
         {
             GM.Gold -= checkPrice(nowStoreCard[selectCard].GetComponent<CardState>().cardRare);
             nowStoreCard[selectCard].GetComponent<CardState>().Unlock = true;
-            StoreCardButton[selectCard].GetComponentInChildren<TextMeshProUGUI>().text = "품절";
+            PriceText[cardCount].text = "품절";
             StopAllCoroutines();
             switch (Random.Range(0, 3))
             {

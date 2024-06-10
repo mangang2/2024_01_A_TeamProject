@@ -539,8 +539,8 @@ Transform:
   m_GameObject: {fileID: 3803754654867363928}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.20400001, z: -0.51}
-  m_LocalScale: {x: 0.14689, y: 0.08772001, z: 0.17541}
+  m_LocalPosition: {x: 0, y: 0.22, z: -0.51}
+  m_LocalScale: {x: 0.15, y: 0.1, z: 0.17541}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1984634554078229762}
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c23e56975ed42058a5d40330ff453e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameText: "\uC81C\uC57D\uACFC \uC11C\uC57D"
+  NameText: "\uD63C\uC2E0\uC758 \uC77C\uACA9"
   InfoText: "\uD604\uC7AC\uCCB4\uB825\uC758 20% \uB9CC\uD07C \uCCB4\uB825\uC744 \uC783\uACE0,
     \uC783\uC740\uCCB4\uB825\uC758 40 / 60 / 80% \uB9CC\uD07C \uCD94\uAC00 \uD53C\uD574\uC640
     \uACF5\uACA9\uB825\uC758 160 / 180 / 200% \uB9CC\uD07C\uC758 \uBB3C\uB9AC\uD53C\uD574\uB97C

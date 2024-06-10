@@ -73,7 +73,8 @@ public class StageButton : MonoBehaviour
 
         GameObject goldTemp = Instantiate(RewardPrefab);
         goldTemp.transform.SetParent(RewardLayout.transform);
-        goldTemp.GetComponentInChildren<TextMeshProUGUI>().text = stageInfo.Gold.ToString();
+        goldTemp.GetComponentInChildren<TextMeshProUGUI>().enableAutoSizing = true;
+        goldTemp.GetComponentInChildren<TextMeshProUGUI>().text = stageInfo.Gold.ToString() + "G";
 
         if(stageInfo.ItemRank != 0)
         {
@@ -82,7 +83,8 @@ public class StageButton : MonoBehaviour
 
             itemTemp.transform.GetChild(0).GetComponent<Image>().sprite = ItemSprite;
             itemTemp.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(150, 129.75f);
-            itemTemp.GetComponentInChildren<TextMeshProUGUI>().text = "레어도 " + itemRank.ToString();
+            itemTemp.GetComponentInChildren<TextMeshProUGUI>().fontSize = 26;
+            itemTemp.GetComponentInChildren<TextMeshProUGUI>().text = "레어도" + itemRank.ToString();
         }
 
         if (stageInfo.RewardCard != 0)
@@ -90,8 +92,10 @@ public class StageButton : MonoBehaviour
             GameObject rewardTemp = GM.CardList[stageInfo.RewardCard - 1];
             GameObject cardTemp = Instantiate(RewardPrefab);
             cardTemp.transform.SetParent(RewardLayout.transform);
+            cardTemp.GetComponentInChildren<TextMeshProUGUI>().enableAutoSizing = true;
             cardTemp.GetComponentInChildren<TextMeshProUGUI>().text = rewardTemp.gameObject.GetComponent<CardInfo>().NameText;
         }
+        gameObject.SetActive(true);
     }
 
     public void YesButton()

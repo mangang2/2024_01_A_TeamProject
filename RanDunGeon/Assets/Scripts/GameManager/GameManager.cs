@@ -308,9 +308,9 @@ public class GameManager : MonoBehaviour
     private void Char_1_SetStatus()
     {
         int LevelDiveide1 = Mathf.FloorToInt(CharLevel[0] / 10);
-        DefaultStatus[0] = BaseStatus[0] + (CharLevel[0] - 1) * 10;
-        DefaultStatus[1] = BaseStatus[1] + (CharLevel[0] - 1) * 10;
-        DefaultStatus[2] = BaseStatus[2] + (CharLevel[0] - 1) * 10;
+        DefaultStatus[0] = BaseStatus[0] + (CharLevel[0] - 1) * 20;
+        DefaultStatus[1] = BaseStatus[1] + (CharLevel[0] - 1) * 18;
+        DefaultStatus[2] = BaseStatus[2] + (CharLevel[0] - 1) * 12;
         DefaultStatus[3] = BaseStatus[3] + LevelDiveide1 * 5;
         DefaultStatus[4] = BaseStatus[4] + LevelDiveide1 * 10;
         DefaultStatus[5] = BaseStatus[5];

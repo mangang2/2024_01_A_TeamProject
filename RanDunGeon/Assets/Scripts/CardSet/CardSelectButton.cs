@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CardSelectButton : MonoBehaviour
 {
@@ -16,7 +17,13 @@ public class CardSelectButton : MonoBehaviour
     private float holdTime;
 
     [SerializeField]
-    private Text nameText;
+    private Button CardButton;
+
+    [SerializeField]
+    private Image skillImage;
+
+    [SerializeField]
+    private TextMeshProUGUI nameText;
 
     [SerializeField]
     private bool Clicking,notClick = false;
@@ -32,13 +39,22 @@ public class CardSelectButton : MonoBehaviour
 
         DeckManager = GameObject.Find("DeckManager");
         CardSelectCavas = GameObject.Find("CardSelect");
-        nameText.text = CardType.name;
+        nameText.text = CardType.GetComponent<CardInfo>().NameText;
+        skillImage.sprite = CardType.GetComponent<CardState>().SkillSprite;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Clicking == true)
+        if (CardType.GetComponent<CardState>().Unlock == false)
+        {
+            CardButton.interactable = false;
+        }
+        else
+        {
+            CardButton.interactable = true;
+        }
+        if (Clicking == true)
         {
             holdTime += Time.deltaTime;
         }
@@ -68,7 +84,7 @@ public class CardSelectButton : MonoBehaviour
             DeckManager.GetComponent<DeckManager>().CardSet(CardType);
             StartCoroutine(FadeOut());
         }
-        else if(CardType.GetComponent<CardState>().Unlock == false)
+        else if(CardType.GetComponent<CardState>().Unlock == false && holdTime <= 0.3f)
         {
             Debug.Log("아직 해금 되지 않은 카드야!");
         }

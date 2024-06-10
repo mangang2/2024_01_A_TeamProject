@@ -26,7 +26,6 @@ public class StageSelectButton : MonoBehaviour
     public void Click(int stage)
     {
         GameManager.Instance.nowStage = stage;
-        StageUI.SetActive(true);
         StageUI.GetComponent<StageButton>().OnUI(OpenStage);
     }
 }
