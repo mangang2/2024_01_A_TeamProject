@@ -774,9 +774,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameText: "\uC900\uBE44 \uC6B4\uB3D9"
-  InfoText: "\uD589\uB3D9 \uD69F\uC218\uB97C 0 / 0 / 1 \uD68C \uCD94\uAC00\uD558\uACE0,
-    \uC774\uBC88 1 \uD134\uB3D9\uC548 \uCE58\uBA85\uD0C0 \uD655\uB960\uC774 15 /
-    25 / 25%, \uCE58\uBA85\uD0C0 \uD53C\uD574\uAC00 0 / 0 / 50% \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  InfoText: "\uC774\uBC88 2 \uD134\uB3D9\uC548 \uCE58\uBA85\uD0C0 \uD655\uB960\uC774
+    10 / 15 / 25%, \uCE58\uBA85\uD0C0 \uD53C\uD574\uAC00 15 / 25 / 50% \uC99D\uAC00\uD569\uB2C8\uB2E4.
+    (3\uB2E8\uACC4 \uCE74\uB4DC\uC77C \uACBD\uC6B0 \uCD94\uAC00\uB85C \uD589\uB3D9
+    \uD69F\uC218\uAC00 1\uD68C \uB298\uC5B4\uB0A9\uB2C8\uB2E4.)"
 --- !u!114 &-6269935368714377077
 MonoBehaviour:
   m_ObjectHideFlags: 0

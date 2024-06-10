@@ -61,7 +61,7 @@ public class GameOverUI : MonoBehaviour
             Debug.Log(rewardTemp.gameObject.name + "카드 해금");
             GameObject cardTemp = Instantiate(rewardPrefabs);
             cardTemp.transform.SetParent(rewardLayout.transform);
-            cardTemp.GetComponentInChildren<TextMeshProUGUI>().text = rewardTemp.gameObject.name;
+            cardTemp.GetComponentInChildren<TextMeshProUGUI>().text = rewardTemp.GetComponent<CardInfo>().NameText;
         }
 
         if(stageManager.itemRank != 0)

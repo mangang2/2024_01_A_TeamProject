@@ -92,6 +92,9 @@ public class CharacterStatus : MonoBehaviour
     public float Shield;
     public int ShieldTurn;
 
+    public bool DotCri;
+    public int DotCriTurn;
+
     private bool TurnDown = true;
 
     // Start is called before the first frame update
@@ -101,6 +104,7 @@ public class CharacterStatus : MonoBehaviour
         {
             LoadStatus();
         }
+        DotCri = false;
     }
 
     // Update is called once per frame
@@ -122,6 +126,7 @@ public class CharacterStatus : MonoBehaviour
                 if (EnhanceDBuffTurn > 0) EnhanceDBuffTurn--;
                 if (EnhanceDDebuffTurn > 0) EnhanceDDebuffTurn--;
                 if (ShieldTurn > 0) ShieldTurn--;
+                if (DotCriTurn > 0) DotCriTurn--;
                 TurnDown = false;
             }
 
@@ -144,6 +149,7 @@ public class CharacterStatus : MonoBehaviour
                 if (EnhanceDBuffTurn > 0) EnhanceDBuffTurn--;
                 if (EnhanceDDebuffTurn > 0) EnhanceDDebuffTurn--;
                 if (ShieldTurn > 0) ShieldTurn--;
+                if (DotCriTurn > 0) DotCriTurn--;
                 StartCoroutine(checkDotsDamage());
                 TurnDown = false;
             }
@@ -157,40 +163,8 @@ public class CharacterStatus : MonoBehaviour
             Hp = MaxHp;
         }
 
-        if(FinalDamage != 0)
-        {
-            if (Shield > 0)
-            {
-                float damageTemp = Shield - FinalDamage;
-                Debug.Log(damageTemp);
-                if (damageTemp >= 0)
-                {
-                    ShieldAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
-                    Instantiate(ShieldAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
-                    Shield -= FinalDamage;
-                    FinalDamage = 0;
-                }
-                else if (damageTemp < 0)
-                {
-                    ShieldAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
-                    Instantiate(ShieldAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
-                    Shield = 0;
-                    ShieldTurn = 0;
-                    DamageAmount.GetComponent<TextMeshPro>().text = (FinalDamage - Shield).ToString("F0");
-                    Instantiate(DamageAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
-                    Hp -= FinalDamage - Shield;
-                    FinalDamage = 0;
-
-                }
-            }
-            else
-            {
-                DamageAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
-                Instantiate(DamageAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
-                Hp -= FinalDamage;
-                FinalDamage = 0;
-            }
-        }
+        if (FinalDamage != 0 && Hp > 0)
+            checkDamage();
 
         if(Recover != 0)
         {
@@ -225,12 +199,12 @@ public class CharacterStatus : MonoBehaviour
 
         if (AdBuffTurn == 0) AdBuff = 1;
         if (AdDeBuffTurn == 0) AdDebuff = 1;
-        Ad = (DefaultAd * (1 + AdPer * 0.01f) + AdAdd) * (100 + AdBuff - AdDebuff) * 0.01f;
+        Ad = (DefaultAd * (1 + AdPer) + AdAdd) * (100 + AdBuff - AdDebuff) * 0.01f;
 
         if (DefenseBuffTurn == 0) DefenseBuff = 1;
         if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
-        LastDefense = ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * (100 + DefenseBuff - DefenseDebuff) * 0.01f;
-        Defense = 1000 / (1000 + LastDefense);
+        LastDefense = (DefaultDefense * (1 + DfPer) + DfAdd) * (100 + DefenseBuff - DefenseDebuff) * 0.01f;
+        Defense = 500 / (500 + LastDefense);
 
         if (DownDamageTurn == 0) DownDamage = 0;
 
@@ -247,6 +221,8 @@ public class CharacterStatus : MonoBehaviour
         EnhanceDamage = 100 + DefaultEnhanceD + EnhanceDAdd + EnhanceDBuff - EnhanceDDebuff;
 
         if (ShieldTurn == 0) Shield = 0;
+
+        if (DotCriTurn == 0) DotCri = false;
     }
 
     private IEnumerator checkDotsDamage()
@@ -255,14 +231,51 @@ public class CharacterStatus : MonoBehaviour
         {
             if(i >= 0)
             transform.GetChild(i).GetComponent<DotsDamage>().DoDotsDamage();
+            if (FinalDamage != 0 && Hp > 0)
+                checkDamage();
 
             yield return new WaitForSeconds(0.5f);
         }
 
         if (gameObject.tag == "Enemy")
-            gameObject.GetComponent<EnemyAI>().eTurn = true;
+            gameObject.GetComponent<EnemyAI>().eTurn = true;                //자기 턴 활성화
 
         yield break;
+    }
+
+    private void checkDamage()
+    {   
+        if (Shield > 0)
+        {
+            float damageTemp = Shield - FinalDamage;
+            Debug.Log(damageTemp);
+            if (damageTemp >= 0)
+            {
+                ShieldAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
+                Instantiate(ShieldAmount).transform.position = new Vector3(gameObject.transform.position.x, 12, gameObject.transform.position.z);
+                Shield -= FinalDamage;
+                FinalDamage = 0;
+            }
+            else if (damageTemp < 0)
+            {
+                ShieldAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
+                Instantiate(ShieldAmount).transform.position = new Vector3(gameObject.transform.position.x, 12, gameObject.transform.position.z);
+                DamageAmount.GetComponent<TextMeshPro>().text = (FinalDamage - Shield).ToString("F0");
+                Instantiate(DamageAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
+                Hp -= FinalDamage - Shield;
+                FinalDamage = 0;
+                Shield = 0;
+                ShieldTurn = 0;
+
+            }
+        }
+        else
+        {
+            DamageAmount.GetComponent<TextMeshPro>().text = FinalDamage.ToString("F0");
+            Instantiate(DamageAmount).transform.position = new Vector3(gameObject.transform.position.x, 6, gameObject.transform.position.z);
+            Hp -= FinalDamage;
+            FinalDamage = 0;
+        }
     }
 
     public void LoadStatus()

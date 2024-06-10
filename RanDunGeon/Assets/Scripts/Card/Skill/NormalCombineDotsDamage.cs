@@ -62,7 +62,7 @@ public class NormalCombineDotsDamage : MonoBehaviour
             {
                 for (int i = enemy.transform.childCount - 1; i >= 0; i--)
                 {
-                    dotsDamageSum += enemy.transform.GetChild(i).GetComponent<DotsDamage>().ReturnDatsDamage() * SumDamageRank;
+                    dotsDamageSum += enemy.transform.GetChild(i).GetComponent<DotsDamage>().ReturnDotsDamage() * SumDamageRank;
                     enemy.transform.GetChild(i).GetComponent<DotsDamage>().Turn = 0;
                 }
             }

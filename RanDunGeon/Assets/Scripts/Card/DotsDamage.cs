@@ -32,23 +32,49 @@ public class DotsDamage : MonoBehaviour
 
     public void DoDotsDamage()
     {
+        float criD = 0;
         float ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
         float DotsED = player.GetComponent<CharacterStatus>().EnhanceDotsD * 0.01f;
         enemyDf = enemy.gameObject.GetComponent<CharacterStatus>().Defense;
         enemyDd = enemy.gameObject.GetComponent<CharacterStatus>().DownDamage;
 
-        finalDamage = Damage * enemyDf * (ED + DotsED) - enemyDd;
+        if(Random.Range(0f,100f) < 25 && player.GetComponent<CharacterStatus>().DotCri == true)
+        {
+            criD = 50;
+            Debug.Log("DotCri!");
+        }
+        else
+        {
+            criD = 0;
+        }
+
+        finalDamage = Damage * (ED + DotsED) * (1 + criD * 0.01f) - enemyDd;
         enemy.gameObject.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
         Debug.Log(Turn.ToString("지속피해 : " + finalDamage.ToString("F0") + "의 지속피해를 입힙니다."));
         Turn -= 1;
     }
 
-    public float ReturnDatsDamage()
+    public float ReturnDotsDamage()
     {
+        float criD = 0;
+        float ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
+        float DotsED = player.GetComponent<CharacterStatus>().EnhanceDotsD * 0.01f;
         enemyDf = enemy.gameObject.GetComponent<CharacterStatus>().Defense;
         enemyDd = enemy.gameObject.GetComponent<CharacterStatus>().DownDamage;
 
-        finalDamage = (Damage * enemyDf - enemyDd) * Turn;
-        return finalDamage;
+        if (Random.Range(0f, 100f) < 25 && player.GetComponent<CharacterStatus>().DotCri == true)
+        {
+            criD = 50;
+            Debug.Log("DotCri!");
+        }
+        else
+        {
+            criD = 0;
+        }
+
+        finalDamage = Damage * (ED + DotsED) * (1 + criD * 0.01f);
+
+        float tempDamage = finalDamage * Turn - enemyDd;
+        return tempDamage;
     }
 }
