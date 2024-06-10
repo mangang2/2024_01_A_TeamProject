@@ -90,6 +90,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(Gold > 999999999)
+        {
+            Gold = 999999999;
+        }
+        if(Gold < 0)
+        {
+            Gold = 0;
+        }
         NowUsingItemCount = UsingItemList.Count;
 
 
@@ -307,7 +315,7 @@ public class GameManager : MonoBehaviour
 
     private void Char_1_SetStatus()
     {
-        int LevelDiveide1 = Mathf.FloorToInt(CharLevel[0] / 10);
+        int LevelDiveide1 = Mathf.FloorToInt(CharLevel[0] / 5);
         DefaultStatus[0] = BaseStatus[0] + (CharLevel[0] - 1) * 20;
         DefaultStatus[1] = BaseStatus[1] + (CharLevel[0] - 1) * 18;
         DefaultStatus[2] = BaseStatus[2] + (CharLevel[0] - 1) * 12;

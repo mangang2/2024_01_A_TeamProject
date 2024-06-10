@@ -14,7 +14,7 @@ public class EXAddItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Semicolon))
+        if(Input.GetKey(KeyCode.Semicolon))
         {
             float value = 3;
             int type = 2;
@@ -23,16 +23,16 @@ public class EXAddItem : MonoBehaviour
             switch(temp.ItemType)
             {
                 case 0:
-                    value = UnityEngine.Random.Range(6f, 10f);
-                    type = UnityEngine.Random.Range(1, 3);
+                    value = UnityEngine.Random.Range(6f, 12f);
+                    type = 2;
                     break;
                 case 1:
-                    value = UnityEngine.Random.Range(4f, 7f);
-                    type = UnityEngine.Random.Range(1, 3);
+                    value = UnityEngine.Random.Range(4f, 9f);
+                    type = 2;
                     break;
                 case 2:
-                    value = UnityEngine.Random.Range(4f, 7f);
-                    type = UnityEngine.Random.Range(1, 3);
+                    value = UnityEngine.Random.Range(4f, 8f);
+                    type = 2;
                     break;
                 case 3:
                     value = UnityEngine.Random.Range(3f, 5f);
@@ -49,10 +49,7 @@ public class EXAddItem : MonoBehaviour
             }
             value = Mathf.Floor(value * 10f) / 10f;
 
-            if (type == 1)
-                value += 10000;
-            else
-                value += 20000;
+            value += 20000;
 
             temp.ItemValue = value;
             GM.ItemList.Add(temp);

@@ -17,10 +17,14 @@ public class ItemListGen : MonoBehaviour
 
     private List<ItemStatus> NowItemList = new List<ItemStatus>();
 
+    private Vector3 FirstPos,LastItemPos;
+
     // Start is called before the first frame update
     void Start()
     {
         GM = GameManager.Instance;
+        FirstPos = transform.transform.GetComponent<RectTransform>().position;
+        Debug.Log(FirstPos)
         GenList();
     }
 
@@ -29,6 +33,20 @@ public class ItemListGen : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.L))
         GenList();          //나중에 삭제
+
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            transform.GetComponent<RectTransform>().position = new Vector2(transform.GetComponent<RectTransform>().position.x, Input.GetAxis("Mouse ScrollWheel") * -500);
+        }
+        if (transform.GetComponent<RectTransform>().position.y > FirstPos.y)
+        {
+            transform.GetComponent<RectTransform>().position = new Vector2(transform.GetComponent<RectTransform>().position.x, FirstPos.y);
+        }
+
+        if (transform.GetComponent<RectTransform>().position.y < LastItemPos.y)
+        {
+            transform.GetComponent<RectTransform>().position = new Vector2(transform.GetComponent<RectTransform>().position.x, LastItemPos.y);
+        }
     }
 
     public void GenList()
@@ -63,6 +81,7 @@ public class ItemListGen : MonoBehaviour
             temp2.GetComponentInChildren<ItemStatus>().SetValue(NowItemList[j].ItemType, NowItemList[j].ItemValue, NowItemList[j].Used);
             temp2.GetComponentInChildren<ItemStatus>().Origin = NowItemList[j].Origin;
         }
+        LastItemPos = transform.GetChild(transform.childCount - 1).GetComponent<RectTransform>().position;
     }
 
     private int compare(ItemStatus a, ItemStatus b)

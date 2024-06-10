@@ -12,22 +12,12 @@ public class GameOverUI : MonoBehaviour
 
     public GameObject rewardLayout, rewardPrefabs;
 
+    public TurnManager turnManager;
+
     [SerializeField]
     private StageManager stageManager;
 
     private GameManager GM;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Win()
     {
@@ -42,19 +32,32 @@ public class GameOverUI : MonoBehaviour
 
     private void reward()
     {
+        int rewardDouble = 1;
         GM = GameManager.Instance;
         if (GM.ClearStage < GM.nowChapter * 100 + GM.nowStage)
         {
             GM.ClearStage = GM.nowChapter * 100 + GM.nowStage;
         }
         CardState rewardTemp;
-        GM.Gold += stageManager.gold;
 
-        GameObject goldTemp = Instantiate(rewardPrefabs);
-        goldTemp.transform.SetParent(rewardLayout.transform);
-        goldTemp.GetComponentInChildren<TextMeshProUGUI>().text = stageManager.gold.ToString();
+        if (turnManager.Turn > 10)
+        {
+            rewardDouble = 2;
+        }
+        else
+        {
+            rewardDouble = 1;
+        }
 
-        if(stageManager.rewardCard != 0)
+        for (int i = 0; i < rewardDouble; i++)
+        {
+            GM.Gold += stageManager.gold;
+            GameObject goldTemp = Instantiate(rewardPrefabs);
+            goldTemp.transform.SetParent(rewardLayout.transform);
+            goldTemp.GetComponentInChildren<TextMeshProUGUI>().text = stageManager.gold.ToString();
+        }
+        
+        if (stageManager.rewardCard != 0)
         {
             rewardTemp = GM.CardList[stageManager.rewardCard - 1].GetComponent<CardState>();
             rewardTemp.Unlock = true;
@@ -63,8 +66,7 @@ public class GameOverUI : MonoBehaviour
             cardTemp.transform.SetParent(rewardLayout.transform);
             cardTemp.GetComponentInChildren<TextMeshProUGUI>().text = rewardTemp.GetComponent<CardInfo>().NameText;
         }
-
-        if(stageManager.itemRank != 0)
+            if (stageManager.itemRank != 0)
         {
             for (int i = 0; i < 6; i++)
             {

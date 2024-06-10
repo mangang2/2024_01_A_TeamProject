@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TurnManager : MonoBehaviour
 {
-    [SerializeField]
-    private CharacterStatus Player;
-    [SerializeField]
-    private CharacterStatus Enemy;
-    [SerializeField]
-    private GameObject OverUI;
+    public CharacterStatus Player;
+    public CharacterStatus Enemy;
+    public GameObject OverUI;
+
+    public TextMeshProUGUI TurnText;
 
     public int Turn;
 
@@ -23,15 +23,18 @@ public class TurnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Turn = 20;
         Playing = false;
+        Turn = 20;
         PWorkCount = 2;
         pTurn = true;
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (PWorkCount == 0 && pTurn == true && Playing)
         {
             EWorkCount = 2;
@@ -47,7 +50,19 @@ public class TurnManager : MonoBehaviour
             Turn--;
         }
 
-        if(Player.Hp <= 0 && Playing)
+        if (Turn > 0)
+        {
+            TurnText.text = "턴 " + (21 - Turn) + " / 20   행동 " + PWorkCount + " / 2";
+        }
+        else
+        {
+            TurnText.text = "턴 20 / 20   행동 2 / 2";
+            StopGame();
+            OverUI.SetActive(true);
+            OverUI.GetComponent<GameOverUI>().Lose();
+        }
+
+        if (Player.Hp <= 0 && Playing)
         {
             StopGame();
             OverUI.SetActive(true);
