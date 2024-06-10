@@ -189,11 +189,11 @@ public class Store : MonoBehaviour
 
     public void BuyCard()
     {
-        if (GM.Gold > checkPrice(nowStoreCard[selectCard].GetComponent<CardState>().cardRare) && nowStoreCard[selectCard].GetComponent<CardState>().Unlock == false)
+        if (GM.Gold >= checkPrice(nowStoreCard[selectCard].GetComponent<CardState>().cardRare) && nowStoreCard[selectCard].GetComponent<CardState>().Unlock == false)
         {
             GM.Gold -= checkPrice(nowStoreCard[selectCard].GetComponent<CardState>().cardRare);
             nowStoreCard[selectCard].GetComponent<CardState>().Unlock = true;
-            PriceText[cardCount].text = "품절";
+            PriceText[selectCard].text = "품절";
             StopAllCoroutines();
             switch (Random.Range(0, 3))
             {
@@ -235,7 +235,7 @@ public class Store : MonoBehaviour
 
     public void NewCard()
     {
-        if (GM.Gold > 10000)
+        if (GM.Gold >= 10000)
         {
             if (ableCard.Count > 0)
             {

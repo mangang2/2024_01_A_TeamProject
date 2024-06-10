@@ -126,11 +126,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
+  m_fontSize: 30.9
   m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -612,8 +612,9 @@ GameObject:
   - component: {fileID: 8546909567175730845}
   - component: {fileID: 9027998817102125035}
   - component: {fileID: -7612886901748817763}
+  - component: {fileID: 1461345463076772495}
   m_Layer: 3
-  m_Name: CardPrefab
+  m_Name: 12_DefenceDebuff
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,9 +752,9 @@ MonoBehaviour:
   SkillSprite: {fileID: 0}
   SpriteObject: {fileID: 7468313632749544076}
   moveSpeed: 50
-  Unlock: 0
+  Unlock: 1
   DoMerge: 0
-  cardType: 0
+  cardType: 12
   cardRank: 1
   cardRare: 0
   skill: 0
@@ -772,5 +773,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c23e56975ed42058a5d40330ff453e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameText: "\uCE74\uB4DC \uC774\uB984 \uCD94\uAC00\uB780"
-  InfoText: "\uCE74\uB4DC \uC124\uBA85 \uCD94\uAC00\uB780"
+  NameText: "\uAECD\uC9C8\uBC97\uAE30\uAE30"
+  InfoText: "\uC0C1\uB300\uBC29\uC758 \uBC29\uC5B4\uB825\uC744 3\uD134 \uB3D9\uC548
+    30 / 30 / 45 % \uB9CC\uD07C \uAC10\uC18C\uC2DC\uD0A4\uACE0, \uACF5\uACA9\uB825\uC758
+    70 / 120 / 250 % \uB9CC\uD07C\uC758 \uBB3C\uB9AC\uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4."
+--- !u!114 &1461345463076772495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143045235273301103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfb918a068cb46bdaaf8d11f58961fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

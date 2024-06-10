@@ -11,6 +11,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     private GameObject OverUI;
 
+    public int Turn;
 
     public int PWorkCount = 0;
     public int EWorkCount = 0;
@@ -22,6 +23,7 @@ public class TurnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Turn = 20;
         Playing = false;
         PWorkCount = 2;
         pTurn = true;
@@ -42,6 +44,7 @@ public class TurnManager : MonoBehaviour
             PWorkCount = 2;
             pTurn = true;
             eTurn = false;
+            Turn--;
         }
 
         if(Player.Hp <= 0 && Playing)

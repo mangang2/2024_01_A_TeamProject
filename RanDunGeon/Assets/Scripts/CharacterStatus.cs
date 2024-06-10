@@ -57,15 +57,15 @@ public class CharacterStatus : MonoBehaviour
     public float LastDefense;
 
     [Header("버프")]
-    public float AdBuff = 1;
-    public float DefenseBuff = 1;
+    public float AdBuff = 0;
+    public float DefenseBuff = 0;
     public float CriPercentBuff = 0;
     public float CriDamageBuff = 0;
     public float EnhanceDBuff = 0;
 
     [Header("디버프")]
-    public float AdDebuff = 1;
-    public float DefenseDebuff = 1;
+    public float AdDebuff = 0;
+    public float DefenseDebuff = 0;
     public float CriPercentDebuff = 0;
     public float CriDamageDebuff = 0;
     public float EnhanceDDebuff = 0;
@@ -225,14 +225,14 @@ public class CharacterStatus : MonoBehaviour
 
         if (AdBuffTurn == 0) AdBuff = 1;
         if (AdDeBuffTurn == 0) AdDebuff = 1;
-        Ad = (DefaultAd * (1 + AdPer * 0.01f) + AdAdd) * AdBuff * AdDebuff;
+        Ad = (DefaultAd * (1 + AdPer * 0.01f) + AdAdd) * (100 + AdBuff - AdDebuff) * 0.01f;
 
         if (DefenseBuffTurn == 0) DefenseBuff = 1;
         if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
-        LastDefense = ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * DefenseBuff * DefenseDebuff;
+        LastDefense = ((DefaultDefense * (1 + DfPer * 0.01f)) + DfAdd) * (100 + DefenseBuff - DefenseDebuff) * 0.01f;
         Defense = 1000 / (1000 + LastDefense);
 
-        if(DownDamageTurn == 0) DownDamage = 0;
+        if (DownDamageTurn == 0) DownDamage = 0;
 
         if (CriPercentBuffTrun == 0) CriPercentBuff = 0;
         if (CriPercentDebuffTrun == 0) CriPercentDebuff = 0;

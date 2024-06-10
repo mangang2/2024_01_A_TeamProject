@@ -54,9 +54,9 @@ public class GameManager : MonoBehaviour
 
     public bool BeStoreCard = false;
 
-    public long Gold = 0;
-
     public int ClearStage;
+
+    public long Gold = 0;
 
     private string path = Path.Combine(Application.dataPath, "TestSaveData.json");
     //private string monsterPath = Path.
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            transform.parent = null;
+            //transform.parent = null;
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }

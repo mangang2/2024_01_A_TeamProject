@@ -31,9 +31,9 @@ public class NormalShield : MonoBehaviour
             playerShield = player.GetComponent<CharacterStatus>().Shield;
             CardRank = GetComponent<CardState>().cardRank;
 
-            if (CardRank == 1) shieldRank = 2;
-            if (CardRank == 2) shieldRank = 2.7f;
-            if (CardRank == 3) shieldRank = 3.4f;
+            if (CardRank == 1) shieldRank = 1.5f;
+            if (CardRank == 2) shieldRank = 2.2f;
+            if (CardRank == 3) shieldRank = 4f;
 
             shield = playerDf * shieldRank;
 
@@ -51,6 +51,7 @@ public class NormalShield : MonoBehaviour
             }
             else
             {
+                player.GetComponent<CharacterStatus>().ShieldTurn = shieldTurn;
                 Debug.Log("현재 더 강력한 효과가 적용중입니다.");
             }
 
