@@ -23,12 +23,12 @@ public class AudioController : MonoBehaviour
         volumeSlider = GetComponent<Slider>();
         volumeSlider.onValueChanged.AddListener(SetVolume);
         audioMixer.GetFloat(AudioNameIndex,out nowVolume);
-        volumeSlider.value = (nowVolume +80)/10;
+        volumeSlider.value = (nowVolume +40)/5;
     }
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat(AudioNameIndex, -80 + volume * 10);
+        audioMixer.SetFloat(AudioNameIndex, -40 + volume * 5);
     }
 
 }

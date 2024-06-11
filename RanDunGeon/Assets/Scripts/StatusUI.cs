@@ -24,7 +24,7 @@ public class StatusUI : MonoBehaviour
         StatusText[1].text = "공격력 : " + (GM.DefaultStatus[1] * (1 + GM.StatusPer[1]) + GM.StatusAdd[1]).ToString("F0");
         StatusText[2].text = "방어력 : " + (GM.DefaultStatus[2] * (1 + GM.StatusPer[2]) + GM.StatusAdd[2]).ToString("F0");
         StatusText[3].text = "치명타 확률 : " + (GM.DefaultStatus[3] + GM.StatusAdd[3]).ToString("F0") + "%";
-        StatusText[4].text = "치명타 피해 : " + (GM.DefaultStatus[4] + GM.StatusAdd[5]).ToString("F0") + "%";
+        StatusText[4].text = "치명타 피해 : " + (GM.DefaultStatus[4] + GM.StatusAdd[4]).ToString("F0") + "%";
         StatusText[5].text = "가하는 피해 증가 : " + (GM.DefaultStatus[5] + GM.StatusAdd[5]).ToString("F0") + "%";
 
         DefenceText.text = "받는 피해가 " + (100*(1-(500 / (500 + (GM.DefaultStatus[2] * (1 + GM.StatusPer[2]) + GM.StatusAdd[2]))))).ToString("F2") + "% 만큼 감소합니다.";

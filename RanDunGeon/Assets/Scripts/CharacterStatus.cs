@@ -244,7 +244,9 @@ public class CharacterStatus : MonoBehaviour
     }
 
     private void checkDamage()
-    {   
+    {
+        GetComponent<SpriteRenderer>().color = new Color(1, 185 / 255, 185 / 255);
+        Invoke("returnColor", 0.2f);
         if (Shield > 0)
         {
             float damageTemp = Shield - FinalDamage;
@@ -276,6 +278,11 @@ public class CharacterStatus : MonoBehaviour
             Hp -= FinalDamage;
             FinalDamage = 0;
         }
+    }
+
+    private void returnColor()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public void LoadStatus()

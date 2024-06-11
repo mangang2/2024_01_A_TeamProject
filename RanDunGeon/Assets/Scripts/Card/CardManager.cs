@@ -138,7 +138,7 @@ public class CardManager : MonoBehaviour
 
         cardType = Random.Range(0, 4);
 
-        if (nowCount[checkCard(Card[cardType])] < 4)
+        if (nowCount[checkCard(Card[cardType])] < 5)
         {
             spawnCard = Card[cardType];
             Instantiate(spawnCard, transform);
