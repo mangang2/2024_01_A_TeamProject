@@ -24,6 +24,7 @@ public class PauseControl : MonoBehaviour
     {
         if (pauseActive)
         {
+            if(ClickChecker)
             ClickChecker.SetActive(true);
             pauseUI.SetActive(false);
             Time.timeScale = 1;
@@ -31,6 +32,7 @@ public class PauseControl : MonoBehaviour
         }
         else
         {
+            if (ClickChecker)
             ClickChecker.SetActive(false);
             pauseUI.SetActive(true);
             Time.timeScale = 0;

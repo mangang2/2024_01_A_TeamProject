@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 63044554}
   - component: {fileID: 63044553}
   - component: {fileID: 63044552}
+  - component: {fileID: 63044556}
   m_Layer: 5
   m_Name: Stage (8)
   m_TagString: Untagged
@@ -429,6 +430,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63044550}
   m_CullTransparentMesh: 1
+--- !u!114 &63044556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63044550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &74524587
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +472,7 @@ GameObject:
   - component: {fileID: 74524591}
   - component: {fileID: 74524590}
   - component: {fileID: 74524589}
+  - component: {fileID: 74524593}
   m_Layer: 5
   m_Name: Stage (1)
   m_TagString: Untagged
@@ -577,6 +608,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74524587}
   m_CullTransparentMesh: 1
+--- !u!114 &74524593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74524587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &152683953
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +650,7 @@ GameObject:
   - component: {fileID: 152683957}
   - component: {fileID: 152683956}
   - component: {fileID: 152683955}
+  - component: {fileID: 152683959}
   m_Layer: 5
   m_Name: Stage (2)
   m_TagString: Untagged
@@ -725,6 +786,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152683953}
   m_CullTransparentMesh: 1
+--- !u!114 &152683959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152683953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &258928779
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,8 +897,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   BeStoreCard: 0
-  Gold: 0
   ClearStage: 0
+  Gold: 0
 --- !u!4 &258928781
 Transform:
   m_ObjectHideFlags: 0
@@ -1109,6 +1199,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318718881}
   m_CullTransparentMesh: 1
+--- !u!1 &334988955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334988957}
+  - component: {fileID: 334988956}
+  m_Layer: 0
+  m_Name: PlayBGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &334988956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334988955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743aa480a9e21d44e8b627b595e33fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicName: MainBGM
+  BGM: 1
+--- !u!4 &334988957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334988955}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1099.2723, y: 691.8654, z: 2.9252625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &394215867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1346,7 @@ GameObject:
   - component: {fileID: 426992058}
   - component: {fileID: 426992057}
   - component: {fileID: 426992056}
+  - component: {fileID: 426992060}
   m_Layer: 5
   m_Name: Stage (3)
   m_TagString: Untagged
@@ -1345,6 +1482,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426992054}
   m_CullTransparentMesh: 1
+--- !u!114 &426992060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426992054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &465649488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1815,7 @@ GameObject:
   - component: {fileID: 608668102}
   - component: {fileID: 608668101}
   - component: {fileID: 608668100}
+  - component: {fileID: 608668103}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1770,6 +1937,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608668098}
   m_CullTransparentMesh: 1
+--- !u!114 &608668103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608668098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &617887081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,6 +2205,7 @@ GameObject:
   - component: {fileID: 848609063}
   - component: {fileID: 848609062}
   - component: {fileID: 848609061}
+  - component: {fileID: 848609065}
   m_Layer: 5
   m_Name: Stage (6)
   m_TagString: Untagged
@@ -2144,6 +2341,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848609059}
   m_CullTransparentMesh: 1
+--- !u!114 &848609065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848609059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &856222670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,6 +2382,7 @@ GameObject:
   - component: {fileID: 856222674}
   - component: {fileID: 856222673}
   - component: {fileID: 856222672}
+  - component: {fileID: 856222675}
   m_Layer: 5
   m_Name: NoButton
   m_TagString: Untagged
@@ -2277,6 +2504,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856222670}
   m_CullTransparentMesh: 1
+--- !u!114 &856222675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856222670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &949560105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,6 +2680,7 @@ GameObject:
   - component: {fileID: 956153230}
   - component: {fileID: 956153229}
   - component: {fileID: 956153228}
+  - component: {fileID: 956153232}
   m_Layer: 5
   m_Name: Stage (4)
   m_TagString: Untagged
@@ -2559,6 +2816,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956153226}
   m_CullTransparentMesh: 1
+--- !u!114 &956153232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956153226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &977604486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,6 +3267,7 @@ GameObject:
   - component: {fileID: 1119958407}
   - component: {fileID: 1119958406}
   - component: {fileID: 1119958405}
+  - component: {fileID: 1119958409}
   m_Layer: 5
   m_Name: Stage (7)
   m_TagString: Untagged
@@ -3116,6 +3403,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119958403}
   m_CullTransparentMesh: 1
+--- !u!114 &1119958409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119958403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1145144939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,6 +3444,7 @@ GameObject:
   - component: {fileID: 1145144943}
   - component: {fileID: 1145144942}
   - component: {fileID: 1145144941}
+  - component: {fileID: 1145144944}
   m_Layer: 5
   m_Name: "\uB4A4\uB85C\uAC00\uAE30"
   m_TagString: Untagged
@@ -3249,6 +3566,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145144939}
   m_CullTransparentMesh: 1
+--- !u!114 &1145144944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145144939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1184865691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,6 +3784,7 @@ GameObject:
   - component: {fileID: 1348829567}
   - component: {fileID: 1348829566}
   - component: {fileID: 1348829565}
+  - component: {fileID: 1348829569}
   m_Layer: 5
   m_Name: Stage (4)
   m_TagString: Untagged
@@ -3573,6 +3920,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348829563}
   m_CullTransparentMesh: 1
+--- !u!114 &1348829569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348829563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1385226558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3923,6 +4299,7 @@ GameObject:
   - component: {fileID: 1535462056}
   - component: {fileID: 1535462055}
   - component: {fileID: 1535462054}
+  - component: {fileID: 1535462057}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4044,6 +4421,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535462052}
   m_CullTransparentMesh: 1
+--- !u!114 &1535462057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535462052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1549607517
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,6 +4621,7 @@ GameObject:
   - component: {fileID: 1556979234}
   - component: {fileID: 1556979233}
   - component: {fileID: 1556979236}
+  - component: {fileID: 1556979237}
   m_Layer: 5
   m_Name: Stage
   m_TagString: Untagged
@@ -4350,6 +4757,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageUI: {fileID: 1184865691}
   ClearStage: 0
+--- !u!114 &1556979237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556979231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1640043238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4648,6 +5084,7 @@ GameObject:
   - component: {fileID: 1739048002}
   - component: {fileID: 1739048001}
   - component: {fileID: 1739048000}
+  - component: {fileID: 1739048003}
   m_Layer: 5
   m_Name: YesButton
   m_TagString: Untagged
@@ -4769,6 +5206,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739047998}
   m_CullTransparentMesh: 1
+--- !u!114 &1739048003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739047998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1765158728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4782,6 +5248,7 @@ GameObject:
   - component: {fileID: 1765158732}
   - component: {fileID: 1765158731}
   - component: {fileID: 1765158730}
+  - component: {fileID: 1765158734}
   m_Layer: 5
   m_Name: Stage
   m_TagString: Untagged
@@ -4917,6 +5384,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765158728}
   m_CullTransparentMesh: 1
+--- !u!114 &1765158734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765158728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1788669739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4996,6 +5492,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788669739}
   m_CullTransparentMesh: 1
+--- !u!1001 &1790669444
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1099.2723
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 691.8654
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9252625
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 371318897667335405, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3793627263939743170, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+      propertyPath: m_Name
+      value: ClickSoundPlay
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+--- !u!114 &1790669445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7546488918116409592, guid: 308bbbc685353e24f839bbec7707abc9, type: 3}
+  m_PrefabInstance: {fileID: 1790669444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f534292b56ab0c74f810ba0401f3b79b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1790870249
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,6 +5652,7 @@ GameObject:
   - component: {fileID: 1836615073}
   - component: {fileID: 1836615072}
   - component: {fileID: 1836615071}
+  - component: {fileID: 1836615075}
   m_Layer: 5
   m_Name: Stage (1)
   m_TagString: Untagged
@@ -5223,6 +5788,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836615069}
   m_CullTransparentMesh: 1
+--- !u!114 &1836615075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836615069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1845340648
 GameObject:
   m_ObjectHideFlags: 0
@@ -5359,6 +5953,7 @@ GameObject:
   - component: {fileID: 1869767009}
   - component: {fileID: 1869767008}
   - component: {fileID: 1869767007}
+  - component: {fileID: 1869767011}
   m_Layer: 5
   m_Name: Stage (2)
   m_TagString: Untagged
@@ -5494,6 +6089,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869767005}
   m_CullTransparentMesh: 1
+--- !u!114 &1869767011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869767005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1877855853
 GameObject:
   m_ObjectHideFlags: 0
@@ -5858,6 +6482,7 @@ GameObject:
   - component: {fileID: 2023168280}
   - component: {fileID: 2023168279}
   - component: {fileID: 2023168278}
+  - component: {fileID: 2023168282}
   m_Layer: 5
   m_Name: Stage (5)
   m_TagString: Untagged
@@ -5993,6 +6618,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023168276}
   m_CullTransparentMesh: 1
+--- !u!114 &2023168282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023168276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2029373793
 GameObject:
   m_ObjectHideFlags: 0
@@ -6219,6 +6873,7 @@ GameObject:
   - component: {fileID: 2088936078}
   - component: {fileID: 2088936077}
   - component: {fileID: 2088936076}
+  - component: {fileID: 2088936080}
   m_Layer: 5
   m_Name: Stage (9)
   m_TagString: Untagged
@@ -6354,6 +7009,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088936074}
   m_CullTransparentMesh: 1
+--- !u!114 &2088936080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088936074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2094733244
 GameObject:
   m_ObjectHideFlags: 0
@@ -6427,6 +7111,7 @@ GameObject:
   - component: {fileID: 2106578120}
   - component: {fileID: 2106578119}
   - component: {fileID: 2106578118}
+  - component: {fileID: 2106578122}
   m_Layer: 5
   m_Name: Stage (3)
   m_TagString: Untagged
@@ -6562,6 +7247,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106578116}
   m_CullTransparentMesh: 1
+--- !u!114 &2106578122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106578116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1790669445}
+          m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+          m_MethodName: Click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2129445930
 GameObject:
   m_ObjectHideFlags: 0
@@ -6646,3 +7360,5 @@ SceneRoots:
   - {fileID: 1192779172}
   - {fileID: 680982904}
   - {fileID: 258928781}
+  - {fileID: 334988957}
+  - {fileID: 1790669444}

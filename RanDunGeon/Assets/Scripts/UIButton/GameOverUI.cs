@@ -57,7 +57,7 @@ public class GameOverUI : MonoBehaviour
             goldTemp.GetComponentInChildren<TextMeshProUGUI>().text = stageManager.gold.ToString();
         }
         
-        if (stageManager.rewardCard != 0)
+        if (stageManager.rewardCard != 0 && GM.CardList[stageManager.rewardCard - 1].GetComponent<CardState>().Unlock == false)
         {
             rewardTemp = GM.CardList[stageManager.rewardCard - 1].GetComponent<CardState>();
             rewardTemp.Unlock = true;

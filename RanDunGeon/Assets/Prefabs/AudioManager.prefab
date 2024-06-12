@@ -52,4 +52,32 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: -8187420681901574774, guid: 7d58d8b97013ba942af5fc1d21ac71a2, type: 2}
     audioSources: {fileID: 0}
+  - name: Click
+    Clip: {fileID: 8300000, guid: 9d0113dd16699ce4ea3c58dd422fdc1f, type: 3}
+    volume: 0.484
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: -8187420681901574774, guid: 7d58d8b97013ba942af5fc1d21ac71a2, type: 2}
+    audioSources: {fileID: 0}
+  - name: StoreBGM
+    Clip: {fileID: 8300000, guid: 2cebe5ef59f447d4d803665e3ecf1a2f, type: 3}
+    volume: 0.418
+    pitch: 1
+    loop: 1
+    mixerGroup: {fileID: -3287968044930506884, guid: 7d58d8b97013ba942af5fc1d21ac71a2, type: 2}
+    audioSources: {fileID: 0}
+  - name: MainBGM
+    Clip: {fileID: 8300000, guid: 64cbd0ab2666e4e7c814310b8fedc1f5, type: 3}
+    volume: 0.357
+    pitch: 1
+    loop: 1
+    mixerGroup: {fileID: -3287968044930506884, guid: 7d58d8b97013ba942af5fc1d21ac71a2, type: 2}
+    audioSources: {fileID: 0}
+  - name: Gold
+    Clip: {fileID: 8300000, guid: 8e746bda97a9f634f9c225c03bd4bfcb, type: 3}
+    volume: 0.775
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: -8187420681901574774, guid: 7d58d8b97013ba942af5fc1d21ac71a2, type: 2}
+    audioSources: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 7d58d8b97013ba942af5fc1d21ac71a2, type: 2}

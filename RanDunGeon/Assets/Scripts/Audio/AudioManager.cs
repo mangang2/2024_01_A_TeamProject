@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public List<Sound> sounds = new List<Sound>();
     public AudioMixer audioMixer;
+    private Sound beforeSound;
 
     private void Awake()
     {
@@ -50,13 +51,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(string name)
+    public void PlaySound(string name, bool BGM = false)
     {
         Sound soundToPlay = sounds.Find(sound => sound.name == name);
+        if(BGM)
+        StopSound(soundToPlay.name);
 
-        if (soundToPlay != null)
+        if (soundToPlay != null && beforeSound != soundToPlay)
         {
-            soundToPlay.audioSources.PlayOneShot(soundToPlay.audioSources.clip);
+            soundToPlay.audioSources.Play();
+            if (BGM == true)
+            {
+                beforeSound = soundToPlay;
+            }
         }
         else
         {
@@ -64,4 +71,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopSound(string newSound)
+    {
+        if(beforeSound != null && beforeSound.name != newSound)
+        beforeSound.audioSources.Stop();
+        beforeSound = null;
+    }
 }

@@ -8,7 +8,7 @@ using DG.Tweening;
 public class DeckCard : MonoBehaviour
 {
     public GameObject CardSelectCavas;
-    public TextMeshProUGUI textBox;
+    public TextMeshProUGUI NameText;
     public Image SkillImange;
     public TextMeshProUGUI InfoText;
 
@@ -51,14 +51,15 @@ public class DeckCard : MonoBehaviour
     {
         if (CardType != null)
         {
-            textBox.text = CardType.GetComponent<CardInfo>().NameText;
+            NameText.text = CardType.GetComponent<CardInfo>().NameText;
             SkillImange.sprite = CardType.GetComponent<CardState>().SkillSprite;
             SkillImange.enabled = true;
             InfoText.text = CardType.GetComponent<CardInfo>().InfoText;
         }
         else
         {
-            textBox.text = "";
+            NameText.text = "";
+            InfoText.text = "";
             SkillImange.enabled = false;
         }
     }
@@ -71,12 +72,12 @@ public class DeckCard : MonoBehaviour
 
         if (CardType != null)
         {
-            textBox.text = CardType.GetComponent<CardInfo>().NameText;
+            NameText.text = CardType.GetComponent<CardInfo>().NameText;
             InfoText.text = CardType.GetComponent<CardInfo>().InfoText;
         }
         else
         {
-            textBox.text = "카드가 없어!";
+            NameText.text = "카드가 없어!";
         }
 
         SkillImange.sprite = CardType.GetComponent<CardState>().SkillSprite;
