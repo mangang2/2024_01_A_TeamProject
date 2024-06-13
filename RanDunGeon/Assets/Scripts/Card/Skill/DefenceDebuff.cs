@@ -33,7 +33,7 @@ public class DefenceDebuff : MonoBehaviour
         float DamageRank = 1.25f;
         float Debuff = 30;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;
@@ -84,7 +84,7 @@ public class DefenceDebuff : MonoBehaviour
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
             Debug.Log("상대방 방어력을 3턴 동안 " + Debuff.ToString() + "만큼 감소시키고, " + finalDamage.ToString("F0") + " 의 물리피해를 입힙니다.");
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject, 0.3f);
             enabled = false;
         }

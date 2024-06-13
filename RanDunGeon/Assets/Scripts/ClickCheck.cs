@@ -55,7 +55,7 @@ public class ClickCheck : MonoBehaviour
                     {
                         if (PWCount > 0)
                         {
-                            hit.collider.gameObject.GetComponent<CardState>().skill = true;
+                            hit.collider.gameObject.GetComponent<CardState>().skill();
                         }
                         
                         holdTime = 0;

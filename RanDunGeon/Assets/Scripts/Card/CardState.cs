@@ -8,6 +8,7 @@ using DG.Tweening;
 
 public class CardState : MonoBehaviour
 {
+    public GameObject player;
     public Sprite SkillSprite;
     public GameObject SpriteObject;
 
@@ -24,7 +25,7 @@ public class CardState : MonoBehaviour
     public int cardType;
     public int cardRank = 1;
     public int cardRare;
-    public bool skill = false;
+    public bool skillUse = false;
 
     public TextMeshPro rankText,NameText,InfoText;
 
@@ -40,6 +41,7 @@ public class CardState : MonoBehaviour
     private void Awake()
     {
         CardManager = GameObject.Find("CardManager");
+        player = GameObject.FindGameObjectWithTag("Player");
         infoText = gameObject.GetComponent<CardInfo>().InfoText;
     }
 
@@ -84,7 +86,7 @@ public class CardState : MonoBehaviour
             }
         }
         
-        if(skill == true)
+        if(skillUse == true)
         {
             CardManager.GetComponent<CardManager>().UsingCard = true;
             transform.DOMoveY(5, 0.3f);
@@ -137,5 +139,11 @@ public class CardState : MonoBehaviour
         Debug.Log("카드 스킬 : " + infoText);
     }
 
-    
+    public void skill()
+    {
+        if(player.GetComponent<CharacterStatus>().SkipTurn == false)
+        {
+            skillUse = true;
+        }    
+    }
 }

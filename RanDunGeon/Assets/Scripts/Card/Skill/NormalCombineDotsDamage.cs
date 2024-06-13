@@ -32,7 +32,7 @@ public class NormalCombineDotsDamage : MonoBehaviour
         float SumDamageRank = 0;
         float DamageRank = 0;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;

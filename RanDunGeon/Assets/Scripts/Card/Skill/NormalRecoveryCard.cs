@@ -23,7 +23,7 @@ public class NormalRecoveryCard : MonoBehaviour
         float finalHeal;
         int CardRank;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerMaxHp = player.GetComponent<CharacterStatus>().MaxHp;
             CardRank = GetComponent<CardState>().cardRank;
@@ -39,7 +39,7 @@ public class NormalRecoveryCard : MonoBehaviour
             Debug.Log("체력을 " + finalHeal.ToString("F0") + "만큼 회복합니다.");
 
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject,0.3f);
             enabled = false;
         }

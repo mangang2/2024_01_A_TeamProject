@@ -28,7 +28,7 @@ public class NormalCriPerBuff : MonoBehaviour
 
         int CardRank;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerCriPBuff = player.GetComponent<CharacterStatus>().CriPercentBuff;
            
@@ -73,7 +73,7 @@ public class NormalCriPerBuff : MonoBehaviour
             }
 
 
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject,0.3f);
             enabled = false;
         }

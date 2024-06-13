@@ -52,11 +52,11 @@ public class TurnManager : MonoBehaviour
 
         if (Turn > 0)
         {
-            TurnText.text = "턴 " + (21 - Turn) + " / 20   행동 " + PWorkCount + " / 2";
+            TurnText.text = "?? " + (21 - Turn) + " / 20   ???? " + PWorkCount + " / 2";
         }
         else
         {
-            TurnText.text = "턴 20 / 20   행동 2 / 2";
+            TurnText.text = "?? 20 / 20   ???? 2 / 2";
             StopGame();
             OverUI.SetActive(true);
             OverUI.GetComponent<GameOverUI>().Lose();

@@ -24,7 +24,7 @@ public class NormalDamageDown : MonoBehaviour
         int DdTurn = 2;
         int CardRank;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerLevel = player.GetComponent<CharacterStatus>().CharLevel;
             playerDd = player.GetComponent<CharacterStatus>().DownDamage;
@@ -52,7 +52,7 @@ public class NormalDamageDown : MonoBehaviour
             }
 
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject, 0.3f);
             enabled = false;
         }

@@ -35,7 +35,7 @@ public class ReflectionDamage : MonoBehaviour
             DamageRank = 2.5f;
         }
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             if(player.GetComponent<ReflectObject>() == null)
             {
@@ -49,7 +49,7 @@ public class ReflectionDamage : MonoBehaviour
             player.GetComponent<ReflectObject>().DamageRank = DamageRank;
 
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject, 0.3f);
             enabled = false;
         }

@@ -28,7 +28,7 @@ public class DotDamageCri : MonoBehaviour
 
         float DamageRank = 0.6f;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;
@@ -56,7 +56,7 @@ public class DotDamageCri : MonoBehaviour
             GameObject DotDamageObject = Instantiate(DotDamagePrefabs);
             DotDamageObject.transform.parent = enemy.transform;
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject, 0.3f);
             enabled = false;
         }

@@ -25,7 +25,7 @@ public class NormalShield : MonoBehaviour
         float shield = 0;
         int CardRank;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerDf = player.GetComponent<CharacterStatus>().LastDefense;
             playerShield = player.GetComponent<CharacterStatus>().Shield;
@@ -56,7 +56,7 @@ public class NormalShield : MonoBehaviour
             }
 
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject, 0.3f);
             enabled = false;
         }

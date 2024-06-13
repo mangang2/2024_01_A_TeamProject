@@ -95,6 +95,8 @@ public class CharacterStatus : MonoBehaviour
     public bool DotCri;
     public int DotCriTurn;
 
+    public bool SkipTurn;
+
     private bool TurnDown = true;
 
     // Start is called before the first frame update
@@ -105,6 +107,7 @@ public class CharacterStatus : MonoBehaviour
             LoadStatus();
         }
         DotCri = false;
+        SkipTurn = false;
     }
 
     // Update is called once per frame
@@ -157,6 +160,12 @@ public class CharacterStatus : MonoBehaviour
             if (TurnManager.GetComponent<TurnManager>().pTurn == true) TurnDown = true;
         }
 
+        if(SkipTurn == true)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 229 / 255, 0);
+            Invoke("returnColor", 0.2f);
+            TurnManager.GetComponent<TurnManager>().PWorkCount = 0;
+        }
 
         if(Hp > MaxHp)
         {

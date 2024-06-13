@@ -1973,6 +1973,7 @@ MonoBehaviour:
   ShieldTurn: 0
   DotCri: 0
   DotCriTurn: 0
+  SkipTurn: 0
 --- !u!212 &545915834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2650,6 +2651,7 @@ MonoBehaviour:
   ShieldTurn: 0
   DotCri: 0
   DotCriTurn: 0
+  SkipTurn: 0
 --- !u!114 &737671627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2666,6 +2668,7 @@ MonoBehaviour:
   StageManager: {fileID: 2002313767}
   eTurn: 0
   MonsterNum: 0
+  soyeon: {fileID: 0}
 --- !u!212 &737671628
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -33,7 +33,7 @@ public class FatalBlow : MonoBehaviour
         float DamageRank = 1.25f;
         int criDAdd = 70;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;
@@ -78,7 +78,7 @@ public class FatalBlow : MonoBehaviour
             enemy.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
             Debug.Log(finalDamage.ToString("F0") + "? ????? ????.");
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject, 0.3f);
             enabled = false;
         }

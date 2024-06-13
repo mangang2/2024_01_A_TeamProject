@@ -36,7 +36,7 @@ public class SelfDamageAttack : MonoBehaviour
         float DamageRank = 1.25f;
         float HpDamageBuffRank = 0.5f;
 
-        if (GetComponent<CardState>().skill == true)
+        if (GetComponent<CardState>().skillUse == true)
         {
             playerAd = player.GetComponent<CharacterStatus>().Ad;
             CardRank = GetComponent<CardState>().cardRank;
@@ -93,7 +93,7 @@ public class SelfDamageAttack : MonoBehaviour
             Invoke("AdditionalAttck", 0.2f);
             Debug.Log(DisHp.ToString("F0") + "의 체력을 잃고, " + finalDamage2.ToString("F0") + "의 추가 피해와 " + finalDamage1.ToString("F0") + "의 물리피해를 입힙니다.");
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
-            GetComponent<CardState>().skill = false;
+            GetComponent<CardState>().skillUse = false;
             Destroy(gameObject, 0.3f);
             enabled = false;
         }
