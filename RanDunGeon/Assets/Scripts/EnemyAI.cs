@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public partial class EnemyAI : MonoBehaviour
 {
-    public GameObject TurnManager;
+    public TurnManager TurnManager;
+    public StageManager StageManager;
     public bool eTurn = false;
+    public int MonsterNum;
 
     private GameObject player;
     private GameObject enemy;
     private bool skillWork = false;
     private int EWCount;
     private int skillNum;
-
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +31,7 @@ public class EnemyAI : MonoBehaviour
             StopAllCoroutines();
         }
 
-        
-
-        EWCount = TurnManager.GetComponent<TurnManager>().EWorkCount;
+        EWCount = TurnManager.EWorkCount;
 
         if (skillWork == false && EWCount > 0 && eTurn == true)
         {
@@ -50,17 +49,36 @@ public class EnemyAI : MonoBehaviour
             yield return null;
         }
 
-        skillNum = Random.Range(1, 4);
+        MonsterNum = StageManager.MonsterNum;
 
-        if (skillNum == 1) Skill_1();
-        if (skillNum == 2) Skill_2();
-        if (skillNum == 3) Skill_3();
+        skillNum = Random.Range(1, 3);
+
+        switch(MonsterNum)
+        {
+            case 11:
+                if (skillNum == 1) Skill_11_1();
+                if (skillNum == 2) Skill_11_2();
+                break;
+
+            case 12:
+                if (skillNum == 1) Skill_12_1();
+                if (skillNum == 2) Skill_12_2();
+                break;
+
+        }
+
     }
 
-    private void Skill_1()
+    private void StopSkill(int SP = 2)
     {
- 
-
+        TurnManager.EWorkCount -= SP;
+        skillWork = false;
+    }
+}
+public partial class EnemyAI
+{
+    private void Skill_12_1()
+    {
         float enemyAd;
         float playerDf;
         float playerDd;
@@ -77,10 +95,9 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("적-" + (enemyAd * 2).ToString("F0") + "의 물리피해를 입힙니다.");
 
         StopSkill();
-        //Invoke("StopSkill", 0.5f);
     }
 
-    private void Skill_2()
+    private void Skill_12_2()
     {
         float DownHp;
         float UpAd;
@@ -95,23 +112,21 @@ public class EnemyAI : MonoBehaviour
             UpAd = enemy.GetComponent<CharacterStatus>().DefaultAd * 0.1f;
             finalAd = enemy.GetComponent<CharacterStatus>().Ad;
 
-
-
             Debug.Log("적-자신의 체력을 " + DownHp.ToString("F0") + "만큼 소모하고, 1턴동안 공격력을 " + UpAd.ToString("F0") + "만큼 올린다");
 
             StopSkill();
-            //Invoke("StopSkill", 0.5f);
         }
         else if (EWCount == 1)
         {
             skillWork = false;
         }
     }
+}//몬스터 12
 
-    private void Skill_3()
+public partial class EnemyAI
+{
+    private void Skill_11_1()
     {
-
-
         float enemyAd;
         float playerDf;
         float playerDd;
@@ -121,21 +136,37 @@ public class EnemyAI : MonoBehaviour
         playerDf = player.GetComponent<CharacterStatus>().Defense;
         playerDd = player.GetComponent<CharacterStatus>().DownDamage;
 
-        finalDamage = enemyAd * 1f * playerDf - playerDd;
+        finalDamage = enemyAd * 1.5f * playerDf - playerDd;
 
         player.GetComponent<CharacterStatus>().FinalDamage = finalDamage;
 
-        enemy.GetComponent<CharacterStatus>().Recover = finalDamage * 0.15f;
-
-        Debug.Log("적-" + (enemyAd * 1.5f).ToString("F0") + "의 물리피해를 입히고, " + (finalDamage * 0.15f).ToString("F0") + "만큼 체력을 흡수합니다.");
+        Debug.Log("적-" + (enemyAd * 2).ToString("F0") + "의 물리피해를 입힙니다.");
 
         StopSkill();
-        //Invoke("StopSkill", 0.5f);
     }
 
-    private void StopSkill()
+    private void Skill_11_2()
     {
-        TurnManager.GetComponent<TurnManager>().EWorkCount--;
-        skillWork = false;
+        float DownHp;
+        float UpAd;
+        float finalAd;
+
+        if (EWCount == 2)
+        {
+            enemy.GetComponent<CharacterStatus>().Hp *= 0.95f;
+            DownHp = enemy.GetComponent<CharacterStatus>().Hp * 0.05f;
+            enemy.GetComponent<CharacterStatus>().AdBuffTurn = 1;
+            enemy.GetComponent<CharacterStatus>().AdBuff = 1.10f;
+            UpAd = enemy.GetComponent<CharacterStatus>().DefaultAd * 0.1f;
+            finalAd = enemy.GetComponent<CharacterStatus>().Ad;
+
+            Debug.Log("적-자신의 체력을 " + DownHp.ToString("F0") + "만큼 소모하고, 1턴동안 공격력을 " + UpAd.ToString("F0") + "만큼 올린다");
+
+            StopSkill();
+        }
+        else if (EWCount == 1)
+        {
+            skillWork = false;
+        }
     }
-}
+}//몬스터 11

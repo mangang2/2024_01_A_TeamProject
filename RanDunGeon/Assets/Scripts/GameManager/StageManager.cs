@@ -8,8 +8,9 @@ public class StageManager : MonoBehaviour
     public int gold;
     public int itemRank;
     public int rewardCard;
+    public int MonsterNum;
 
-    [SerializeField]
+[SerializeField]
     private GameObject enemy;
     [SerializeField]
     private GameObject player;
@@ -39,6 +40,8 @@ public class StageManager : MonoBehaviour
         gold = monster.Gold;
         itemRank = monster.ItemRank;
         rewardCard = monster.RewardCard;
+        MonsterNum = monster.MonsterNum;
+
         if(itemRank > 0)
         LoadItemStatus(itemRank -1);
 

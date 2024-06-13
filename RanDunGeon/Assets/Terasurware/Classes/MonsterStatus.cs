@@ -28,7 +28,7 @@ public class MonsterStatus : ScriptableObject
 		public float DotsED;
 		public int Gold;
 		public int ItemRank;
-		public int Image;
+		public int MonsterNum;
 		public int RewardCard;
 	}
 }

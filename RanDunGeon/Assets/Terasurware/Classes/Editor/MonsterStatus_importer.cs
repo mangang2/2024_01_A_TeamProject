@@ -8,8 +8,8 @@ using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 
 public class MonsterStatus_importer : AssetPostprocessor {
-	private static readonly string filePath = "Assets/GameResources/ExelInforter/MonsterStatus.xlsx";
-	private static readonly string exportPath = "Assets/GameResources/ExelInforter/MonsterStatus.asset";
+	private static readonly string filePath = "Assets/GameResources/ExelImforter/MonsterStatus.xlsx";
+	private static readonly string exportPath = "Assets/GameResources/ExelImforter/MonsterStatus.asset";
 	private static readonly string[] sheetNames = { "Chapter 0","Chapter 1","Chapter 2", };
 	
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
@@ -61,7 +61,7 @@ public class MonsterStatus_importer : AssetPostprocessor {
 					cell = row.GetCell(8); p.DotsED = (float)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(9); p.Gold = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(10); p.ItemRank = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(11); p.Image = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(11); p.MonsterNum = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(12); p.RewardCard = (int)(cell == null ? 0 : cell.NumericCellValue);
 						s.list.Add (p);
 					}

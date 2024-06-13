@@ -2662,8 +2662,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2bbf49e9f16432487c87d8b5fc6c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnManager: {fileID: 1983862294}
+  TurnManager: {fileID: 1983862295}
+  StageManager: {fileID: 2002313767}
   eTurn: 0
+  MonsterNum: 0
 --- !u!212 &737671628
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6785,6 +6787,7 @@ MonoBehaviour:
   gold: 0
   itemRank: 0
   rewardCard: 0
+  MonsterNum: 0
   enemy: {fileID: 737671621}
   player: {fileID: 545915828}
   monsterStatus: {fileID: 11400000, guid: f3d5ec8550d6c4c078c6d563f69bdf12, type: 2}

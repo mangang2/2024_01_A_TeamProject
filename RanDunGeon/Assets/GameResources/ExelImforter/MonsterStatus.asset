@@ -26,7 +26,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 1000
       ItemRank: 0
-      Image: 1
+      MonsterNum: 1
       RewardCard: 0
   - name: Chapter 1
     list:
@@ -41,7 +41,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 1500
       ItemRank: 0
-      Image: 11
+      MonsterNum: 11
       RewardCard: 0
     - Index: 2
       LV: 10
@@ -54,7 +54,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 2000
       ItemRank: 0
-      Image: 11
+      MonsterNum: 11
       RewardCard: 0
     - Index: 3
       LV: 15
@@ -67,7 +67,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 4000
       ItemRank: 1
-      Image: 12
+      MonsterNum: 12
       RewardCard: 6
     - Index: 4
       LV: 20
@@ -80,7 +80,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 10000
       ItemRank: 1
-      Image: 12
+      MonsterNum: 12
       RewardCard: 0
     - Index: 5
       LV: 30
@@ -93,7 +93,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 16000
       ItemRank: 2
-      Image: 13
+      MonsterNum: 13
       RewardCard: 10
   - name: Chapter 2
     list:
@@ -108,7 +108,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 15000
       ItemRank: 2
-      Image: 21
+      MonsterNum: 21
       RewardCard: 0
     - Index: 2
       LV: 30
@@ -121,7 +121,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 20000
       ItemRank: 2
-      Image: 21
+      MonsterNum: 21
       RewardCard: 0
     - Index: 3
       LV: 30
@@ -134,7 +134,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 24000
       ItemRank: 2
-      Image: 21
+      MonsterNum: 21
       RewardCard: 0
     - Index: 4
       LV: 30
@@ -147,7 +147,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 27000
       ItemRank: 2
-      Image: 21
+      MonsterNum: 21
       RewardCard: 0
     - Index: 5
       LV: 40
@@ -160,7 +160,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 30000
       ItemRank: 3
-      Image: 22
+      MonsterNum: 22
       RewardCard: 0
     - Index: 6
       LV: 40
@@ -173,7 +173,7 @@ MonoBehaviour:
       DotsED: 15
       Gold: 40000
       ItemRank: 3
-      Image: 22
+      MonsterNum: 22
       RewardCard: 0
     - Index: 7
       LV: 40
@@ -186,7 +186,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 55000
       ItemRank: 3
-      Image: 22
+      MonsterNum: 22
       RewardCard: 0
     - Index: 8
       LV: 40
@@ -199,7 +199,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 75000
       ItemRank: 3
-      Image: 22
+      MonsterNum: 22
       RewardCard: 0
     - Index: 9
       LV: 40
@@ -211,8 +211,8 @@ MonoBehaviour:
       ED: 10
       DotsED: 0
       Gold: 100000
-      ItemRank: 4
-      Image: 22
+      ItemRank: 3
+      MonsterNum: 22
       RewardCard: 0
     - Index: 10
       LV: 50
@@ -225,5 +225,5 @@ MonoBehaviour:
       DotsED: 0
       Gold: 160000
       ItemRank: 4
-      Image: 23
+      MonsterNum: 23
       RewardCard: 0
