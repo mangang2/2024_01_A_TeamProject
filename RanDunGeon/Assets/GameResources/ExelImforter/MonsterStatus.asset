@@ -173,7 +173,7 @@ MonoBehaviour:
       DotsED: 15
       Gold: 40000
       ItemRank: 3
-      MonsterNum: 22
+      MonsterNum: 23
       RewardCard: 0
     - Index: 7
       LV: 40
@@ -186,7 +186,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 55000
       ItemRank: 3
-      MonsterNum: 22
+      MonsterNum: 23
       RewardCard: 0
     - Index: 8
       LV: 40
@@ -199,7 +199,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 75000
       ItemRank: 3
-      MonsterNum: 22
+      MonsterNum: 23
       RewardCard: 0
     - Index: 9
       LV: 40
@@ -212,7 +212,7 @@ MonoBehaviour:
       DotsED: 0
       Gold: 100000
       ItemRank: 3
-      MonsterNum: 22
+      MonsterNum: 23
       RewardCard: 0
     - Index: 10
       LV: 50
@@ -225,5 +225,5 @@ MonoBehaviour:
       DotsED: 0
       Gold: 160000
       ItemRank: 4
-      MonsterNum: 23
+      MonsterNum: 24
       RewardCard: 0

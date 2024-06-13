@@ -1401,8 +1401,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -50}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchoredPosition: {x: 240, y: -50}
+  m_SizeDelta: {x: 550, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366435007
 MonoBehaviour:
@@ -2668,6 +2668,7 @@ MonoBehaviour:
   StageManager: {fileID: 2002313767}
   eTurn: 0
   MonsterNum: 0
+  EWCount: 0
   soyeon: {fileID: 0}
 --- !u!212 &737671628
 SpriteRenderer:
@@ -6914,8 +6915,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -50}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchoredPosition: {x: 268, y: -50}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091527217
 MonoBehaviour:
@@ -6937,7 +6938,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD134 1 / 20   \uD589\uB3D9 2 / 2   "
+  m_text: "\uB0A8\uC740 \uD134  20 / 20   \uD589\uB3D9 2 / 2   "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14bc244df88404361b574097656d7a64, type: 2}
   m_sharedMaterial: {fileID: -8573086619758758993, guid: 14bc244df88404361b574097656d7a64, type: 2}
@@ -6971,7 +6972,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

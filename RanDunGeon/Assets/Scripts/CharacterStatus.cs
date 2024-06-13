@@ -95,7 +95,7 @@ public class CharacterStatus : MonoBehaviour
     public bool DotCri;
     public int DotCriTurn;
 
-    public bool SkipTurn;
+    public bool SkipTurn, invincibility;
 
     private bool TurnDown = true;
 
@@ -160,11 +160,13 @@ public class CharacterStatus : MonoBehaviour
             if (TurnManager.GetComponent<TurnManager>().pTurn == true) TurnDown = true;
         }
 
-        if(SkipTurn == true)
+        if(SkipTurn == true && TurnManager.GetComponent<TurnManager>().pTurn == true)
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, 229 / 255, 0);
+            Debug.Log("마비");
+            GetComponent<SpriteRenderer>().color = Color.yellow;
             Invoke("returnColor", 0.2f);
             TurnManager.GetComponent<TurnManager>().PWorkCount = 0;
+            SkipTurn = false;
         }
 
         if(Hp > MaxHp)
@@ -191,7 +193,7 @@ public class CharacterStatus : MonoBehaviour
             HpText.text = "Hp : " + Hp.ToString("F0");
             HpBar.value = Hp / MaxHp;
         }
-        else if (Hp <= 0) 
+        else if (Hp <= 0 && invincibility == false)
         {
             HpText.text = "Die";
         }
@@ -206,12 +208,12 @@ public class CharacterStatus : MonoBehaviour
             ShieldBar.gameObject.SetActive(false);
         }
 
-        if (AdBuffTurn == 0) AdBuff = 1;
-        if (AdDeBuffTurn == 0) AdDebuff = 1;
+        if (AdBuffTurn == 0) AdBuff = 0;
+        if (AdDeBuffTurn == 0) AdDebuff = 0;
         Ad = (DefaultAd * (1 + AdPer) + AdAdd) * (100 + AdBuff - AdDebuff) * 0.01f;
 
-        if (DefenseBuffTurn == 0) DefenseBuff = 1;
-        if (DefenseDebuffTurn == 0) DefenseDebuff = 1;
+        if (DefenseBuffTurn == 0) DefenseBuff = 0;
+        if (DefenseDebuffTurn == 0) DefenseDebuff = 0;
         LastDefense = (DefaultDefense * (1 + DfPer) + DfAdd) * (100 + DefenseBuff - DefenseDebuff) * 0.01f;
         Defense = 500 / (500 + LastDefense);
 

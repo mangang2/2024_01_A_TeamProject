@@ -52,24 +52,24 @@ public class TurnManager : MonoBehaviour
 
         if (Turn > 0)
         {
-            TurnText.text = "?? " + (21 - Turn) + " / 20   ???? " + PWorkCount + " / 2";
+            TurnText.text = "남은 턴 " + Turn + " / 20   행동 " + PWorkCount + " / 2";
         }
         else
         {
-            TurnText.text = "?? 20 / 20   ???? 2 / 2";
+            TurnText.text = "턴 20 / 20    2 / 2";
             StopGame();
             OverUI.SetActive(true);
             OverUI.GetComponent<GameOverUI>().Lose();
         }
 
-        if (Player.Hp <= 0 && Playing)
+        if (Player.Hp <= 0 && Playing && Player.invincibility == false)
         {
             StopGame();
             OverUI.SetActive(true);
             OverUI.GetComponent<GameOverUI>().Lose();
         }
 
-        if(Enemy.Hp <= 0 && Playing)
+        if(Enemy.Hp <= 0 && Playing && Enemy.invincibility == false)
         {
             StopGame();
             OverUI.SetActive(true);

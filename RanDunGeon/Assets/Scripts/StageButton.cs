@@ -22,6 +22,14 @@ public class StageButton : MonoBehaviour
 
     private int monsterLV, itemRank;
 
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            NoButton();
+        }
+    }
+
     public void OnUI(bool open)
     {
         if(open == true)
