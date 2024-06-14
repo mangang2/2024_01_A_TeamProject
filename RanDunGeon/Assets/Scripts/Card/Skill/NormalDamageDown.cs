@@ -21,7 +21,7 @@ public class NormalDamageDown : MonoBehaviour
         int playerLevel;
         int playerDd;
         int Dd = 5;
-        int DdTurn = 2;
+        int DdTurn = 3;
         int CardRank;
 
         if (GetComponent<CardState>().skillUse == true)
@@ -30,9 +30,9 @@ public class NormalDamageDown : MonoBehaviour
             playerDd = player.GetComponent<CharacterStatus>().DownDamage;
             CardRank = GetComponent<CardState>().cardRank;
 
-            if (CardRank == 1) Dd = 3 * playerLevel;
-            if (CardRank == 2) Dd = 4 * playerLevel;
-            if (CardRank == 3) Dd = 5 * playerLevel;
+            if (CardRank == 1) Dd = 5 * playerLevel;
+            if (CardRank == 2) Dd = 7 * playerLevel;
+            if (CardRank == 3) Dd = 10 * playerLevel;
 
             if (playerDd < Dd)
             {

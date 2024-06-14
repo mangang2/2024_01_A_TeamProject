@@ -336,7 +336,8 @@ MonoBehaviour:
   mainCamera: {fileID: 1530271339}
   TurnManager: {fileID: 1983862294}
   CardManager: {fileID: 813556360}
-  click: 1
+  Click: 1
+  ClickAble: 1
   holdTime: 0
 --- !u!4 &34537366
 Transform:
@@ -695,7 +696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -362}
+  m_AnchoredPosition: {x: 250, y: -362}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &141843659
@@ -1913,6 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnManager: {fileID: 1983862294}
+  ClickChecker: {fileID: 34537364}
   HpText: {fileID: 105708144}
   HpBar: {fileID: 1275788390}
   ShieldBar: {fileID: 1353405595}
@@ -1974,6 +1976,7 @@ MonoBehaviour:
   DotCri: 0
   DotCriTurn: 0
   SkipTurn: 0
+  invincibility: 0
 --- !u!212 &545915834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2591,6 +2594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnManager: {fileID: 1983862294}
+  ClickChecker: {fileID: 34537364}
   HpText: {fileID: 590657165}
   HpBar: {fileID: 1266277847}
   ShieldBar: {fileID: 1639163481}
@@ -2652,6 +2656,7 @@ MonoBehaviour:
   DotCri: 0
   DotCriTurn: 0
   SkipTurn: 0
+  invincibility: 0
 --- !u!114 &737671627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2664,11 +2669,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2bbf49e9f16432487c87d8b5fc6c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DotsDamagePrefab: {fileID: 7695528727712869129, guid: d86245e88470f45b095f1434f2476d2c, type: 3}
   TurnManager: {fileID: 1983862295}
   StageManager: {fileID: 2002313767}
   eTurn: 0
   MonsterNum: 0
   EWCount: 0
+  MaxHp: 0
+  nowPhase: 0
+  MaxHpSave: 0
   soyeon: {fileID: 0}
 --- !u!212 &737671628
 SpriteRenderer:
@@ -4344,7 +4353,7 @@ MonoBehaviour:
   m_text: Win!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14bc244df88404361b574097656d7a64, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -8573086619758758993, guid: 14bc244df88404361b574097656d7a64, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5793,7 +5802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: -362}
+  m_AnchoredPosition: {x: 0, y: -362}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1743722949
@@ -6733,6 +6742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555477085f83b0644bef6b245cbb4420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClickChecker: {fileID: 34537364}
   Player: {fileID: 545915833}
   Enemy: {fileID: 737671626}
   OverUI: {fileID: 1270026506}

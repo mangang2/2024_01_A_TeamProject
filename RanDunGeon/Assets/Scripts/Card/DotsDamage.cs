@@ -16,8 +16,16 @@ public class DotsDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        if (transform.parent.transform.tag == "Enemy")
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            enemy = GameObject.FindGameObjectWithTag("Enemy");
+        }
+        else if(transform.parent.transform.tag == "Player")
+        {
+            enemy = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindGameObjectWithTag("Enemy");
+        }
     }
 
     // Update is called once per frame
@@ -35,7 +43,6 @@ public class DotsDamage : MonoBehaviour
         float criD = 0;
         float ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
         float DotsED = player.GetComponent<CharacterStatus>().EnhanceDotsD * 0.01f;
-        enemyDf = enemy.gameObject.GetComponent<CharacterStatus>().Defense;
         enemyDd = enemy.gameObject.GetComponent<CharacterStatus>().DownDamage;
 
         if(Random.Range(0f,100f) < 25 && player.GetComponent<CharacterStatus>().DotCri == true)
@@ -59,7 +66,6 @@ public class DotsDamage : MonoBehaviour
         float criD = 0;
         float ED = player.GetComponent<CharacterStatus>().EnhanceDamage * 0.01f;
         float DotsED = player.GetComponent<CharacterStatus>().EnhanceDotsD * 0.01f;
-        enemyDf = enemy.gameObject.GetComponent<CharacterStatus>().Defense;
         enemyDd = enemy.gameObject.GetComponent<CharacterStatus>().DownDamage;
 
         if (Random.Range(0f, 100f) < 25 && player.GetComponent<CharacterStatus>().DotCri == true)

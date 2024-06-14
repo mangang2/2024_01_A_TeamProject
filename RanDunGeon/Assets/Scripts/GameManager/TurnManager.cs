@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class TurnManager : MonoBehaviour
 {
+    public GameObject ClickChecker;
+
     public CharacterStatus Player;
     public CharacterStatus Enemy;
     public GameObject OverUI;
@@ -27,8 +30,7 @@ public class TurnManager : MonoBehaviour
         Turn = 20;
         PWorkCount = 2;
         pTurn = true;
-
-        
+           
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class TurnManager : MonoBehaviour
             PWorkCount = 2;
             pTurn = true;
             eTurn = false;
+            ClickChecker.GetComponent<ClickCheck>().ClickAble = false;
             Turn--;
         }
 
@@ -80,6 +83,7 @@ public class TurnManager : MonoBehaviour
 
     private void StopGame()
     {
+        ClickChecker.SetActive(false);
         Playing = false;
         EWorkCount = 0;
         PWorkCount = 0;

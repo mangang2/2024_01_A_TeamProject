@@ -32,7 +32,7 @@ MonoBehaviour:
     list:
     - Index: 1
       LV: 5
-      HP: 700
+      HP: 300
       AD: 15
       Df: 30
       CriP: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
       RewardCard: 0
     - Index: 2
       LV: 10
-      HP: 1500
+      HP: 1000
       AD: 25
       Df: 30
       CriP: 0
@@ -154,10 +154,10 @@ MonoBehaviour:
       HP: 30000
       AD: 350
       Df: 300
-      CriP: 25
-      CriD: 50
+      CriP: 0
+      CriD: 0
       ED: 0
-      DotsED: 0
+      DotsED: 15
       Gold: 30000
       ItemRank: 3
       MonsterNum: 22
@@ -167,10 +167,10 @@ MonoBehaviour:
       HP: 40000
       AD: 600
       Df: 300
-      CriP: 0
-      CriD: 0
+      CriP: 25
+      CriD: 50
       ED: 0
-      DotsED: 15
+      DotsED: 0
       Gold: 40000
       ItemRank: 3
       MonsterNum: 23
@@ -211,7 +211,7 @@ MonoBehaviour:
       ED: 10
       DotsED: 0
       Gold: 100000
-      ItemRank: 3
+      ItemRank: 4
       MonsterNum: 23
       RewardCard: 0
     - Index: 10
@@ -222,7 +222,7 @@ MonoBehaviour:
       CriP: 25
       CriD: 75
       ED: 15
-      DotsED: 0
+      DotsED: 15
       Gold: 160000
       ItemRank: 4
       MonsterNum: 24

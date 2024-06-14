@@ -10,20 +10,14 @@ public class ClickCheck : MonoBehaviour
     public GameObject CardManager;
 
 
-    public bool click = true;
+    public bool Click,ClickAble = true;
 
     private RaycastHit hit;
     [SerializeField]
     private float holdTime = 0;
-    private bool Click = true;
+    private bool holdClick = true;
 
     private int PWCount;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
 
     // Update is called once per frame
     void Update()
@@ -42,16 +36,16 @@ public class ClickCheck : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonUp(0) && CardManager.GetComponent<CardManager>().ClickAble == true && click == true)
+        if (Input.GetMouseButtonUp(0) && CardManager.GetComponent<CardManager>().ClickAble == true && Click == true)
         {
             
-            click = false;
+            Click = false;
 
             if (hit.collider != null)
             {
                 if (holdTime < 0.3f)
                 {
-                    if (hit.collider.transform.tag == "Card")
+                    if (hit.collider.transform.tag == "Card" && ClickAble == true)
                     {
                         if (PWCount > 0)
                         {
@@ -62,25 +56,25 @@ public class ClickCheck : MonoBehaviour
                     }
                 }
             }
-            click = true;
+            Click = true;
 
         }
 
         if (holdTime >= 0.3f)
         {
-            if (Click == true)
+            if (holdClick == true)
             {
                 if (hit.collider != null)
                 {
                     hit.collider.GetComponent<CardState>().CardInfo();
                 }
-                Click = false;
+                holdClick = false;
             }
 
             if (Input.GetMouseButtonUp(0))
             {
                 holdTime = 0;
-                Click = true;
+                holdClick = true;
             }
         }
     }

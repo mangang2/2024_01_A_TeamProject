@@ -7,6 +7,7 @@ using TMPro;
 public class CharacterStatus : MonoBehaviour
 {
     public GameObject TurnManager;
+    public GameObject ClickChecker;
     public Text HpText;
     public Slider HpBar;
     public Slider ShieldBar;
@@ -79,7 +80,7 @@ public class CharacterStatus : MonoBehaviour
     public int EnhanceDBuffTurn;
 
     [Header("디버프 턴")]
-    public int AdDeBuffTurn;
+    public int AdDebuffTurn;
     public int DefenseDebuffTurn;
     public int CriPercentDebuffTrun;
     public int CriDamageDebuffTrun;
@@ -118,7 +119,7 @@ public class CharacterStatus : MonoBehaviour
             if (TurnManager.GetComponent<TurnManager>().pTurn == true && TurnDown == true)
             {
                 if (AdBuffTurn > 0) AdBuffTurn--;
-                if (AdDeBuffTurn > 0) AdDeBuffTurn--;
+                if (AdDebuffTurn > 0) AdDebuffTurn--;
                 if (DefenseBuffTurn > 0) DefenseBuffTurn--;
                 if (DefenseDebuffTurn > 0) DefenseDebuffTurn--;
                 if (DownDamageTurn > 0) DownDamageTurn--;
@@ -131,6 +132,7 @@ public class CharacterStatus : MonoBehaviour
                 if (ShieldTurn > 0) ShieldTurn--;
                 if (DotCriTurn > 0) DotCriTurn--;
                 TurnDown = false;
+                StartCoroutine(checkDotsDamage());
             }
 
             if (TurnManager.GetComponent<TurnManager>().eTurn == true) TurnDown = true;
@@ -141,7 +143,7 @@ public class CharacterStatus : MonoBehaviour
             if (TurnManager.GetComponent<TurnManager>().eTurn == true && TurnDown == true)
             {
                 if (AdBuffTurn > 0) AdBuffTurn--;
-                if (AdDeBuffTurn > 0) AdDeBuffTurn--;
+                if (AdDebuffTurn > 0) AdDebuffTurn--;
                 if (DefenseBuffTurn > 0) DefenseBuffTurn--;
                 if (DefenseDebuffTurn > 0) DefenseDebuffTurn--;
                 if (DownDamageTurn > 0) DownDamageTurn--;
@@ -153,18 +155,20 @@ public class CharacterStatus : MonoBehaviour
                 if (EnhanceDDebuffTurn > 0) EnhanceDDebuffTurn--;
                 if (ShieldTurn > 0) ShieldTurn--;
                 if (DotCriTurn > 0) DotCriTurn--;
-                StartCoroutine(checkDotsDamage());
                 TurnDown = false;
+                StartCoroutine(checkDotsDamage());
             }
 
             if (TurnManager.GetComponent<TurnManager>().pTurn == true) TurnDown = true;
         }
 
-        if(SkipTurn == true && TurnManager.GetComponent<TurnManager>().pTurn == true)
+        
+
+        if (SkipTurn == true && TurnManager.GetComponent<TurnManager>().pTurn == true)
         {
             Debug.Log("마비");
             GetComponent<SpriteRenderer>().color = Color.yellow;
-            Invoke("returnColor", 0.2f);
+            Invoke("returnColor", 0.5f);
             TurnManager.GetComponent<TurnManager>().PWorkCount = 0;
             SkipTurn = false;
         }
@@ -209,7 +213,7 @@ public class CharacterStatus : MonoBehaviour
         }
 
         if (AdBuffTurn == 0) AdBuff = 0;
-        if (AdDeBuffTurn == 0) AdDebuff = 0;
+        if (AdDebuffTurn == 0) AdDebuff = 0;
         Ad = (DefaultAd * (1 + AdPer) + AdAdd) * (100 + AdBuff - AdDebuff) * 0.01f;
 
         if (DefenseBuffTurn == 0) DefenseBuff = 0;
@@ -250,6 +254,10 @@ public class CharacterStatus : MonoBehaviour
 
         if (gameObject.tag == "Enemy")
             gameObject.GetComponent<EnemyAI>().eTurn = true;                //자기 턴 활성화
+
+        if(gameObject.tag == "Player")
+            ClickChecker.GetComponent<ClickCheck>().ClickAble = true;
+            
 
         yield break;
     }
@@ -299,6 +307,8 @@ public class CharacterStatus : MonoBehaviour
     public void LoadStatus()
     {
         GameManager temp = GameManager.Instance;
+        CharNum = temp.NowChar;
+
         switch (CharNum)
         {
             case 1:
