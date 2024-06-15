@@ -90,7 +90,7 @@ public class CharacterStatus : MonoBehaviour
     public float EnhanceDotsD;
 
     [Header("쉴드")]
-    public float Shield;
+    public float Shield,MaxShield;
     public int ShieldTurn;
 
     public bool DotCri;
@@ -205,7 +205,7 @@ public class CharacterStatus : MonoBehaviour
         if(Shield > 0)
         {
             ShieldBar.gameObject.SetActive(true);
-            ShieldBar.value = Shield / MaxHp;
+            ShieldBar.value = Shield / MaxShield;
         }
         else
         {

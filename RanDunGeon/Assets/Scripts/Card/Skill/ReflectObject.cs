@@ -21,10 +21,18 @@ public class ReflectObject : MonoBehaviour
     {
         nowUsing = false;
         TurnManager = GameObject.FindGameObjectWithTag("TurnManager");
-        player = GameObject.FindGameObjectWithTag("Player");
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        if (transform.tag == "Player")
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            enemy = GameObject.FindGameObjectWithTag("Enemy");
+        }
+        else if (transform.tag == "Enemy")
+        {
+            enemy = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindGameObjectWithTag("Enemy");
+        }
 
-        if(player.GetComponent<CharacterStatus>().Shield != 0)
+        if (player.GetComponent<CharacterStatus>().Shield != 0)
         {
             nowShield = player.GetComponent<CharacterStatus>().Shield;
         }
@@ -84,7 +92,6 @@ public class ReflectObject : MonoBehaviour
 
     public void TurnCheck()
     {
-        Turn = 3;
         StartTurn = TurnManager.GetComponent<TurnManager>().Turn;
         NowTurn = StartTurn;
     }

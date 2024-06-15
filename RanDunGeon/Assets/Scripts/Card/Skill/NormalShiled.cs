@@ -39,15 +39,16 @@ public class NormalShield : MonoBehaviour
 
             if (playerShield < shield)
             {
-                player.GetComponent<CharacterStatus>().Shield = shield;
                 player.GetComponent<CharacterStatus>().ShieldTurn = shieldTurn;
+                player.GetComponent<CharacterStatus>().Shield = shield;
+                player.GetComponent<CharacterStatus>().MaxShield = shield;
                 Debug.Log("3턴 동안 유지되는 " + shield + "만큼의 쉴드를 얻습니다.");
             }
             else if (playerShield == shield)
             {
-                player.GetComponent<CharacterStatus>().Shield = shield;
                 player.GetComponent<CharacterStatus>().ShieldTurn = shieldTurn;
-                Debug.Log("이미 동일한 효과가 적용중입니다.");
+                player.GetComponent<CharacterStatus>().Shield = shield;
+                player.GetComponent<CharacterStatus>().MaxShield = shield;
             }
             else
             {
