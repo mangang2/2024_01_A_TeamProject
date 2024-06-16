@@ -1965,13 +1965,14 @@ MonoBehaviour:
   CriPercentBuffTrun: 0
   CriDamageBuffTrun: 0
   EnhanceDBuffTurn: 0
-  AdDeBuffTurn: 0
+  AdDebuffTurn: 0
   DefenseDebuffTurn: 0
   CriPercentDebuffTrun: 0
   CriDamageDebuffTrun: 0
   EnhanceDDebuffTurn: 0
   EnhanceDotsD: 0
   Shield: 0
+  MaxShield: 0
   ShieldTurn: 0
   DotCri: 0
   DotCriTurn: 0
@@ -2645,13 +2646,14 @@ MonoBehaviour:
   CriPercentBuffTrun: 0
   CriDamageBuffTrun: 0
   EnhanceDBuffTurn: 0
-  AdDeBuffTurn: 0
+  AdDebuffTurn: 0
   DefenseDebuffTurn: 0
   CriPercentDebuffTrun: 0
   CriDamageDebuffTrun: 0
   EnhanceDDebuffTurn: 0
   EnhanceDotsD: 0
   Shield: 0
+  MaxShield: 0
   ShieldTurn: 0
   DotCri: 0
   DotCriTurn: 0
@@ -6802,6 +6804,14 @@ MonoBehaviour:
   itemRank: 0
   rewardCard: 0
   MonsterNum: 0
+  MonsterImage:
+  - {fileID: 21300000, guid: 9d54d9a210a251846af335b1071a8602, type: 3}
+  - {fileID: 21300000, guid: 9d54d9a210a251846af335b1071a8602, type: 3}
+  - {fileID: 21300000, guid: 9d54d9a210a251846af335b1071a8602, type: 3}
+  - {fileID: 21300000, guid: bda3443a19c47724da2872f41e04d492, type: 3}
+  - {fileID: 21300000, guid: bda3443a19c47724da2872f41e04d492, type: 3}
+  - {fileID: 21300000, guid: bda3443a19c47724da2872f41e04d492, type: 3}
+  - {fileID: 21300000, guid: bda3443a19c47724da2872f41e04d492, type: 3}
   enemy: {fileID: 737671621}
   player: {fileID: 545915828}
   monsterStatus: {fileID: 11400000, guid: f3d5ec8550d6c4c078c6d563f69bdf12, type: 2}

@@ -10,6 +10,8 @@ public class StageManager : MonoBehaviour
     public int rewardCard;
     public int MonsterNum;
 
+    public List<Sprite> MonsterImage;
+
 [SerializeField]
     private GameObject enemy;
     [SerializeField]
@@ -29,6 +31,7 @@ public class StageManager : MonoBehaviour
     private int chapter;
     private int stage;
     private MonsterStatus.Param monster;
+    private Sprite thisMonsterImage;
 
     private void Start()
     {
@@ -42,7 +45,27 @@ public class StageManager : MonoBehaviour
         rewardCard = monster.RewardCard;
         MonsterNum = monster.MonsterNum;
 
-        if(itemRank > 0)
+        switch(MonsterNum)
+        {
+            case 11:
+                thisMonsterImage = MonsterImage[0]; break;
+            case 12:
+                thisMonsterImage = MonsterImage[1]; break;
+            case 13:
+                thisMonsterImage = MonsterImage[2]; break;
+            case 21:
+                thisMonsterImage = MonsterImage[3]; break;
+            case 22:
+                thisMonsterImage = MonsterImage[4]; break;
+            case 23:
+                thisMonsterImage = MonsterImage[5]; break;
+            case 24:
+                thisMonsterImage = MonsterImage[6]; break;
+        }
+
+        enemy.GetComponent<SpriteRenderer>().sprite = thisMonsterImage;
+
+        if (itemRank > 0)
         LoadItemStatus(itemRank -1);
 
         enemyStasus = enemy.GetComponent<CharacterStatus>();
@@ -63,8 +86,6 @@ public class StageManager : MonoBehaviour
         enemyStasus.DefaultCriDamage = monster.CriD;
         enemyStasus.DefaultEnhanceD = monster.ED;
         enemyStasus.EnhanceDotsD = monster.DotsED;
-
-        //Image
 
         enemyStasus.LoadHp();
         TurnManager.GetComponent<TurnManager>().Playing = true;
