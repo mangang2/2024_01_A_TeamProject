@@ -19,9 +19,9 @@ public class PlayBGM : MonoBehaviour
         {
 
         }
-        else if(MusicName == "null")
+        else if(MusicName == "None")
         {
-            AD.StopSound("Null");
+            AD.StopSound("None");
         }
         else
         {

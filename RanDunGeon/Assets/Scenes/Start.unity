@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743aa480a9e21d44e8b627b595e33fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicName: null
+  MusicName: None
   BGM: 1
 --- !u!4 &1402360743
 Transform:

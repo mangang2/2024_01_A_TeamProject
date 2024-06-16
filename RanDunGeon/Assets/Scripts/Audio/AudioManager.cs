@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public List<Sound> sounds = new List<Sound>();
     public AudioMixer audioMixer;
     private Sound beforeSound;
+    private string beforeName;
 
     private void Awake()
     {
@@ -53,26 +54,36 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string name, bool BGM = false)
     {
-        Sound soundToPlay = sounds.Find(sound => sound.name == name);
-        if(BGM)
-        StopSound(soundToPlay.name);
-
-        if (soundToPlay != null && beforeSound != soundToPlay)
+        if (name != "None")
         {
-            soundToPlay.audioSources.Play();
-            if (BGM == true)
+            Sound soundToPlay = sounds.Find(sound => sound.name == name);
+
+            if (!BGM)
             {
-                beforeSound = soundToPlay;
+                soundToPlay.audioSources.Play();
             }
+
+            if ( beforeName != name && BGM == true)
+            {
+                Debug.Log("이전 노래랑 다릅니다!");
+                StopSound(soundToPlay.name);
+                soundToPlay.audioSources.Play();
+                beforeSound = soundToPlay;
+                beforeName = name;
+            }
+
+            
+
         }
         else
         {
-            Debug.LogWarning("사운드 " + name + " 가 없습니다.");
+            beforeSound.audioSources.Stop();
         }
     }
 
     public void StopSound(string newSound)
     {
+        Debug.Log("정지");
         if(beforeSound != null && beforeSound.name != newSound)
         beforeSound.audioSources.Stop();
         beforeSound = null;
