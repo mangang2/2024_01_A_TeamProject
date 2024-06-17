@@ -65,7 +65,6 @@ public class AudioManager : MonoBehaviour
 
             if ( beforeName != name && BGM == true)
             {
-                Debug.Log("이전 노래랑 다릅니다!");
                 StopSound(soundToPlay.name);
                 soundToPlay.audioSources.Play();
                 beforeSound = soundToPlay;
@@ -83,7 +82,6 @@ public class AudioManager : MonoBehaviour
 
     public void StopSound(string newSound)
     {
-        Debug.Log("정지");
         if(beforeSound != null && beforeSound.name != newSound)
         beforeSound.audioSources.Stop();
         beforeSound = null;

@@ -45,7 +45,18 @@ public class SceneLoadButton : MonoBehaviour
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
-                SceneManager.LoadScene(SceneName);
+                else if (SceneName == "MainScene")
+                {
+                    if(GameManager.Instance.LastSceneIsMain == true)
+                    {
+                        SceneManager.LoadScene("MainScene");
+                    }
+                    else if(GameManager.Instance.LastSceneIsMain == false)
+                    {
+                        SceneManager.LoadScene("Stage");
+                    }
+                }
+                else SceneManager.LoadScene(SceneName);
             }
         }
     }
