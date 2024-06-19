@@ -8,6 +8,7 @@ public class ClickCheck : MonoBehaviour
     public Camera mainCamera;
     public GameObject TurnManager;
     public GameObject CardManager;
+    public GameObject player;
 
 
     public bool Click,ClickAble = true;
@@ -50,6 +51,7 @@ public class ClickCheck : MonoBehaviour
                         if (PWCount > 0)
                         {
                             hit.collider.gameObject.GetComponent<CardState>().skill();
+                            player.GetComponent<CharacterStatus>().BounsMove();
                         }
                         
                         holdTime = 0;

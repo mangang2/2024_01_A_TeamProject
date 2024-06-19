@@ -244,6 +244,7 @@ public partial class EnemyAI : MonoBehaviour
 
     private void StopSkill(int SP = 2)
     {
+        transform.GetComponent<CharacterStatus>().BounsMove();
         TurnManager.EWorkCount -= SP;
         skillWork = false;
     }

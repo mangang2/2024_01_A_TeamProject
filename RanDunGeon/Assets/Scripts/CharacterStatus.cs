@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class CharacterStatus : MonoBehaviour
 {
@@ -341,6 +342,13 @@ public class CharacterStatus : MonoBehaviour
         MaxHp = DefaultHp * (1 + HpPer * 0.01f) + HpAdd;
         Hp = MaxHp;
         HpBar.value = Hp / MaxHp;
+    }
+
+    public void BounsMove()
+    {
+        Sequence Bouns = DOTween.Sequence();
+        Bouns.Append(transform.DOMoveY(transform.position.y + 1, 0.15f));
+        Bouns.Append(transform.DOMoveY(transform.position.y, 0.15f));
     }
 
 }
