@@ -53,6 +53,7 @@ public class ClickCheck : MonoBehaviour
                         {
                             hit.collider.gameObject.GetComponent<CardState>().skill();
                             player.GetComponent<CharacterStatus>().BounsMove();
+                            AudioManager.instance.PlaySound("Click");
                         }
                         
                         holdTime = 0;

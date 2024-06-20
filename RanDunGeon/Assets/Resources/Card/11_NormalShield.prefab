@@ -210,11 +210,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
+  m_fontSize: 30.9
   m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -775,8 +775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameText: "\uADF8\uB300\uB4E4\uC758 \uBC29\uD328\uB77C\uB124!"
-  InfoText: "3 \uD134\uB3D9\uC548 \uC720\uC9C0\uB418\uB294 \uBC29\uC5B4\uB825 200%
-    / 270% / 340% \uB9CC\uD07C\uC758 \uC274\uB4DC\uB97C \uC5BB\uC2B5\uB2C8\uB2E4.
+  InfoText: "3 \uD134\uB3D9\uC548 \uC720\uC9C0\uB418\uB294 \uBC29\uC5B4\uB825 150%
+    / 220% / 400% \uB9CC\uD07C\uC758 \uC274\uB4DC\uB97C \uC5BB\uC2B5\uB2C8\uB2E4.
     (\uC774 \uC274\uB4DC\uB294 \uC911\uCCA9\uB418\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.)"
 --- !u!114 &-8778135779492825487
 MonoBehaviour:

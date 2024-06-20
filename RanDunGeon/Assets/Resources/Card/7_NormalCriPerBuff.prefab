@@ -468,11 +468,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
+  m_fontSize: 30.9
   m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -749,6 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd0e6ac1c88a4b73a39ff991b705237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   SkillSprite: {fileID: 21300000, guid: b0a19d9ebef3ab4409f05d09db6477f8, type: 3}
   SpriteObject: {fileID: 6813268945666590072}
   moveSpeed: 50
@@ -757,7 +758,7 @@ MonoBehaviour:
   cardType: 7
   cardRank: 1
   cardRare: 2
-  skill: 0
+  skillUse: 0
   rankText: {fileID: 3952025004049059221}
   NameText: {fileID: 1570140532129111801}
   InfoText: {fileID: 7078037797538163170}

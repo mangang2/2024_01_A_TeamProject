@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using TreeEditor;
-using UnityEngine.UIElements;
 using DG.Tweening;
 
 public class CardState : MonoBehaviour

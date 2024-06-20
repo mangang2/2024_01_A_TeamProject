@@ -82,14 +82,14 @@ MonoBehaviour:
     audioSources: {fileID: 0}
   - name: Chapter_1_BGM
     Clip: {fileID: 8300000, guid: a7c08cc0697a6034f9302745909408a1, type: 3}
-    volume: 0.248
+    volume: 0.159
     pitch: 1
     loop: 1
     mixerGroup: {fileID: -3287968044930506884, guid: 7d58d8b97013ba942af5fc1d21ac71a2, type: 2}
     audioSources: {fileID: 0}
   - name: Chapter_2_BGM
     Clip: {fileID: 8300000, guid: 85649e822a197744fb0b3324047d5c8a, type: 3}
-    volume: 0.29
+    volume: 0.255
     pitch: 1
     loop: 1
     mixerGroup: {fileID: -3287968044930506884, guid: 7d58d8b97013ba942af5fc1d21ac71a2, type: 2}

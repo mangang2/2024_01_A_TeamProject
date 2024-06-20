@@ -29,7 +29,7 @@ public class NormalStoneCard : MonoBehaviour
 
         int CardRank;
 
-        float DamageRank = 1.25f;
+        float DamageRank = 1.6f;
 
         if (GetComponent<CardState>().skillUse == true)
         {

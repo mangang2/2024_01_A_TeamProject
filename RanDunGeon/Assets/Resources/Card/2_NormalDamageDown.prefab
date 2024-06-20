@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd0e6ac1c88a4b73a39ff991b705237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   SkillSprite: {fileID: 21300000, guid: 2f1c472ff6fce1d4a832e4c3aa54e5bd, type: 3}
   SpriteObject: {fileID: 4302657428062353336}
   moveSpeed: 50
@@ -331,7 +332,7 @@ MonoBehaviour:
   cardType: 2
   cardRank: 1
   cardRare: 0
-  skill: 0
+  skillUse: 0
   rankText: {fileID: 4527026751482894553}
   NameText: {fileID: 8110432663665633456}
   InfoText: {fileID: 2278917488054600460}
@@ -361,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameText: "\uB35C \uC544\uD504\uAC8C \uB9DE\uAE30!"
   InfoText: "\uBC29\uC5B4\uC790\uC138\uB97C \uCDE8\uD574 3\uD134\uB3D9\uC548 \uBC1B\uB294
-    \uD53C\uD574\uB97C 5 / 8 / 15 \uB9CC\uD07C \uAC10\uC18C\uC2DC\uD0B5\uB2C8\uB2E4."
+    \uD53C\uD574\uB97C \uB808\uBCA8 X 5 / 7 / 10 \uB9CC\uD07C \uAC10\uC18C\uC2DC\uD0B5\uB2C8\uB2E4."
 --- !u!1 &4302657428062353336
 GameObject:
   m_ObjectHideFlags: 0

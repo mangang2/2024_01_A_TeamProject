@@ -447,9 +447,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 787232036}
+  NewData: 1
   needChecking: 1
   needLoading: 1
-  SceneName: GameScene
+  SceneName: Story
   InfoText: "(\uACBD\uACE0)\uC0C8\uB85C\uC6B4 \uB370\uC774\uD130\uB85C \uC2DC\uC791\uD569\uB2C8\uB2E4."
 --- !u!114 &370005989
 MonoBehaviour:
@@ -815,6 +816,7 @@ MonoBehaviour:
   nextScene: 
   InfoText: NoneText
   store: 0
+  newData: 0
   CheckBox: {fileID: 787232036}
   InfoUI: {fileID: 2098316645}
 --- !u!1 &830174533
@@ -966,6 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 787232036}
+  NewData: 0
   needChecking: 0
   needLoading: 1
   SceneName: MainScene
@@ -1253,6 +1256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 787232036}
+  NewData: 0
   needChecking: 1
   needLoading: 1
   SceneName: Quit

@@ -2624,106 +2624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f534292b56ab0c74f810ba0401f3b79b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1143764114
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1143764116}
-  - component: {fileID: 1143764115}
-  m_Layer: 0
-  m_Name: GamaManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1143764115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143764114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d75ed6fa9aff43b0b33f25e1859cf4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NowChar: 1
-  CharLevel: 00000000
-  Card:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  DefaultStatus:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  BaseStatus:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  StatusPer:
-  - 0
-  - 0
-  - 0
-  ItemStatusPer:
-  - 0
-  - 0
-  - 0
-  StatusAdd:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  ItemStatusAdd:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  CardList: []
-  UsingItemList: []
-  NowUsingItemCount: 0
-  nowChapter: 0
-  nowStage: 1
-  StoreCard:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  BeStoreCard: 0
-  ClearStage: 0
-  Gold: 0
-  LastSceneIsMain: 0
---- !u!4 &1143764116
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143764114}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1004.6285, y: 377.89676, z: -64.91621}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1188278337
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,6 +3796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 0}
+  NewData: 0
   needChecking: 0
   needLoading: 1
   SceneName: MainScene
@@ -4932,6 +4833,7 @@ MonoBehaviour:
   nextScene: 
   InfoText: NoneText
   store: 1
+  newData: 0
   CheckBox: {fileID: 5061492624252134685}
   InfoUI: {fileID: 0}
 --- !u!222 &7361661294086765887
@@ -5132,7 +5034,6 @@ SceneRoots:
   - {fileID: 1742005824}
   - {fileID: 1879035285}
   - {fileID: 1188278339}
-  - {fileID: 1143764116}
   - {fileID: 820886929}
   - {fileID: 1111974935}
   - {fileID: 977037606}

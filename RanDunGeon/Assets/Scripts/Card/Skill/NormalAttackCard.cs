@@ -31,7 +31,7 @@ public class NormalAttackCard : MonoBehaviour
 
         int CardRank;
 
-        float DamageRank = 1.25f;
+        float DamageRank = 1.2f;
 
         if (GetComponent<CardState>().skillUse == true)
         {

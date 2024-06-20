@@ -749,7 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd0e6ac1c88a4b73a39ff991b705237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillSprite: {fileID: 0}
+  player: {fileID: 0}
+  SkillSprite: {fileID: 21300000, guid: 6079eeca99f1a824cb6f48a2ea26f34b, type: 3}
   SpriteObject: {fileID: 7468313632749544076}
   moveSpeed: 50
   Unlock: 1
@@ -757,7 +758,7 @@ MonoBehaviour:
   cardType: 13
   cardRank: 1
   cardRare: 0
-  skill: 0
+  skillUse: 0
   rankText: {fileID: 9111236726615089526}
   NameText: {fileID: 7115472406584979159}
   InfoText: {fileID: 792209552913513080}

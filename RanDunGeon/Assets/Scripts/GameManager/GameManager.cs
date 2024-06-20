@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     public bool LastSceneIsMain;
 
-    private string path = Path.Combine(Application.dataPath, "TestSaveData.json");
+    private string path = Path.Combine(Application.dataPath, "SaveData.json");
     //private string monsterPath = Path.
 
     private void Awake()
@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //transform.parent = null;
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
@@ -101,12 +100,6 @@ public class GameManager : MonoBehaviour
             Gold = 0;
         }
         NowUsingItemCount = UsingItemList.Count;
-
-
-        if (Input.GetKeyDown(KeyCode.Slash))
-        {
-            SaveData();
-        }
 
         switch (NowChar)
         {
@@ -142,15 +135,46 @@ public class GameManager : MonoBehaviour
         {
             Invoke("LoadData",0.05f);
         }
-        else
-        {
-            Debug.Log("new data");
-        }
 
         UsingItemCheck();
     }
 
-    
+    public void NewSaveData()
+    {
+        SaveNewGameData();
+        string jsonData = JsonUtility.ToJson(gameData);
+        File.WriteAllText(path, jsonData);
+        LoadData();
+    }
+
+    public void SaveNewGameData()
+    {
+        gameData.CharLevel[0] = 1;
+        gameData.Char_1_Card = new int[4] { 1, 2, 3, 4 };
+        gameData.Char_1_BaseStatus = new float[6] { 320f, 23f, 10f, 25f, 50f, 0f };
+        gameData.Char_1_ItemType.Clear();
+        gameData.Char_1_ItemValue.Clear();
+        gameData.Char_1_ItemUsed.Clear();
+
+        gameData.CardUnlock.Clear();
+        for (int c = 0; c < CardList.Count; c++)
+        {
+            if(c < 4)
+            {
+                gameData.CardUnlock.Add(true);
+            }
+            else
+            gameData.CardUnlock.Add(false);
+        }
+
+        gameData.Gold = 0;
+
+        gameData.StoreCard = new GameObject[3];
+
+        gameData.BeStore = false;
+
+        gameData.ClearStage = 0;
+    }
 
     public void UsingItemCheck()
     {
@@ -190,7 +214,6 @@ public class GameManager : MonoBehaviour
                         ItemStatusAdd[i] += (ItemList[m].ItemValue - 10000);
                     }
                     NowItemList.Add(_temp.GetComponent<ItemStatus>());
-                    Debug.Log("새로 추가되는 아이템 - " + _temp.GetComponent<ItemStatus>().ItemType.ToString() + " / " + _temp.GetComponent<ItemStatus>().ItemValue.ToString());
 
                     numTemp++;
                     Destroy(_temp);
@@ -229,9 +252,8 @@ public class GameManager : MonoBehaviour
     {
         SaveGameData();
         LoadAllStatus();
-        string jsonData = JsonUtility.ToJson(gameData,true);
+        string jsonData = JsonUtility.ToJson(gameData);
         File.WriteAllText(path, jsonData);
-        Debug.Log("저장 성공!");
     }
 
     public void LoadData()
@@ -240,7 +262,6 @@ public class GameManager : MonoBehaviour
         gameData = JsonUtility.FromJson<GameData>(jsonData);
         Invoke("LoadGameData",0.1f);
         Char_1_SetStatus();
-        Debug.Log("불러오기 성공!");
     }
 
     private void SaveGameData()

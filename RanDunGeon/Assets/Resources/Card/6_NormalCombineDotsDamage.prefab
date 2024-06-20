@@ -777,9 +777,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameText: "\uD2F0\uB04C\uBAA8\uC544 \uD0DC\uC0B0"
-  InfoText: "\uACF5\uACA9\uB825\uC758 20 / 30 / 40% \uB9CC\uD07C\uC758 \uB9C8\uBC95\uD53C\uD574\uB97C
+  InfoText: "\uACF5\uACA9\uB825\uC758 50 / 60 / 70% \uB9CC\uD07C\uC758 \uD53C\uD574\uB97C
     \uC785\uD788\uACE0, \uC801\uC758 \uC9C0\uC18D\uD53C\uD574\uB97C \uD569\uC0B0\uD55C
-    \uAC12\uC758 70 / 90 / 110% \uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4."
+    \uAC12\uC758 80 / 90 / 100% \uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4."
 --- !u!114 &9060602027866261773
 MonoBehaviour:
   m_ObjectHideFlags: 0

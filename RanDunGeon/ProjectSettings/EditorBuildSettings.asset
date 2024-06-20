@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: fd02eb965dc4a3a429be1874140e6747
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 5b81c03059d12bb4583432274e3f5c22
+  - enabled: 1
     path: Assets/Scenes/CardSet.unity
     guid: 73fad4048572a41d68b82d61d4ec01c3
   - enabled: 1
     path: Assets/Scenes/CharacterStatusScene.unity
     guid: b503439eaa29545d984a7b88bee577b2
-  - enabled: 0
-    path: Assets/Scenes/Gameover.unity
-    guid: 5ead1e86791de2b4197dc4314e16b3dd
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
@@ -27,11 +30,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage.unity
     guid: 25b2d50209712d84abdd05b802256d30
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 5b81c03059d12bb4583432274e3f5c22
-  - enabled: 1
-    path: Assets/Scenes/Start.unity
-    guid: fd02eb965dc4a3a429be1874140e6747
+    path: Assets/Scenes/Story.unity
+    guid: f4e0b4d607288ea46be376c1ab44ae15
   - enabled: 1
     path: Assets/Scenes/LodingScene.unity
     guid: b80462f37fabe264db11ae44894799a9

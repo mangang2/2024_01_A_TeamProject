@@ -47,17 +47,17 @@ public class SelfDamageAttack : MonoBehaviour
             if (CardRank == 1)
             {
                 DamageRank = 1.6f;
-                HpDamageBuffRank = 0.4f;
+                HpDamageBuffRank = 1f;
             }
             if (CardRank == 2)
             {
                 DamageRank = 1.8f;
-                HpDamageBuffRank = 0.6f;
+                HpDamageBuffRank = 1.2f;
             }
             if (CardRank == 3)
             {
                 DamageRank = 2.0f;
-                HpDamageBuffRank = 0.8f;
+                HpDamageBuffRank = 1.5f;
             }
 
 

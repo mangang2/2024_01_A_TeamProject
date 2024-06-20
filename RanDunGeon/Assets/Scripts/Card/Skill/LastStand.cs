@@ -50,17 +50,17 @@ public class LastStand : MonoBehaviour
 
             if (CardRank == 1)
             {
-                DamageRank = 0.5f;
+                DamageRank = 1f;
                 HpDamageBuffRank = 0.3f;
             }
             if (CardRank == 2)
             {
-                DamageRank = 0.5f;
+                DamageRank = 1.3f;
                 HpDamageBuffRank = 0.4f;
             }
             if (CardRank == 3)
             {
-                DamageRank = 0.5f;
+                DamageRank = 1.7f;
                 HpDamageBuffRank = 0.6f;
             }
 

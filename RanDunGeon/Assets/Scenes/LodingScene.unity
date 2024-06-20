@@ -856,7 +856,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tip : !!!'
+  m_text: "Tip : \uCE74\uB4DC\uB97C \uD640\uB4DC\uD558\uBA74 \uC0C1\uC138 \uD6A8\uACFC\uB97C
+    \uD655\uC778 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14bc244df88404361b574097656d7a64, type: 2}
   m_sharedMaterial: {fileID: -8573086619758758993, guid: 14bc244df88404361b574097656d7a64, type: 2}

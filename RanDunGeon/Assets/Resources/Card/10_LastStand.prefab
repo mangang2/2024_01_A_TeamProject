@@ -270,7 +270,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCE74\uB4DC \uC124\uBA85"
+  m_text: "\uC783\uC740 \uCCB4\uB825\uC758 70% \uB9CC\uD07C \uD68C\uBCF5\uD558\uACE0,
+    \uC783\uC740 \uCCB4\uB825\uC758 30 / 40 / 60%\uB9CC\uD07C\uC758 \uCD94\uAC00\uD53C\uD574\uC640
+    \uACF5\uACA9\uB825\uC758 50% \uC758 \uBB3C\uB9AC\uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14bc244df88404361b574097656d7a64, type: 2}
   m_sharedMaterial: {fileID: -8573086619758758993, guid: 14bc244df88404361b574097656d7a64, type: 2}
@@ -297,12 +299,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
+  m_fontSize: 10
   m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
+  m_fontSizeMax: 78
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
@@ -749,6 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd0e6ac1c88a4b73a39ff991b705237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   SkillSprite: {fileID: 21300000, guid: f7104f5c51984b34d9af5a2ffaa9631a, type: 3}
   SpriteObject: {fileID: 4535224016630661799}
   moveSpeed: 50
@@ -757,7 +760,7 @@ MonoBehaviour:
   cardType: 10
   cardRank: 1
   cardRare: 0
-  skill: 0
+  skillUse: 0
   rankText: {fileID: 8101481973636221222}
   NameText: {fileID: 1185527666923694695}
   InfoText: {fileID: 3776239818695641279}
@@ -775,8 +778,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameText: "\uCD5C\uD6C4\uC758 \uC800\uD56D"
   InfoText: "\uC783\uC740 \uCCB4\uB825\uC758 70% \uB9CC\uD07C \uD68C\uBCF5\uD558\uACE0,
-    \uC783\uC740 \uCCB4\uB825\uC758 30 / 40 / 60%\uB9CC\uD07C\uC758 \uCD94\uAC00\uD53C\uD574\uC640
-    \uACF5\uACA9\uB825\uC758 50% \uC758 \uBB3C\uB9AC\uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4."
+    \uC783\uC740 \uCCB4\uB825\uC758 100 / 130 / 170%\uB9CC\uD07C\uC758 \uCD94\uAC00\uD53C\uD574\uC640
+    \uACF5\uACA9\uB825\uC758 50% \uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4."
 --- !u!114 &-2408996814735950128
 MonoBehaviour:
   m_ObjectHideFlags: 0

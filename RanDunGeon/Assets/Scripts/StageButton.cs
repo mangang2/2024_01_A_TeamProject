@@ -7,11 +7,13 @@ using Unity.VisualScripting;
 
 public class StageButton : MonoBehaviour
 {
+    public Image monsterImage;
+
     public TextMeshProUGUI StatusInfo;
 
     public MonsterStatus stageData;
 
-    public Sprite ItemSprite,GoldSprite;
+    public Sprite ItemSprite,GoldSprite,Mon1,Mon2;
 
     public GameObject RewardPrefab, RewardLayout, Button;
 
@@ -63,7 +65,9 @@ public class StageButton : MonoBehaviour
 
         if(chapter == 1)
         {
-            if(stage < 3)
+            monsterImage.GetComponent < Image >().sprite = Mon1;
+            monsterImage.GetComponent<RectTransform>().localPosition = new Vector3(-270, 9, 0);
+            if (stage < 3)
                 infoText += "슬라임" + "\n" + "풀숲에 숨어지내는 초록 슬라임이다.";
             else if (stage < 5)
                 infoText += "끈적끈쩍 슬라임" + "\n" + "끈적이는 슬라임 액체는 몸을 마비시키거나 방어자세를 무너뜨리는 효과가 있다.";
@@ -72,13 +76,15 @@ public class StageButton : MonoBehaviour
         }
         else if (chapter == 2)
         {
+            monsterImage.GetComponent<Image>().sprite = Mon2;
+            monsterImage.GetComponent<RectTransform>().localPosition = new Vector3(-293, 77, 0);
             if (stage < 5)
                 infoText += "먼지 괴물" + "\n" + "탁한 공기들 속에서 태어난 괴물이다." + "\n" + "지속적인 피해와 마비를 입히는 분진을 뿌린다.";
             else if (stage == 5)
                 infoText += "고농도 먼지 괴물" + "\n" + "먼지 괴물이 뭉쳐진 모습으로 강화된 지속피해를 사용한다.";
             else if (stage < 10)
                 infoText += "사나운 길 고양이" + "\n" + "날카로운 발톱으로 공격하는 길고양이다." + "\n" + "(날카로운 발톱은 계속 손질되어 더욱 날카롭고 위험한 존재가 된다.)";
-            else if (stage == 5)
+            else if (stage == 10)
                 infoText += "???" + "\n" + "도시 어딘가에서 힘을 길러온 정체 모를 생명체..." + "\n" + "(도시 지역의 최종보스 입니다.)";
         }
 

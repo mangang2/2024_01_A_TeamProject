@@ -531,6 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 0}
+  NewData: 0
   needChecking: 0
   needLoading: 0
   SceneName: ItemSettingScene
@@ -2939,6 +2940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 0}
+  NewData: 0
   needChecking: 0
   needLoading: 0
   SceneName: CardSet
@@ -3090,6 +3092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 0}
+  NewData: 0
   needChecking: 0
   needLoading: 0
   SceneName: MainScene
@@ -3364,106 +3367,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005309080}
   m_CullTransparentMesh: 1
---- !u!1 &2005799685
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2005799687}
-  - component: {fileID: 2005799686}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2005799686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005799685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d75ed6fa9aff43b0b33f25e1859cf4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NowChar: 1
-  CharLevel: 00000000
-  Card:
-  - {fileID: 5293796684268122817, guid: d52fc99b66493a44780af6eaef8be42d, type: 3}
-  - {fileID: 4055728022967715978, guid: 5e5aa5c0942c29a48b2615826c065546, type: 3}
-  - {fileID: 5834814195292812506, guid: 22855bc87f9873547b4ce313f3a5d4fd, type: 3}
-  - {fileID: 8880946109014373666, guid: 021080190d4dc0b4899a1f86708f5655, type: 3}
-  DefaultStatus:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  BaseStatus:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  StatusPer:
-  - 0
-  - 0
-  - 0
-  ItemStatusPer:
-  - 0
-  - 0
-  - 0
-  StatusAdd:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  ItemStatusAdd:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  CardList: []
-  UsingItemList: []
-  NowUsingItemCount: 0
-  nowChapter: 0
-  nowStage: 0
-  StoreCard:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  BeStoreCard: 0
-  ClearStage: 0
-  Gold: 0
-  LastSceneIsMain: 0
---- !u!4 &2005799687
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005799685}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1025.1171, y: 413.20303, z: -5.23757}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2039568863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,6 +3449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 0}
+  NewData: 0
   needChecking: 0
   needLoading: 0
   SceneName: CharacterStatusScene
@@ -3784,7 +3688,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 953823620}
   - {fileID: 1780020091}
-  - {fileID: 2005799687}
   - {fileID: 1715067735}
   - {fileID: 901040263}
   - {fileID: 785308579}

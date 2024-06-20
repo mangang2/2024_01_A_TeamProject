@@ -11,7 +11,7 @@ public class CheckUI : MonoBehaviour
 
     public string InfoText = "NoneText";
 
-    public bool store = false;
+    public bool store, newData = false;
 
     [SerializeField]
     private GameObject CheckBox;
@@ -25,8 +25,12 @@ public class CheckUI : MonoBehaviour
         InfoUI.text = InfoText;
     }
 
-    public void SendInfo(string SceneName, string InfoString)
+    public void SendInfo(string SceneName, string InfoString, bool NewData = false)
     {
+        if(NewData == true)
+        {
+            newData = true;
+        }
         if (SceneName != null)
             nextScene = SceneName;
         else
@@ -39,13 +43,20 @@ public class CheckUI : MonoBehaviour
     }
 
     public void YesButton()
-    {
+    { 
         Time.timeScale = 1;
+        if (newData == true)
+        {
+            GameManager.Instance.NewSaveData();
+        }
+
         if (nextScene == "Quit")
         {
+            GameManager.Instance.SaveData();
+            Debug.Log("게임종료");
             Application.Quit();
         }
-        else if(nextScene == "Restart")
+        else if (nextScene == "Restart")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -53,9 +64,13 @@ public class CheckUI : MonoBehaviour
         {
             gameObject.SetActive(false);
             GameManager.Instance.ItemClear();
+            GameManager.Instance.SaveData();
         }
         else
-        LoadSceneController.LoadScene(nextScene);
+        {
+            LoadSceneController.LoadScene(nextScene);
+            GameManager.Instance.Invoke("SaveData",0.1f);
+        }
     }
 
     public void CancelButton()

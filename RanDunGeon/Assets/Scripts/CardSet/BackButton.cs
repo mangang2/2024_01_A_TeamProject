@@ -11,6 +11,11 @@ public class BackButton : MonoBehaviour
         CardSelectCavas = GameObject.Find("CardSelect");
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape)) { StartCoroutine(FadeOut()); }
+    }
+
     public void OnClick()
     {
         StartCoroutine(FadeOut());

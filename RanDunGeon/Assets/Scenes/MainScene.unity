@@ -1644,6 +1644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 1312808068}
+  NewData: 0
   needChecking: 1
   needLoading: 0
   SceneName: Start
@@ -2387,6 +2388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 1312808068}
+  NewData: 0
   needChecking: 1
   needLoading: 0
   SceneName: Quit
@@ -2634,6 +2636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 0}
+  NewData: 0
   needChecking: 0
   needLoading: 0
   SceneName: CharacterStatusScene
@@ -2794,6 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckUI: {fileID: 0}
+  NewData: 0
   needChecking: 0
   needLoading: 1
   SceneName: Store
@@ -2962,106 +2966,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1099.2723, y: 691.8654, z: 2.9252625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1230509980
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1230509982}
-  - component: {fileID: 1230509981}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1230509981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230509980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d75ed6fa9aff43b0b33f25e1859cf4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NowChar: 1
-  CharLevel: 00000000
-  Card:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  DefaultStatus:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  BaseStatus:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  StatusPer:
-  - 0
-  - 0
-  - 0
-  ItemStatusPer:
-  - 0
-  - 0
-  - 0
-  StatusAdd:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  ItemStatusAdd:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  CardList: []
-  UsingItemList: []
-  NowUsingItemCount: 0
-  nowChapter: 0
-  nowStage: 1
-  StoreCard:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  BeStoreCard: 0
-  ClearStage: 0
-  Gold: 0
-  LastSceneIsMain: 0
---- !u!4 &1230509982
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230509980}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 963.0993, y: 534.3635, z: -4.7372317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4825,7 +4729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.7552467, b: 0.6036846, a: 1}
+  m_Color: {r: 1, g: 0.6087694, b: 0.4575472, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4887,7 +4791,6 @@ SceneRoots:
   - {fileID: 1653342853}
   - {fileID: 1917969089}
   - {fileID: 364214674}
-  - {fileID: 1230509982}
   - {fileID: 1216490415}
   - {fileID: 420002050}
   - {fileID: 1755533557}

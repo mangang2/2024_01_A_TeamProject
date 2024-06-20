@@ -468,11 +468,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
+  m_fontSize: 30.9
   m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -749,6 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd0e6ac1c88a4b73a39ff991b705237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   SkillSprite: {fileID: 21300000, guid: 4860ab3a2b741754d97c304277429b46, type: 3}
   SpriteObject: {fileID: 8358172261260025549}
   moveSpeed: 50
@@ -757,7 +758,7 @@ MonoBehaviour:
   cardType: 8
   cardRank: 1
   cardRare: 3
-  skill: 0
+  skillUse: 0
   rankText: {fileID: 7955943707526013928}
   NameText: {fileID: 3790895970374025808}
   InfoText: {fileID: 1058059037246661958}
@@ -774,7 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameText: "\uBE48\uD2C8\uC758 \uC2E4"
-  InfoText: "\uACF5\uACA9\uB825\uC758 70 / 120 / 270% \uB9CC\uD07C\uC758 \uBB3C\uB9AC\uD53C\uD574\uB97C
+  InfoText: "\uACF5\uACA9\uB825\uC758 70 / 120 / 270% \uB9CC\uD07C\uC758 \uD53C\uD574\uB97C
     \uC785\uD799\uB2C8\uB2E4. (\uC774\uBC88 \uACF5\uACA9\uC758 \uCE58\uBA85\uD0C0
     \uD53C\uD574\uAC00 70 / 70 / 100%\uB9CC\uD07C \uC99D\uAC00\uD569\uB2C8\uB2E4.)"
 --- !u!114 &391758182376713783

@@ -591,7 +591,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -749,7 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd0e6ac1c88a4b73a39ff991b705237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillSprite: {fileID: 0}
+  player: {fileID: 0}
+  SkillSprite: {fileID: 21300000, guid: 18e54e7d020efb74b9440e04d908f4ea, type: 3}
   SpriteObject: {fileID: 7468313632749544076}
   moveSpeed: 50
   Unlock: 0
@@ -757,7 +758,7 @@ MonoBehaviour:
   cardType: 14
   cardRank: 1
   cardRare: 0
-  skill: 0
+  skillUse: 0
   rankText: {fileID: 4634179449920747061}
   NameText: {fileID: 7115472406584979159}
   InfoText: {fileID: 792209552913513080}
@@ -774,7 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameText: "\uCCB4\uB9AC\uC528\uC557"
-  InfoText: "3\uD134\uB3D9\uC548 \uACF5\uACA9\uB825\uC758 0 / 0 / 0 %\uB9CC\uD07C\uC758
+  InfoText: "3\uD134\uB3D9\uC548 \uACF5\uACA9\uB825\uC758 60 / 80 / 100 %\uB9CC\uD07C\uC758
     \uC9C0\uC18D\uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4. (3\uB2E8\uACC4 \uCE74\uB4DC\uC77C
     \uACBD\uC6B0 \uC9C0\uC18D\uD53C\uD574\uC5D0 25% / 50% \uC758 \uCE58\uBA85\uD0C0\uB960\uC774
     \uC801\uC6A9\uB429\uB2C8\uB2E4.)"

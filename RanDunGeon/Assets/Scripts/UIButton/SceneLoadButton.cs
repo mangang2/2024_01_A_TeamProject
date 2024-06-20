@@ -9,6 +9,9 @@ public class SceneLoadButton : MonoBehaviour
     private GameObject CheckUI;
 
     [SerializeField]
+    private bool NewData = false;
+
+    [SerializeField]
     private bool needChecking = false;
 
     [SerializeField]
@@ -22,10 +25,9 @@ public class SceneLoadButton : MonoBehaviour
 
     public void ClickOn()
     {
-        //GameManager.Instance.SaveData();
-        if(needChecking)
+        if (needChecking)
         {
-            CheckUI.GetComponent<CheckUI>().SendInfo(SceneName, InfoText);
+            CheckUI.GetComponent<CheckUI>().SendInfo(SceneName, InfoText, NewData);
             CheckUI.SetActive(true);
         }
         else

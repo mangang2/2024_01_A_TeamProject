@@ -6,7 +6,7 @@ using System.IO;
 
 public class ContinueButton : MonoBehaviour
 {
-    private string path = Path.Combine(Application.dataPath, "TestSaveData.json");
+    private string path = Path.Combine(Application.dataPath, "SaveData.json");
 
     private Button button;
 
