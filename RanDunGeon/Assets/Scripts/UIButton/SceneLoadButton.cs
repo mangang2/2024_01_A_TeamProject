@@ -34,7 +34,11 @@ public class SceneLoadButton : MonoBehaviour
         {
             if(needLoading)
             {
-                if (SceneName == "Restart")
+                if (SceneName == "Stage" && GameManager.Instance.nowChapter == 0)
+                {
+                    LoadSceneController.LoadScene("MainScene");
+                }
+                else if (SceneName == "Restart")
                 {
                     LoadSceneController.LoadScene(SceneManager.GetActiveScene().name);
                 }

@@ -53,7 +53,6 @@ public class CheckUI : MonoBehaviour
         if (nextScene == "Quit")
         {
             GameManager.Instance.SaveData();
-            Debug.Log("게임종료");
             Application.Quit();
         }
         else if (nextScene == "Restart")

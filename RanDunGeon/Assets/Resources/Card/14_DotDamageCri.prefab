@@ -757,7 +757,7 @@ MonoBehaviour:
   DoMerge: 0
   cardType: 14
   cardRank: 1
-  cardRare: 0
+  cardRare: 3
   skillUse: 0
   rankText: {fileID: 4634179449920747061}
   NameText: {fileID: 7115472406584979159}

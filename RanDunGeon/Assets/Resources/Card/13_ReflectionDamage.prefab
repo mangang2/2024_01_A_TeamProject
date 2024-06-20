@@ -753,11 +753,11 @@ MonoBehaviour:
   SkillSprite: {fileID: 21300000, guid: 6079eeca99f1a824cb6f48a2ea26f34b, type: 3}
   SpriteObject: {fileID: 7468313632749544076}
   moveSpeed: 50
-  Unlock: 1
+  Unlock: 0
   DoMerge: 0
   cardType: 13
   cardRank: 1
-  cardRare: 0
+  cardRare: 3
   skillUse: 0
   rankText: {fileID: 9111236726615089526}
   NameText: {fileID: 7115472406584979159}
