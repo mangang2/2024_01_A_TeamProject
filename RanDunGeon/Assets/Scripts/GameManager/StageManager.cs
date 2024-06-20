@@ -47,6 +47,7 @@ public class StageManager : MonoBehaviour
 
         switch(MonsterNum)
         {
+            case 10:
             case 11:
                 thisMonsterImage = MonsterImage[0]; break;
             case 12:

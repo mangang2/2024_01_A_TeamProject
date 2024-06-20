@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardListLoad : MonoBehaviour
 {
-    public GameObject CardListPrefabs,CardListNull;
+    public GameObject CardListPrefabs,CardListNull,cardInfoUI;
 
     public float LastCardPosY;
 
@@ -28,7 +28,8 @@ public class CardListLoad : MonoBehaviour
             GameObject temp = Instantiate(CardListPrefabs);
             temp.transform.SetParent(gameObject.transform);
             temp.GetComponent<CardSelectButton>().CardType = CardList[i - 1];
-            temp.GetComponent<CardSelectButton>().SendPosY();
+            temp.GetComponent<CardSelectButton>().SendPosY(); 
+            temp.GetComponent<CardSelectButton>().CardInfoUI = cardInfoUI;
         }
 
         for(int o = 1; o <= addNum; o++)

@@ -210,6 +210,7 @@ public partial class EnemyAI : MonoBehaviour
         {
             switch (MonsterNum)
             {
+                case 10:
                 case 11:
                     Skill_11();
                     break;

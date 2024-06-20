@@ -66,7 +66,7 @@ public class ReflectObject : MonoBehaviour
         {
             beforeShield = nowShield;
         }
-        else if(nowUsing == false && nowShield < beforeShield)
+        else if(nowUsing == false && nowShield < beforeShield && enemy.GetComponent<CharacterStatus>(). ShieldTurn > 0)
         {
             nowUsing = true;
             criP = player.GetComponent<CharacterStatus>().CriPercent;

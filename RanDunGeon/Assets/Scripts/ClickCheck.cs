@@ -9,6 +9,7 @@ public class ClickCheck : MonoBehaviour
     public GameObject TurnManager;
     public GameObject CardManager;
     public GameObject player;
+    public GameObject CardInfoUI;
 
 
     public bool Click,ClickAble = true;
@@ -44,7 +45,7 @@ public class ClickCheck : MonoBehaviour
 
             if (hit.collider != null)
             {
-                if (holdTime < 0.3f)
+                if (holdTime < 0.5f)
                 {
                     if (hit.collider.transform.tag == "Card" && ClickAble == true)
                     {
@@ -62,13 +63,14 @@ public class ClickCheck : MonoBehaviour
 
         }
 
-        if (holdTime >= 0.3f)
+        if (holdTime >= 0.5f)
         {
             if (holdClick == true)
             {
                 if (hit.collider != null)
                 {
-                    hit.collider.GetComponent<CardState>().CardInfo();
+                    CardInfoUI.SetActive(true);
+                    CardInfoUI.GetComponent<CardInfoUI>().UIOn(hit.collider.GetComponent<CardState>().SkillSprite, hit.collider.GetComponent<CardInfo>().NameText, hit.collider.GetComponent<CardInfo>().InfoText);
                 }
                 holdClick = false;
             }

@@ -6,7 +6,7 @@ using TMPro;
 
 public class CardSelectButton : MonoBehaviour
 {
-    public GameObject CardListLoader;
+    public GameObject CardListLoader,CardInfoUI;
 
     public GameObject CardType;
 
@@ -62,7 +62,8 @@ public class CardSelectButton : MonoBehaviour
         if(holdTime > 0.3f && Clicking == true)
         {
             notClick = true;
-            Debug.Log("카드 설명 : " + CardType.GetComponent<CardInfo>().InfoText);
+            CardInfoUI.SetActive(true);
+            CardInfoUI.GetComponent<CardInfoUI>().UIOn(CardType.GetComponent<CardState>().SkillSprite, CardType.GetComponent<CardInfo>().NameText, CardType.GetComponent<CardInfo>().InfoText);
             Clicking = false;
         }
 

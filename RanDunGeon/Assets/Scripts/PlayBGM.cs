@@ -17,7 +17,14 @@ public class PlayBGM : MonoBehaviour
 
         if(MusicName == "Game")
         {
-
+            if(GM.nowChapter == 1 || GM.nowChapter == 0)
+            {
+                AD.PlaySound("Chapter_1_BGM", BGM);
+            }
+            else if(GM.nowChapter == 2)
+            {
+                AD.PlaySound("Chapter_2_BGM", BGM);
+            }
         }
         else if(MusicName == "None")
         {

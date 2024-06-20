@@ -50,7 +50,7 @@ public class CardState : MonoBehaviour
     {
         rankText.text = cardRank.ToString();
         Mt = GetComponent<MeshRenderer>().material;
-        FadeOut = new Color(Mt.color.r,Mt.color.g,Mt.color.b, 1);
+        FadeOut = new Color(255/255 ,255/255 ,255/255, 0/255);
         SpriteObject.GetComponent<SpriteRenderer>().sprite = SkillSprite;
     }
 
@@ -90,7 +90,7 @@ public class CardState : MonoBehaviour
         {
             CardManager.GetComponent<CardManager>().UsingCard = true;
             transform.DOMoveY(5, 0.3f);
-            Mt.DOColor(FadeOut,0.3f);
+            Mt.DOColor(Color.clear ,0.3f);
         }
         
     }

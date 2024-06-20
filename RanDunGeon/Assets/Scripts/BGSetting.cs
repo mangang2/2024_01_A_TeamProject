@@ -11,7 +11,10 @@ public class BGSetting : MonoBehaviour
     {
         GM = GameManager.Instance;
 
+        if(GM.nowChapter != 0)
         GetComponent<SpriteRenderer>().sprite = BackGroundImage[GM.nowChapter - 1];
+        else
+            GetComponent<SpriteRenderer>().sprite = BackGroundImage[0];
     }
 
 }

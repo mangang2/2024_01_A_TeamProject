@@ -7,7 +7,7 @@ public class StageSelectButton : MonoBehaviour
 {
     public GameObject StageUI;
 
-    public int ClearStage;
+    public int ClearStage,ThisStage;
 
     private bool OpenStage;
 
@@ -20,6 +20,11 @@ public class StageSelectButton : MonoBehaviour
         else
         {
             OpenStage = false;
+        }
+
+        if(ThisStage <= GameManager.Instance.ClearStage)
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 

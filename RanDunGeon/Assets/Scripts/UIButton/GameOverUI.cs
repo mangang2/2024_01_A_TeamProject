@@ -9,6 +9,7 @@ public class GameOverUI : MonoBehaviour
     public TextMeshProUGUI text;
 
     public Sprite[] ItemSprite = new Sprite[6];
+    public Sprite GoldSprite;
 
     public GameObject rewardLayout, rewardPrefabs;
 
@@ -55,6 +56,7 @@ public class GameOverUI : MonoBehaviour
             GameObject goldTemp = Instantiate(rewardPrefabs);
             goldTemp.transform.SetParent(rewardLayout.transform);
             goldTemp.GetComponentInChildren<TextMeshProUGUI>().text = stageManager.gold.ToString();
+            goldTemp.transform.GetChild(1).GetComponent<Image>().sprite = GoldSprite;
         }
         
         if (stageManager.rewardCard != 0 && GM.CardList[stageManager.rewardCard - 1].GetComponent<CardState>().Unlock == false)
@@ -64,7 +66,9 @@ public class GameOverUI : MonoBehaviour
             Debug.Log(rewardTemp.gameObject.name + "카드 해금");
             GameObject cardTemp = Instantiate(rewardPrefabs);
             cardTemp.transform.SetParent(rewardLayout.transform);
-            cardTemp.GetComponentInChildren<TextMeshProUGUI>().text = rewardTemp.GetComponent<CardInfo>().NameText;
+            cardTemp.transform.GetChild(0).GetComponent<Image>().enabled = true;
+            cardTemp.GetComponentInChildren<TextMeshProUGUI>().text = "";
+            cardTemp.transform.GetChild(1).GetComponent<Image>().sprite = rewardTemp.gameObject.GetComponent<CardState>().SkillSprite;
         }
             if (stageManager.itemRank != 0)
         {
@@ -81,8 +85,8 @@ public class GameOverUI : MonoBehaviour
                 GameObject itemTemp = Instantiate(rewardPrefabs);
                 itemTemp.transform.SetParent(rewardLayout.transform);
                 
-                itemTemp.transform.GetChild(0).GetComponent<Image>().sprite = ItemSprite[newItemStatus.ItemType];
-                itemTemp.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(150, 129.75f);
+                itemTemp.transform.GetChild(1).GetComponent<Image>().sprite = ItemSprite[newItemStatus.ItemType];
+                itemTemp.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(150, 129.75f);
 
                 string temp = "";
 
