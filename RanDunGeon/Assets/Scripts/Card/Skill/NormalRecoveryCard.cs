@@ -40,7 +40,7 @@ public class NormalRecoveryCard : MonoBehaviour
 
             TurnManager.GetComponent<TurnManager>().PWorkCount--;
             GetComponent<CardState>().skillUse = false;
-            Destroy(gameObject,0.3f);
+            Destroy(gameObject, 0.3f);
             enabled = false;
         }
     }
