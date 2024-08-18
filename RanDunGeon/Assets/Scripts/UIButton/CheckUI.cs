@@ -52,6 +52,7 @@ public class CheckUI : MonoBehaviour
 
         if (nextScene == "Quit")
         {
+            Debug.Log("게임종료");
             GameManager.Instance.SaveData();
             Application.Quit();
         }

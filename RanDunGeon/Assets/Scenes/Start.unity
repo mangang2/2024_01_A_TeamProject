@@ -1808,12 +1808,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NowChar: 1
-  CharLevel: 00000000
+  CharLevel: 01000000
   Card:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5293796684268122817, guid: 0a92220c3f35f9e438802951059879f6, type: 3}
+  - {fileID: 4055728022967715978, guid: 26f24930523031e4680aa569a81ccd9c, type: 3}
+  - {fileID: 5834814195292812506, guid: 61e7bbaaa73f6544f98a515e79940c9d, type: 3}
+  - {fileID: 8880946109014373666, guid: 405b583acbcac434c914db43f48f3e27, type: 3}
   DefaultStatus:
   - 0
   - 0
@@ -1822,11 +1822,11 @@ MonoBehaviour:
   - 0
   - 0
   BaseStatus:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 32
+  - 23
+  - 23
+  - 5
+  - 20
   - 0
   StatusPer:
   - 0
@@ -1855,10 +1855,7 @@ MonoBehaviour:
   NowUsingItemCount: 0
   nowChapter: 0
   nowStage: 1
-  StoreCard:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  StoreCard: 000000000000000000000000
   BeStoreCard: 0
   ClearStage: 0
   Gold: 0

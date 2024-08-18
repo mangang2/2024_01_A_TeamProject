@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     public int nowChapter,nowStage;
 
-    public GameObject[] StoreCard = new GameObject[3];
+    public int[] StoreCard = new int[3];
 
     public bool BeStoreCard = false;
 
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         DefaultStatus = new float[6];
-        BaseStatus = new float[6];
+        BaseStatus = new float[6] {320, 24, 24, 5, 20, 0};
         StatusAdd = new float[6];
 
         CardList = new List<GameObject>();
@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveNewGameData()
     {
+        gameData = new GameData();
         gameData.CharLevel[0] = 1;
         gameData.Char_1_Card = new int[4] { 1, 2, 3, 4 };
         gameData.Char_1_BaseStatus = new float[6] { 320f, 23f, 10f, 25f, 50f, 0f };
@@ -169,7 +170,7 @@ public class GameManager : MonoBehaviour
 
         gameData.Gold = 0;
 
-        gameData.StoreCard = new GameObject[3];
+        gameData.StoreCard = new int[3];
 
         gameData.BeStore = false;
 
@@ -250,6 +251,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveData()
     {
+        gameData = new GameData();
         SaveGameData();
         LoadAllStatus();
         string jsonData = JsonUtility.ToJson(gameData);
@@ -304,7 +306,16 @@ public class GameManager : MonoBehaviour
         {
             Card[i] = CardList[gameData.Char_1_Card[i] - 1];
         }
-        BaseStatus = gameData.Char_1_BaseStatus;
+
+        if (CharLevel[0] < 2)
+        {
+            BaseStatus = new float[6] { 320, 24, 24, 5, 20, 0 };
+        }
+        else
+        {
+            BaseStatus = gameData.Char_1_BaseStatus;
+        }
+
         ItemList.Clear();
         for(int L = 0; L < gameData.Char_1_ItemType.Count; L++)
         {
@@ -385,7 +396,7 @@ public class GameData
 
     public long Gold;
 
-    public GameObject[] StoreCard = new GameObject[3];
+    public int[] StoreCard = new int[3];
 
     public bool BeStore;
 

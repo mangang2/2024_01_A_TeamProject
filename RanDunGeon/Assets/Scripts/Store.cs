@@ -25,6 +25,7 @@ public class Store : MonoBehaviour
 
     private int cardCount;
 
+    [SerializeField]
     private GameObject[] nowStoreCard = new GameObject[3];
 
     private int selectCard = 1;
@@ -59,7 +60,13 @@ public class Store : MonoBehaviour
         }
         for (int i = 0; i < 3; i++)
         {
-            nowStoreCard[i] = GM.StoreCard[i];
+            if(GM.StoreCard[i] == 0)
+            {
+                StoreNameText[cardCount].text = "품절";
+                SkillImage[cardCount].sprite = null;
+            }
+
+            nowStoreCard[i] = cardList[GM.StoreCard[i] - 1];
             StoreNameText[cardCount].text = nowStoreCard[i].GetComponent<CardInfo>().NameText;
             SkillImage[cardCount].sprite = nowStoreCard[i].GetComponent<CardState>().SkillSprite;
 
@@ -116,8 +123,11 @@ public class Store : MonoBehaviour
             }
             cardCount++;
         }
+        for(int i = 0; i < 3; i++)
+        {
+            GM.StoreCard[i] = nowStoreCard[i].GetComponent<CardState>().cardType; 
+        }
         
-        GM.StoreCard = nowStoreCard;
         GM.BeStoreCard = true;
     }
 

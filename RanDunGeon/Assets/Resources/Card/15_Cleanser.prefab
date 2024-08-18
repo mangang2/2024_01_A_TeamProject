@@ -579,14 +579,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  SkillSprite: {fileID: 0}
+  SkillSprite: {fileID: 21300000, guid: faebcbf63b054dc42b0194a1426daeb2, type: 3}
   SpriteObject: {fileID: 7468313632749544076}
   moveSpeed: 50
-  Unlock: 1
+  Unlock: 0
   DoMerge: 0
   cardType: 15
   cardRank: 1
-  cardRare: 2
+  cardRare: 3
   skillUse: 0
   rankText: {fileID: 6460715372833139530}
   NameText: {fileID: 7115472406584979159}
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c23e56975ed42058a5d40330ff453e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameText: "\uC815\uD654"
+  NameText: "\uAE68\uB057\uD55C \uBE44\uB204!"
   InfoText: "\uBAA8\uB4E0 \uB514\uBC84\uD504\uB97C \uD574\uC81C\uD558\uACE0 \uD574\uC81C\uD55C
     \uB514\uBC84\uD504\uC758 \uAC1C\uC218 X 2.5 / 7 / 10 % \uB9CC\uD07C \uCCB4\uB825\uC744
     \uD68C\uBCF5\uD55C\uB2E4."
